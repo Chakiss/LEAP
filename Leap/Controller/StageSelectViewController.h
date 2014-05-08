@@ -11,6 +11,9 @@
 @interface StageSelectViewController : UIViewController
 
 
+@property (nonatomic , strong) IBOutlet UIScrollView *map;
+@property (nonatomic, retain) IBOutlet UIView* content;
+@property (nonatomic , strong) IBOutlet UIButton *button;
 
 - (IBAction)stageSelect:(id)sender;
 @end
