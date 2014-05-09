@@ -613,6 +613,7 @@
 		22CAEEB21911198300C43979 /* ChinaGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAEEB11911198300C43979 /* ChinaGameViewController.m */; };
 		22CAEEB519111C4D00C43979 /* AlphabetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAEEB419111C4D00C43979 /* AlphabetView.m */; };
 		22CAEEB819111DCA00C43979 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAEEB719111DCA00C43979 /* DrawView.m */; };
+		2D06D91B191C86B400FDD6EB /* info.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2D06D91A191C86B400FDD6EB /* info.rtf */; };
 		2D173DC9190F7DD800617354 /* LocalizeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D173DC8190F7DD800617354 /* LocalizeData.m */; };
 		2D173DCF190F89AB00617354 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D173DCE190F89AB00617354 /* Parser.m */; };
 		2D173DD2190F8B8200617354 /* LocalizeDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D173DD1190F8B8200617354 /* LocalizeDataStore.m */; };
@@ -1401,6 +1402,7 @@
 		22CAEEB419111C4D00C43979 /* AlphabetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlphabetView.m; sourceTree = "<group>"; };
 		22CAEEB619111DCA00C43979 /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
 		22CAEEB719111DCA00C43979 /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
+		2D06D91A191C86B400FDD6EB /* info.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = info.rtf; sourceTree = "<group>"; };
 		2D173DC7190F7DD800617354 /* LocalizeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizeData.h; sourceTree = "<group>"; };
 		2D173DC8190F7DD800617354 /* LocalizeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizeData.m; sourceTree = "<group>"; };
 		2D173DCD190F89AB00617354 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
@@ -1636,6 +1638,7 @@
 		220988B018C2D61800F5BDED /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				2D06D91A191C86B400FDD6EB /* info.rtf */,
 				2D25B876190F6E2F0099D68A /* localization.xml */,
 				2D44E926190F4D9C00CEC64E /* Sound */,
 				22254FE618C30430002F6271 /* alphabet */,
@@ -3271,6 +3274,7 @@
 				22098DC618C2D65900F5BDED /* rabbit.png in Resources */,
 				22098DDF18C2D65900F5BDED /* snow.png.meta in Resources */,
 				2D44E9C1190F4D9C00CEC64E /* alphabet_n.mp3 in Resources */,
+				2D06D91B191C86B400FDD6EB /* info.rtf in Resources */,
 				22098CE518C2D65900F5BDED /* head_lion4@2x.png.meta in Resources */,
 				22098BED18C2D65900F5BDED /* l@2x.png in Resources */,
 				22098DDC18C2D65900F5BDED /* snake.png in Resources */,

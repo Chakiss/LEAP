@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0B6336A7-7F95-4409-8C08-ED99EBE6BCAA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Leap</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>498F60D9-D63F-4F71-9CCB-918CF5730711</key>
+		<string>https://github.com/Chakiss/LEAP.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Leap.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>498F60D9-D63F-4F71-9CCB-918CF5730711</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Chakiss/LEAP.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>498F60D9-D63F-4F71-9CCB-918CF5730711</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>498F60D9-D63F-4F71-9CCB-918CF5730711</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LEAP</string>
+		</dict>
+	</array>
+</dict>
+</plist>
