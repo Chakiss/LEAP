@@ -240,7 +240,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgT-LN-GYe">
-                                                <rect key="frame" x="814" y="436" width="43" height="39"/>
+                                                <rect key="frame" x="814" y="427" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -859,6 +859,17 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="XLA-gO-6oF"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ouj-6m-A8n" userLabel="Balloon">
+                                                <rect key="frame" x="826" y="474" width="111" height="123"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="balloonM.png" translatesAutoresizingMaskIntoConstraints="NO" id="LIK-7J-i4R">
+                                                        <rect key="frame" x="0.0" y="4" width="111" height="123"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
@@ -883,6 +894,8 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="ballonImageView" destination="LIK-7J-i4R" id="eD6-Ix-kJ5"/>
+                        <outlet property="ballonView" destination="Ouj-6m-A8n" id="gv0-0u-jSd"/>
                         <outlet property="content" destination="2sI-sK-AeO" id="cvE-af-fXc"/>
                         <outlet property="map" destination="ipV-iS-bIJ" id="LSJ-mg-VDB"/>
                         <outlet property="view" destination="68g-dE-HcW" id="XDB-jG-sVN"/>
@@ -1543,6 +1556,7 @@
         <image name="UI_Arrow_fix_right.png" width="187" height="97"/>
         <image name="UI_Icon_greed.png" width="119" height="109"/>
         <image name="UI_Icon_red.png" width="119" height="109"/>
+        <image name="balloonM.png" width="2112" height="2352"/>
         <image name="bg_gameusa.png" width="1024" height="768"/>
         <image name="buttonmore.png" width="177" height="80"/>
         <image name="flag_america.png" width="400" height="267"/>
