@@ -614,6 +614,7 @@
 		22CAEEB519111C4D00C43979 /* AlphabetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAEEB419111C4D00C43979 /* AlphabetView.m */; };
 		22CAEEB819111DCA00C43979 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAEEB719111DCA00C43979 /* DrawView.m */; };
 		22CB72C0191DFFCA00224BBF /* Stage.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CB72BF191DFFCA00224BBF /* Stage.m */; };
+		22CB72C3191E104E00224BBF /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CB72C2191E104E00224BBF /* Score.m */; };
 		2D06D91B191C86B400FDD6EB /* info.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2D06D91A191C86B400FDD6EB /* info.rtf */; };
 		2D173DC9190F7DD800617354 /* LocalizeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D173DC8190F7DD800617354 /* LocalizeData.m */; };
 		2D173DCF190F89AB00617354 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D173DCE190F89AB00617354 /* Parser.m */; };
@@ -1405,6 +1406,8 @@
 		22CAEEB719111DCA00C43979 /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
 		22CB72BE191DFFCA00224BBF /* Stage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stage.h; sourceTree = "<group>"; };
 		22CB72BF191DFFCA00224BBF /* Stage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stage.m; sourceTree = "<group>"; };
+		22CB72C1191E104E00224BBF /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
+		22CB72C2191E104E00224BBF /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
 		2D06D91A191C86B400FDD6EB /* info.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = info.rtf; sourceTree = "<group>"; };
 		2D173DC7190F7DD800617354 /* LocalizeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizeData.h; sourceTree = "<group>"; };
 		2D173DC8190F7DD800617354 /* LocalizeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizeData.m; sourceTree = "<group>"; };
@@ -2666,6 +2669,8 @@
 			children = (
 				22CB72BE191DFFCA00224BBF /* Stage.h */,
 				22CB72BF191DFFCA00224BBF /* Stage.m */,
+				22CB72C1191E104E00224BBF /* Score.h */,
+				22CB72C2191E104E00224BBF /* Score.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3815,6 +3820,7 @@
 				22A45F201911374900BEA218 /* NSDictionary_JSONExtensions.m in Sources */,
 				22A45F1E1911374900BEA218 /* CJSONSerializedData.m in Sources */,
 				22A45F251911374900BEA218 /* ndollar.js in Sources */,
+				22CB72C3191E104E00224BBF /* Score.m in Sources */,
 				2220D73B190D27CD0099F0FA /* USAGame.m in Sources */,
 				2D173DC9190F7DD800617354 /* LocalizeData.m in Sources */,
 				2286E6C0190B4D710084E498 /* USAGameViewController.m in Sources */,
