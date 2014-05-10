@@ -613,6 +613,7 @@
 		22CAEEB21911198300C43979 /* ChinaGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAEEB11911198300C43979 /* ChinaGameViewController.m */; };
 		22CAEEB519111C4D00C43979 /* AlphabetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAEEB419111C4D00C43979 /* AlphabetView.m */; };
 		22CAEEB819111DCA00C43979 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAEEB719111DCA00C43979 /* DrawView.m */; };
+		22CB72C0191DFFCA00224BBF /* Stage.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CB72BF191DFFCA00224BBF /* Stage.m */; };
 		2D06D91B191C86B400FDD6EB /* info.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2D06D91A191C86B400FDD6EB /* info.rtf */; };
 		2D173DC9190F7DD800617354 /* LocalizeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D173DC8190F7DD800617354 /* LocalizeData.m */; };
 		2D173DCF190F89AB00617354 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D173DCE190F89AB00617354 /* Parser.m */; };
@@ -1402,6 +1403,8 @@
 		22CAEEB419111C4D00C43979 /* AlphabetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlphabetView.m; sourceTree = "<group>"; };
 		22CAEEB619111DCA00C43979 /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
 		22CAEEB719111DCA00C43979 /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
+		22CB72BE191DFFCA00224BBF /* Stage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stage.h; sourceTree = "<group>"; };
+		22CB72BF191DFFCA00224BBF /* Stage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stage.m; sourceTree = "<group>"; };
 		2D06D91A191C86B400FDD6EB /* info.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = info.rtf; sourceTree = "<group>"; };
 		2D173DC7190F7DD800617354 /* LocalizeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizeData.h; sourceTree = "<group>"; };
 		2D173DC8190F7DD800617354 /* LocalizeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizeData.m; sourceTree = "<group>"; };
@@ -1597,6 +1600,7 @@
 				2209888A18C2D4C200F5BDED /* AppDelegate.h */,
 				2209888B18C2D4C200F5BDED /* AppDelegate.m */,
 				2209888D18C2D4C200F5BDED /* Main.storyboard */,
+				22CB72BD191DFED600224BBF /* Model */,
 				2286E6C1190B83ED0084E498 /* KKProgressTimer */,
 				22098E1D18C2D86E00F5BDED /* Controller */,
 				220988B018C2D61800F5BDED /* Resource */,
@@ -2655,6 +2659,15 @@
 				22CAEEB11911198300C43979 /* ChinaGameViewController.m */,
 			);
 			name = controller;
+			sourceTree = "<group>";
+		};
+		22CB72BD191DFED600224BBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22CB72BE191DFFCA00224BBF /* Stage.h */,
+				22CB72BF191DFFCA00224BBF /* Stage.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		2D173DD6190FD13800617354 /* (1) Shop */ = {
@@ -3779,6 +3792,7 @@
 				222AE536190CE5770002B228 /* TileView.m in Sources */,
 				22A45F2F1911374900BEA218 /* WTMGlyphUtilities.m in Sources */,
 				22A45F2A1911374900BEA218 /* WTMGlyph.m in Sources */,
+				22CB72C0191DFFCA00224BBF /* Stage.m in Sources */,
 				2D173DD2190F8B8200617354 /* LocalizeDataStore.m in Sources */,
 				22A45F231911374900BEA218 /* CJSONSerializer.m in Sources */,
 				22A45F221911374900BEA218 /* CJSONScanner.m in Sources */,

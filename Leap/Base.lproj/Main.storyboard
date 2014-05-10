@@ -144,7 +144,6 @@
                                 </state>
                                 <connections>
                                     <action selector="nextButtonTapped:" destination="jVp-Qd-Qaq" eventType="touchUpInside" id="ofd-iX-MAn"/>
-                                    <segue destination="u98-LD-TsY" kind="modal" modalTransitionStyle="crossDissolve" id="2vn-zJ-YhC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -220,7 +219,7 @@
                                                 <rect key="frame" x="736" y="415" width="33" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zm4-9Q-yZF">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zm4-9Q-yZF">
                                                 <rect key="frame" x="790" y="557" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_greed.png">
@@ -230,63 +229,77 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="vWw-cA-ciy"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNd-Aq-70u">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNd-Aq-70u">
                                                 <rect key="frame" x="787" y="485" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="sHy-Yk-vXw"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgT-LN-GYe">
-                                                <rect key="frame" x="814" y="433" width="43" height="39"/>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgT-LN-GYe">
+                                                <rect key="frame" x="814" y="436" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="GIY-QH-yxF"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHp-px-dyd">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHp-px-dyd">
                                                 <rect key="frame" x="801" y="313" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="8re-Iq-dz4"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ngt-yt-Inz">
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ngt-yt-Inz">
                                                 <rect key="frame" x="613" y="497" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="4x7-t2-hfv"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxx-En-rbJ">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxx-En-rbJ">
                                                 <rect key="frame" x="731" y="436" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="zm7-JK-fJ3"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zba-1t-4aH">
-                                                <rect key="frame" x="755" y="373" width="43" height="39"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="UI_Icon_red.png">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDw-b7-GS7">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDw-b7-GS7">
                                                 <rect key="frame" x="742" y="401" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="1PW-ib-yBe"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhb-73-b89">
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhb-73-b89">
                                                 <rect key="frame" x="559" y="492" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="bWd-10-vW8"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rc5-Lv-ebF">
+                                            <button opaque="NO" tag="17" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rc5-Lv-ebF">
                                                 <rect key="frame" x="556" y="274" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -296,7 +309,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="469-oE-Idb"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5N-mv-zre">
+                                            <button opaque="NO" tag="16" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5N-mv-zre">
                                                 <rect key="frame" x="607" y="281" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -306,28 +319,27 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="5g8-Fz-jGD"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQc-Ya-fZj">
+                                            <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQc-Ya-fZj">
                                                 <rect key="frame" x="568" y="401" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="6KI-U9-QHR"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6l-MU-Wm3">
+                                            <button opaque="NO" tag="14" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6l-MU-Wm3">
                                                 <rect key="frame" x="607" y="378" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="Y6U-aE-f0A"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwU-Uz-haw">
-                                                <rect key="frame" x="599" y="341" width="43" height="39"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="UI_Icon_red.png">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cU7-uj-dnC">
+                                            <button opaque="NO" tag="18" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cU7-uj-dnC">
                                                 <rect key="frame" x="531" y="254" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -337,7 +349,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="3CP-q3-M7T"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEQ-Un-qQi">
+                                            <button opaque="NO" tag="19" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEQ-Un-qQi">
                                                 <rect key="frame" x="553" y="232" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -347,7 +359,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="9b7-0S-mzx"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fO8-1J-UzE">
+                                            <button opaque="NO" tag="21" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fO8-1J-UzE">
                                                 <rect key="frame" x="755" y="248" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -357,7 +369,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="O8x-6R-Gex"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGQ-Wb-gDd">
+                                            <button opaque="NO" tag="20" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGQ-Wb-gDd">
                                                 <rect key="frame" x="593" y="166" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -367,7 +379,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="LHC-9M-E9c"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQo-0M-eV6">
+                                            <button opaque="NO" tag="22" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQo-0M-eV6">
                                                 <rect key="frame" x="794" y="226" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -377,7 +389,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="5Ha-7K-H3e"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DV9-PD-p1X">
+                                            <button opaque="NO" tag="23" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DV9-PD-p1X">
                                                 <rect key="frame" x="819" y="210" width="43" height="37"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -431,7 +443,7 @@
                                                 <rect key="frame" x="767" y="85" width="33" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKa-EO-gYL">
+                                            <button opaque="NO" tag="24" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKa-EO-gYL">
                                                 <rect key="frame" x="760" y="104" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -441,7 +453,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="ppL-MF-zub"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Va0-K5-7Z2">
+                                            <button opaque="NO" tag="31" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Va0-K5-7Z2">
                                                 <rect key="frame" x="489" y="196" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -451,7 +463,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="D6U-MI-wco"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCp-jr-uVp">
+                                            <button opaque="NO" tag="30" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCp-jr-uVp">
                                                 <rect key="frame" x="483" y="172" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -461,7 +473,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="ot0-kN-RHP"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="je7-xM-Dnu">
+                                            <button opaque="NO" tag="25" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="je7-xM-Dnu">
                                                 <rect key="frame" x="690" y="114" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -471,17 +483,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="tYm-pb-oPo"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EuS-iJ-myf">
-                                                <rect key="frame" x="639" y="114" width="43" height="39"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="UI_Icon_red.png">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="XLA-gO-6oF"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOu-3Q-zJw">
+                                            <button opaque="NO" tag="27" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOu-3Q-zJw">
                                                 <rect key="frame" x="593" y="107" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -491,7 +493,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="9qP-Jd-t8J"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Twf-YX-Y6S">
+                                            <button opaque="NO" tag="29" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Twf-YX-Y6S">
                                                 <rect key="frame" x="484" y="110" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -501,7 +503,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="Jwx-xk-4yb"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pml-8g-p2j">
+                                            <button opaque="NO" tag="28" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pml-8g-p2j">
                                                 <rect key="frame" x="541" y="51" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -511,7 +513,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="b6J-sJ-0O1"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mc-CE-w2C">
+                                            <button opaque="NO" tag="32" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mc-CE-w2C">
                                                 <rect key="frame" x="416" y="221" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -521,7 +523,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="Tnw-Ec-WTy"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdm-R6-WQv">
+                                            <button opaque="NO" tag="33" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdm-R6-WQv">
                                                 <rect key="frame" x="386" y="166" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -531,7 +533,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="D7k-Wf-TLv"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kd9-jm-M5H">
+                                            <button opaque="NO" tag="34" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kd9-jm-M5H">
                                                 <rect key="frame" x="382" y="124" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -557,7 +559,7 @@
                                                 <rect key="frame" x="287" y="120" width="33" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbh-bb-VAK">
+                                            <button opaque="NO" tag="35" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbh-bb-VAK">
                                                 <rect key="frame" x="356" y="51" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -567,7 +569,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="XFe-bg-xw1"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOS-2S-Ueb">
+                                            <button opaque="NO" tag="36" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOS-2S-Ueb">
                                                 <rect key="frame" x="340" y="126" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -577,7 +579,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="ppm-3S-yS7"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Luq-jC-KEh">
+                                            <button opaque="NO" tag="38" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Luq-jC-KEh">
                                                 <rect key="frame" x="282" y="134" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -619,7 +621,7 @@
                                                 <rect key="frame" x="156" y="341" width="33" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xb-Cj-wRw">
+                                            <button opaque="NO" tag="39" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xb-Cj-wRw">
                                                 <rect key="frame" x="250" y="73" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -629,7 +631,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="5E1-KE-d2C"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkz-qA-UPC">
+                                            <button opaque="NO" tag="37" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkz-qA-UPC">
                                                 <rect key="frame" x="317" y="144" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -639,7 +641,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="s3g-0Y-u6e"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10l-we-QSb">
+                                            <button opaque="NO" tag="40" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10l-we-QSb">
                                                 <rect key="frame" x="185" y="126" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -649,7 +651,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="vjf-pX-4ub"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7d-SM-tkw">
+                                            <button opaque="NO" tag="41" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7d-SM-tkw">
                                                 <rect key="frame" x="155" y="141" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -659,7 +661,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="0bU-Lh-ATI"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDy-RA-HsX">
+                                            <button opaque="NO" tag="42" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDy-RA-HsX">
                                                 <rect key="frame" x="130" y="172" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -669,7 +671,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="Zne-w6-pbk"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kf-cE-EiL">
+                                            <button opaque="NO" tag="44" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kf-cE-EiL">
                                                 <rect key="frame" x="98" y="259" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -679,7 +681,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="fXE-dR-jKX"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCt-9N-nGf">
+                                            <button opaque="NO" tag="43" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCt-9N-nGf">
                                                 <rect key="frame" x="98" y="123" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -689,7 +691,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="IZl-9B-mMp"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkc-vb-DSl">
+                                            <button opaque="NO" tag="45" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkc-vb-DSl">
                                                 <rect key="frame" x="121" y="306" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -699,7 +701,7 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="Oiw-gj-G8R"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGL-8R-9j0">
+                                            <button opaque="NO" tag="46" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGL-8R-9j0">
                                                 <rect key="frame" x="151" y="359" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -713,7 +715,7 @@
                                                 <rect key="frame" x="271" y="243" width="33" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHx-aB-C7k">
+                                            <button opaque="NO" tag="47" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHx-aB-C7k">
                                                 <rect key="frame" x="266" y="263" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -727,7 +729,7 @@
                                                 <rect key="frame" x="108" y="461" width="33" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnL-a6-MTh">
+                                            <button opaque="NO" tag="48" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnL-a6-MTh">
                                                 <rect key="frame" x="103" y="485" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
@@ -737,12 +739,15 @@
                                                     <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="d6Q-FK-ibf"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbN-PZ-qDD">
+                                            <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbN-PZ-qDD">
                                                 <rect key="frame" x="513" y="446" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="8Kh-6M-Rio"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="4.png" translatesAutoresizingMaskIntoConstraints="NO" id="D8j-UO-w8z">
                                                 <rect key="frame" x="804" y="290" width="33" height="33"/>
@@ -760,12 +765,15 @@
                                                 <rect key="frame" x="618" y="479" width="33" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNi-nt-SFd">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNi-nt-SFd">
                                                 <rect key="frame" x="685" y="386" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="TgO-2s-lHi"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8.png" translatesAutoresizingMaskIntoConstraints="NO" id="FRj-UX-X1p">
                                                 <rect key="frame" x="690" y="361" width="33" height="33"/>
@@ -779,12 +787,15 @@
                                                 <rect key="frame" x="518" y="427" width="33" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKu-g1-NeH">
+                                            <button opaque="NO" tag="12" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKu-g1-NeH">
                                                 <rect key="frame" x="512" y="374" width="43" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="UI_Icon_red.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="FDp-a9-q3P"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="12.png" translatesAutoresizingMaskIntoConstraints="NO" id="6zL-gy-xzk">
                                                 <rect key="frame" x="517" y="355" width="33" height="33"/>
@@ -818,6 +829,36 @@
                                                 <rect key="frame" x="558" y="214" width="32" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zba-1t-4aH">
+                                                <rect key="frame" x="755" y="373" width="43" height="39"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="UI_Icon_red.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="gHX-HM-lwK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="15" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwU-Uz-haw">
+                                                <rect key="frame" x="599" y="341" width="43" height="39"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="UI_Icon_red.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="NIv-g7-3UO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="26" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EuS-iJ-myf">
+                                                <rect key="frame" x="639" y="114" width="43" height="39"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="UI_Icon_red.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="stageSelect:" destination="u98-LD-TsY" eventType="touchUpInside" id="XLA-gO-6oF"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
@@ -845,6 +886,54 @@
                         <outlet property="content" destination="2sI-sK-AeO" id="cvE-af-fXc"/>
                         <outlet property="map" destination="ipV-iS-bIJ" id="LSJ-mg-VDB"/>
                         <outlet property="view" destination="68g-dE-HcW" id="XDB-jG-sVN"/>
+                        <outletCollection property="button" destination="zm4-9Q-yZF" id="Bq8-pQ-nWD"/>
+                        <outletCollection property="button" destination="MNd-Aq-70u" id="Q4p-Ls-j8P"/>
+                        <outletCollection property="button" destination="sgT-LN-GYe" id="PIQ-rT-F1T"/>
+                        <outletCollection property="button" destination="RHp-px-dyd" id="ExH-h1-bok"/>
+                        <outletCollection property="button" destination="Zba-1t-4aH" id="ZTh-hY-Wsf"/>
+                        <outletCollection property="button" destination="UDw-b7-GS7" id="2gY-Ja-2eB"/>
+                        <outletCollection property="button" destination="Xxx-En-rbJ" id="QQx-Zi-E9T"/>
+                        <outletCollection property="button" destination="jNi-nt-SFd" id="Wlf-Yj-TJ7"/>
+                        <outletCollection property="button" destination="Ngt-yt-Inz" id="8hV-Bq-C5W"/>
+                        <outletCollection property="button" destination="Rhb-73-b89" id="b8R-sR-tCV"/>
+                        <outletCollection property="button" destination="VbN-PZ-qDD" id="afG-Ee-loW"/>
+                        <outletCollection property="button" destination="MKu-g1-NeH" id="MNd-DC-Mzm"/>
+                        <outletCollection property="button" destination="zQc-Ya-fZj" id="TZh-1j-ssB"/>
+                        <outletCollection property="button" destination="l6l-MU-Wm3" id="i7s-Uv-cT5"/>
+                        <outletCollection property="button" destination="lwU-Uz-haw" id="H9b-Vr-cnA"/>
+                        <outletCollection property="button" destination="b5N-mv-zre" id="7Hk-JB-k1G"/>
+                        <outletCollection property="button" destination="Rc5-Lv-ebF" id="KYm-uG-4VX"/>
+                        <outletCollection property="button" destination="cU7-uj-dnC" id="Rbk-WS-9qM"/>
+                        <outletCollection property="button" destination="FEQ-Un-qQi" id="RsD-SZ-X67"/>
+                        <outletCollection property="button" destination="VGQ-Wb-gDd" id="F01-6N-TDU"/>
+                        <outletCollection property="button" destination="fO8-1J-UzE" id="VaX-A2-JKe"/>
+                        <outletCollection property="button" destination="DV9-PD-p1X" id="ItZ-iH-JoW"/>
+                        <outletCollection property="button" destination="sQo-0M-eV6" id="BB4-TT-5K6"/>
+                        <outletCollection property="button" destination="fKa-EO-gYL" id="uNj-Dr-7sS"/>
+                        <outletCollection property="button" destination="je7-xM-Dnu" id="UYL-aM-6KP"/>
+                        <outletCollection property="button" destination="EuS-iJ-myf" id="0Y9-hA-RUy"/>
+                        <outletCollection property="button" destination="VOu-3Q-zJw" id="Vjr-z4-sS0"/>
+                        <outletCollection property="button" destination="Pml-8g-p2j" id="gAy-Va-PrW"/>
+                        <outletCollection property="button" destination="Twf-YX-Y6S" id="44A-Wx-1dL"/>
+                        <outletCollection property="button" destination="RCp-jr-uVp" id="Nbl-Hc-5tj"/>
+                        <outletCollection property="button" destination="Va0-K5-7Z2" id="Auf-K2-2OH"/>
+                        <outletCollection property="button" destination="4mc-CE-w2C" id="BTw-3q-uIJ"/>
+                        <outletCollection property="button" destination="pdm-R6-WQv" id="Kv8-xR-wcm"/>
+                        <outletCollection property="button" destination="kd9-jm-M5H" id="9Bg-za-5ec"/>
+                        <outletCollection property="button" destination="gbh-bb-VAK" id="Xwn-mh-Jf3"/>
+                        <outletCollection property="button" destination="SOS-2S-Ueb" id="vQv-c7-z9z"/>
+                        <outletCollection property="button" destination="bkz-qA-UPC" id="H2E-Cb-GTp"/>
+                        <outletCollection property="button" destination="Luq-jC-KEh" id="JMw-AZ-xi9"/>
+                        <outletCollection property="button" destination="2xb-Cj-wRw" id="9Ls-xr-ffK"/>
+                        <outletCollection property="button" destination="10l-we-QSb" id="bWt-U3-O5b"/>
+                        <outletCollection property="button" destination="H7d-SM-tkw" id="zEj-pV-xHF"/>
+                        <outletCollection property="button" destination="XDy-RA-HsX" id="zXk-Up-PUz"/>
+                        <outletCollection property="button" destination="WCt-9N-nGf" id="q9k-7N-vx6"/>
+                        <outletCollection property="button" destination="0kf-cE-EiL" id="chE-eE-MPH"/>
+                        <outletCollection property="button" destination="Zkc-vb-DSl" id="NMe-Ix-Emf"/>
+                        <outletCollection property="button" destination="GGL-8R-9j0" id="m4b-cU-OnE"/>
+                        <outletCollection property="button" destination="hHx-aB-C7k" id="g1p-5l-JVi"/>
+                        <outletCollection property="button" destination="wnL-a6-MTh" id="1C9-UH-dDg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Km-RT-rZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -969,7 +1058,7 @@
         <!--China Game View Controller-->
         <scene sceneID="Egc-uX-BiY">
             <objects>
-                <viewController id="FD0-tC-sY8" customClass="ChinaGameViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameChina" id="FD0-tC-sY8" customClass="ChinaGameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="b4J-Cs-Qg2"/>
                         <viewControllerLayoutGuide type="bottom" id="6Sl-mu-RMp"/>
@@ -1016,6 +1105,9 @@
                                 <state key="normal" image="ui_left.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="FD0-tC-sY8" eventType="touchUpInside" id="D39-Zp-XpX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDY-Mg-HEi">
                                 <rect key="frame" x="738" y="29" width="148" height="21"/>

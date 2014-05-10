@@ -225,4 +225,10 @@
     }
     
 }
+
+- (IBAction)backButtonTapped:(id)sender{
+    [backgroundSound stop];
+    [crocodileSound stop];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

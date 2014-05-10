@@ -28,4 +28,7 @@
 
 @property (weak, nonatomic) IBOutlet KKProgressTimer *timer1;
 
+
+
+- (IBAction)backButtonTapped:(id)sender;
 @end

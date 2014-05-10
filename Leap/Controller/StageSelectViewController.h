@@ -12,8 +12,8 @@
 
 
 @property (nonatomic , strong) IBOutlet UIScrollView *map;
-@property (nonatomic, retain) IBOutlet UIView* content;
-@property (nonatomic , strong) IBOutlet UIButton *button;
+@property (nonatomic , retain) IBOutlet UIView* content;
+@property (nonatomic , strong) IBOutletCollection(UIButton) NSArray* button;
 
 - (IBAction)stageSelect:(id)sender;
 @end
