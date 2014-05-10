@@ -742,6 +742,7 @@
 		2D44E9DF190F4D9C00CEC64E /* voice003.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D44E98D190F4D9C00CEC64E /* voice003.mp3 */; };
 		2D5F10771911EF2500507877 /* ui_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5F10761911EF2500507877 /* ui_left.png */; };
 		2DCCA20A191E81E4001A06EA /* UIView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCCA209191E81E4001A06EA /* UIView+Animation.m */; };
+		2DCCA20D191E8F9E001A06EA /* ResultScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCCA20C191E8F9E001A06EA /* ResultScoreViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1542,6 +1543,8 @@
 		2D5F10761911EF2500507877 /* ui_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ui_left.png; sourceTree = "<group>"; };
 		2DCCA208191E81E4001A06EA /* UIView+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animation.h"; sourceTree = "<group>"; };
 		2DCCA209191E81E4001A06EA /* UIView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animation.m"; sourceTree = "<group>"; };
+		2DCCA20B191E8F9E001A06EA /* ResultScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultScoreViewController.h; sourceTree = "<group>"; };
+		2DCCA20C191E8F9E001A06EA /* ResultScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultScoreViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2414,6 +2417,8 @@
 				22098E2518C2E2A400F5BDED /* StageSelectViewController.m */,
 				2D173DD3190FD03700617354 /* ProfileViewController.h */,
 				2D173DD4190FD03700617354 /* ProfileViewController.m */,
+				2DCCA20B191E8F9E001A06EA /* ResultScoreViewController.h */,
+				2DCCA20C191E8F9E001A06EA /* ResultScoreViewController.m */,
 				22CAEEA91911182800C43979 /* China */,
 				222AE522190CB1EE0002B228 /* Thai */,
 				222AE521190CB1E30002B228 /* USA */,
@@ -3787,6 +3792,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DCCA20D191E8F9E001A06EA /* ResultScoreViewController.m in Sources */,
 				22098E2318C2D88200F5BDED /* StoryLineViewController.m in Sources */,
 				222AE52D190CDC460002B228 /* Level.m in Sources */,
 				225B2386190D4D1D00034645 /* AnswerView.m in Sources */,
