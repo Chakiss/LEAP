@@ -10,4 +10,9 @@
 
 @interface Score : NSObject
 
+
++ (Score *) sharedInstance;
+- (int)highScore;
+- (int)score;
+- (void)setScore:(int)score;
 @end

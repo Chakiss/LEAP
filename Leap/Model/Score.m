@@ -8,6 +8,38 @@
 
 #import "Score.h"
 
+static Score *sharedInstance;
+
 @implementation Score
 
+
++ (Score *) sharedInstance{
+    @synchronized(self)
+    {
+        if (sharedInstance == nil)
+        {
+            sharedInstance = [[Score alloc] init];
+            
+        }
+    }
+    return sharedInstance;
+}
+- (int)highScore{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [[defaults objectForKey:@"highScore"] integerValue];
+}
+
+- (int)score{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [[defaults objectForKey:@"score"] integerValue];
+}
+
+- (void)setScore:(int)score{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[NSNumber numberWithInt:score] forKey:@"score"];
+    if ([defaults objectForKey:@"score"] > [defaults objectForKey:@"highScore"]) {
+        [defaults setObject:[NSNumber numberWithInt:score] forKey:@"highScore"];
+    }
+    [defaults synchronize];
+}
 @end

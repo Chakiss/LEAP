@@ -1006,7 +1006,7 @@
         <!--USA Game View Controller-->
         <scene sceneID="thW-X2-Z8X">
             <objects>
-                <viewController id="vfN-cn-Mey" userLabel="USA Game View Controller" customClass="USAGameViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameUSA" id="vfN-cn-Mey" userLabel="USA Game View Controller" customClass="USAGameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jAb-0Y-5Hz"/>
                         <viewControllerLayoutGuide type="bottom" id="VoI-qp-LwX"/>

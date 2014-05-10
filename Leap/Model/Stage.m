@@ -16,9 +16,7 @@ static Stage *sharedInstance;
 
 - (id)init{
     if (self = [super init]) {
-//        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
- //       [defaults setObject:[NSNumber numberWithInt:1] forKey:@"stage"];
-  //      [defaults synchronize];
+
     }
     return self;
 }

@@ -67,6 +67,13 @@
             [self presentViewController:vc animated:NO completion:nil];
             
         }
+        else{
+            
+            UIStoryboard *storyboard     = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+            PhonicGameViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"GameUSA"];
+            vc.stage = stageNumber;
+            [self presentViewController:vc animated:NO completion:nil];
+        } 
         
     }
     
