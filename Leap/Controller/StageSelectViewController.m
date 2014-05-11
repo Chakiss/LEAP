@@ -12,6 +12,12 @@
 
 #import "Stage.h"
 
+static int curveValues[] = {
+    UIViewAnimationOptionCurveEaseInOut,
+    UIViewAnimationOptionCurveEaseIn,
+    UIViewAnimationOptionCurveEaseOut,
+    UIViewAnimationOptionCurveLinear };
+
 @interface StageSelectViewController (){
     CGPoint center;
     
@@ -30,6 +36,8 @@
 @end
 
 @implementation StageSelectViewController
+@synthesize ballonImageView;
+@synthesize ballonView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -88,6 +96,8 @@
 {
     [super viewDidLoad];
     
+     selectedCurveIndex = 1;
+    
     stage = [Stage sharedInstance];
    // [stage setStage:10];
     NSLog(@"%d",[stage currentStage]);
@@ -107,7 +117,29 @@
     self.map.contentSize=CGSizeMake(1280, 960);
     
 	// Do any additional setup after loading the view.
+    
+
+
+ }
+
+- (void) viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+    //********** Ballon ***********///////////
+    
+    UIButton *nextLevelButton = (UIButton *)[self.view viewWithTag:2];
+    
+    [ballonView moveTo:
+     CGPointMake(nextLevelButton.center.x - (ballonView.frame.size.width/2),
+                 nextLevelButton.frame.origin.y - (ballonView.frame.size.height + 5.0))
+              duration:3.0
+                option:curveValues[selectedCurveIndex]];
+
+    
 }
+
+
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
     return self.content;
