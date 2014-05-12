@@ -69,6 +69,7 @@
     self.alligatorView.animationImages = @[[UIImage imageNamed:@"game1_close.png"],[UIImage imageNamed:@"game1_open.png"]];
     self.alligatorView.animationDuration = 0.5;
     self.alligatorView.animationRepeatCount = 1;
+
     
     myScore = [Score sharedInstance];
    // [ self.alligatorView startAnimating];

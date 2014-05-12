@@ -24,5 +24,5 @@
 @property (weak, nonatomic) id<TileTouchDelegate> delegate;
 
 -(instancetype)initWithLetter:(NSString*)letter andSideLength:(float)sideLength;
-
+- (void)setLetter:(NSString *)letter;
 @end

@@ -609,6 +609,7 @@
 		22A45F3C19114A3A00BEA218 /* eyelid_crocodile_oppenmouse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A45F3819114A3A00BEA218 /* eyelid_crocodile_oppenmouse@2x.png */; };
 		22A45F3D19114A3A00BEA218 /* eyelid.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A45F3919114A3A00BEA218 /* eyelid.png */; };
 		22A45F3E19114A3A00BEA218 /* eyelid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A45F3A19114A3A00BEA218 /* eyelid@2x.png */; };
+		22AB121A19214E51000F4EAD /* NSString+ShuffledString.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AB121919214E51000F4EAD /* NSString+ShuffledString.m */; };
 		22CAEEAE1911194500C43979 /* ChinaGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAEEAD1911194500C43979 /* ChinaGame.m */; };
 		22CAEEB21911198300C43979 /* ChinaGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAEEB11911198300C43979 /* ChinaGameViewController.m */; };
 		22CAEEB519111C4D00C43979 /* AlphabetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAEEB419111C4D00C43979 /* AlphabetView.m */; };
@@ -1398,6 +1399,8 @@
 		22A45F3819114A3A00BEA218 /* eyelid_crocodile_oppenmouse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyelid_crocodile_oppenmouse@2x.png"; sourceTree = "<group>"; };
 		22A45F3919114A3A00BEA218 /* eyelid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyelid.png; sourceTree = "<group>"; };
 		22A45F3A19114A3A00BEA218 /* eyelid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyelid@2x.png"; sourceTree = "<group>"; };
+		22AB121819214E51000F4EAD /* NSString+ShuffledString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ShuffledString.h"; sourceTree = "<group>"; };
+		22AB121919214E51000F4EAD /* NSString+ShuffledString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ShuffledString.m"; sourceTree = "<group>"; };
 		22CAEEAC1911194500C43979 /* ChinaGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChinaGame.h; sourceTree = "<group>"; };
 		22CAEEAD1911194500C43979 /* ChinaGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChinaGame.m; sourceTree = "<group>"; };
 		22CAEEB01911198300C43979 /* ChinaGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChinaGameViewController.h; sourceTree = "<group>"; };
@@ -2409,6 +2412,8 @@
 				2D173DD1190F8B8200617354 /* LocalizeDataStore.m */,
 				2252509E18C31C3B00D8D85C /* NSMutableArray+ShuffledArray.h */,
 				2252509F18C31C3B00D8D85C /* NSMutableArray+ShuffledArray.m */,
+				22AB121819214E51000F4EAD /* NSString+ShuffledString.h */,
+				22AB121919214E51000F4EAD /* NSString+ShuffledString.m */,
 				22098E1E18C2D86E00F5BDED /* ViewController.h */,
 				22098E1F18C2D86E00F5BDED /* ViewController.m */,
 				22098E2118C2D88200F5BDED /* StoryLineViewController.h */,
@@ -3803,6 +3808,7 @@
 				22098E2018C2D86E00F5BDED /* ViewController.m in Sources */,
 				2DCCA20A191E81E4001A06EA /* UIView+Animation.m in Sources */,
 				22CAEEB519111C4D00C43979 /* AlphabetView.m in Sources */,
+				22AB121A19214E51000F4EAD /* NSString+ShuffledString.m in Sources */,
 				22CAEEB21911198300C43979 /* ChinaGameViewController.m in Sources */,
 				22A45F1F1911374900BEA218 /* CDataScanner_Extensions.m in Sources */,
 				2D173DD5190FD03700617354 /* ProfileViewController.m in Sources */,

@@ -51,6 +51,20 @@
     return self;
 }
 
+- (void)setLetter:(NSString *)letter{
+     UIImage* img = [UIImage imageNamed:[NSString stringWithFormat:@"ui_font_%@_@2x.png",letter]];
+    [self setImage:img];
+    self.isMatched = NO;
+    _letter = letter;
+    
+    
+    self.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget: self action:@selector(actionSingleTap)];
+    singleTap.numberOfTapsRequired = 1;
+    [self addGestureRecognizer:singleTap];
+
+}
+
 -(void)actionSingleTap{
     NSLog(@"TAP!!");
     
