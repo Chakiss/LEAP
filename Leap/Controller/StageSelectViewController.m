@@ -211,35 +211,15 @@ static int curveValues[] = {
     
     NSArray *animalArray = @[@"head_lion2.png",@"button_head_rat.png",@"head_lion2.png"];
     
-    for (int i = 0; i < [converSound count]; i++) {
+  //  for (int i = 0; i < [converSound count]; i++) {
       
-       
-        /*
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            
-            //Add some method process in global queue - normal for data processing
-            
-            dispatch_async(dispatch_get_main_queue(), ^(){
-                //Add method, task you want perform on mainQueue
-                //Control UIView, IBOutlet all here
-                
-         
-                
-            });
-            
-            //Add some method process in global queue - normal for data processing
-            
-        });
-         */
-        
-        animalImageView.image = [animalArray objectAtIndex:i];
-        
-        [conversationSound playSoundFile:[converSound objectAtIndex:i]];
+    
+        [conversationSound playSoundFile:[converSound objectAtIndex:0]];
         [conversationSound play];
         
         [NSThread sleepForTimeInterval:[conversationSound duration]];
         
-    }
+   // }
  
     
     //footerView.hidden = YES;
