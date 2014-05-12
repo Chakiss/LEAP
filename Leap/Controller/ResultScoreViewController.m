@@ -37,7 +37,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(IBAction)backButton:(id)sender{
+    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:NO completion:^(void) {
+        
+      
+    }];
+}
 /*
 #pragma mark - Navigation
 

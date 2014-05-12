@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="yzb-At-nIC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="u98-LD-TsY">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -862,14 +862,12 @@
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ouj-6m-A8n" userLabel="Balloon">
                                                 <rect key="frame" x="826" y="474" width="111" height="123"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="balloonM.png" translatesAutoresizingMaskIntoConstraints="NO" id="LIK-7J-i4R">
-                                                        <rect key="frame" x="0.0" y="4" width="111" height="123"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    </imageView>
-                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="balloonM.png" translatesAutoresizingMaskIntoConstraints="NO" id="LIK-7J-i4R">
+                                                <rect key="frame" x="841" y="523" width="111" height="123"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
@@ -956,7 +954,7 @@
         <!--Result Score View Controller-->
         <scene sceneID="4kB-oq-5x5">
             <objects>
-                <viewController id="yzb-At-nIC" customClass="ResultScoreViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultScore" id="yzb-At-nIC" customClass="ResultScoreViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F5k-jF-dMl"/>
                         <viewControllerLayoutGuide type="bottom" id="9iT-9s-peD"/>
@@ -996,6 +994,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="backButton:" destination="yzb-At-nIC" eventType="touchUpInside" id="ST7-hM-SsY"/>
                                     <action selector="nextButtonTapped:" destination="jVp-Qd-Qaq" eventType="touchUpInside" id="Y2b-vH-BTW"/>
                                 </connections>
                             </button>

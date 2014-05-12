@@ -9,9 +9,12 @@
 #define GESTURE_SCORE_THRESHOLD         0.7f
 
 #import "ChinaGameViewController.h"
+#import "ResultScoreViewController.h"
 #import "WTMGlyphDetectorView.h"
 #import "NSMutableArray+ShuffledArray.h"
 #import "Sound.h"
+#import "Score.h"
+#import "Stage.h"
 
 @interface ChinaGameViewController (){
     
@@ -24,6 +27,8 @@
     Sound *backgroundSound;
     Sound *correctSound;
     Sound *crocodileSound;
+    
+    Score *score;
     
 }
 
@@ -45,7 +50,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.level = 16;
     currentloop = 0;
     
     self.gestureDetectorView = [[WTMGlyphDetectorView alloc] initWithFrame:self.drawAreaView.bounds];
@@ -64,6 +68,8 @@
     self.alligatorView.animationImages = @[[UIImage imageNamed:@"game1_close.png"],[UIImage imageNamed:@"game1_open.png"]];
     self.alligatorView.animationDuration = 0.5;
     self.alligatorView.animationRepeatCount = 1;
+    
+    score = [Score sharedInstance];
    // [ self.alligatorView startAnimating];
     
 }
@@ -83,8 +89,16 @@
     }
     else{
         NSLog(@"FINISH!!!");
+        
+        [backgroundSound stop];
+        [crocodileSound stop];
         [self.drawAreaView removeFromSuperview];
         [self.choiceImageView removeFromSuperview];
+        
+        UIStoryboard *storyboard     = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        ResultScoreViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ResultScore"];
+        
+        [self presentViewController:vc animated:NO completion:nil];
     }
     
     

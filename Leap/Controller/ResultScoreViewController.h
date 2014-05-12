@@ -10,4 +10,6 @@
 
 @interface ResultScoreViewController : UIViewController
 
+-(IBAction)backButton:(id)sender;
+
 @end
