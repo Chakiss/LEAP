@@ -54,7 +54,8 @@
     
     self.gestureDetectorView = [[WTMGlyphDetectorView alloc] initWithFrame:self.drawAreaView.bounds];
     self.gestureDetectorView.delegate = self;
-    [self.gestureDetectorView loadTemplatesWithNames:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",nil];
+//    [self.gestureDetectorView loadTemplatesWithNames:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",nil];
+    
     [self.drawAreaView addSubview:self.gestureDetectorView];
     [self checkLevel];
     [self playGame];
@@ -165,70 +166,86 @@ int c = 0;
     if (self.level == 1){
         loop = 4;
         alplabet = [@[@"a",@"a",@"b",@"b"] mutableCopy];
+        [self.gestureDetectorView loadTemplatesWithNames:@"A",@"B",nil];
     }
     else if(self.level == 2){
         loop = 4;
         alplabet = [@[@"c",@"c",@"d",@"d"] mutableCopy];
+        [self.gestureDetectorView loadTemplatesWithNames:@"C",@"D",nil];
     }
     else if(self.level == 3){
         loop = 4;
         alplabet = [@[@"e",@"e",@"f",@"f"] mutableCopy];
+        [self.gestureDetectorView loadTemplatesWithNames:@"E",@"F",nil];
     }
     else if(self.level == 4){
         loop = 4;
         alplabet = [@[@"g",@"g",@"h",@"h"] mutableCopy];
+        [self.gestureDetectorView loadTemplatesWithNames:@"G",@"H",nil];
     }
     else if(self.level == 5){
         loop = 4;
         alplabet = [@[@"i",@"i",@"j",@"j"] mutableCopy];
+        [self.gestureDetectorView loadTemplatesWithNames:@"I",@"J",nil];
     }
     else if(self.level == 6){
         loop = 4;
         alplabet = [@[@"k",@"k",@"l",@"l"] mutableCopy];
+        [self.gestureDetectorView loadTemplatesWithNames:@"K",@"L",nil];
     }
     else if(self.level == 7){
         loop = 4;
         alplabet = [@[@"m",@"m",@"n",@"n"] mutableCopy];
+        [self.gestureDetectorView loadTemplatesWithNames:@"M",@"N",nil];
     }
     else if(self.level == 8){
         loop = 4;
         alplabet = [@[@"o",@"o",@"p",@"p"] mutableCopy];
+        [self.gestureDetectorView loadTemplatesWithNames:@"O",@"P",nil];
     }
     else if(self.level == 9){
         loop = 4;
         alplabet = [@[@"q",@"q",@"r",@"r"] mutableCopy];
+        [self.gestureDetectorView loadTemplatesWithNames:@"Q",@"R",nil];
     }
     else if(self.level == 10){
         loop = 4;
         alplabet = [@[@"s",@"s",@"t",@"t"] mutableCopy];
+        [self.gestureDetectorView loadTemplatesWithNames:@"S",@"T",nil];
     }
     else if(self.level == 11){
         loop = 4;
         alplabet = [@[@"u",@"u",@"v",@"v"] mutableCopy];
+        [self.gestureDetectorView loadTemplatesWithNames:@"U",@"V",nil];
     }
     else if(self.level == 12){
         loop = 4;
         alplabet = [@[@"w",@"x",@"y",@"z"] mutableCopy];
+        [self.gestureDetectorView loadTemplatesWithNames:@"W",@"X",@"Y",@"Z",nil];
     }
     else if(self.level == 13){
         loop = 10;
         alplabet = [@[@"a",@"b",@"c",@"d",@"e",@"f",@"g",@"h",@"i",@"j"] mutableCopy];
+        [self.gestureDetectorView loadTemplatesWithNames:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",nil];
         
     }
     else if(self.level == 14){
         loop = 10;
         alplabet = [@[@"k",@"l",@"m",@"n",@"o",@"p",@"q",@"r",@"s",@"t"] mutableCopy];
         [self shuffle];
+        [self.gestureDetectorView loadTemplatesWithNames:@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",nil];
     }
     else if(self.level == 15){
         loop = 10;
         alplabet = [@[@"u",@"v",@"w",@"x",@"y",@"z",@"u",@"w",@"y",@"z"] mutableCopy];
         [self shuffle];
+        [self.gestureDetectorView loadTemplatesWithNames:@"U",@"V",@"W",@"X",@"Y",@"Z",nil];
     }
     else if(self.level == 16){
         loop = 10;
         alplabet = [@[@"a",@"b",@"c",@"d",@"e",@"f",@"g",@"h",@"i",@"j",@"k",@"l",@"m",@"n",@"o",@"p",@"q",@"r",@"s",@"t",@"u",@"v",@"w",@"x",@"y",@"z"] mutableCopy];
         [self shuffle];
+        [self.gestureDetectorView loadTemplatesWithNames:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",nil];
     }
     
 }
