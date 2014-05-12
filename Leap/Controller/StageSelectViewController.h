@@ -17,7 +17,7 @@
 {
      int	selectedCurveIndex;
      AppDelegate *app;
-    Score *score;
+    Score *heightScore;
 }
 
 @property (nonatomic , strong) IBOutlet UIScrollView *map;
@@ -29,6 +29,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *animalImageView;
 @property (nonatomic, strong) LocalizeDataStore *localizeDataStore;
 @property (strong, nonatomic) IBOutlet UIView *footerView;
+@property (strong, nonatomic) IBOutlet UIButton *bookButton;
 
 - (IBAction)stageSelect:(id)sender;
+- (IBAction)pressedProfile:(id)sender;
 @end
