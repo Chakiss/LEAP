@@ -898,6 +898,24 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qa4-tM-qJg" userLabel="FooterView">
+                                <rect key="frame" x="0.0" y="618" width="1024" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="head_lion2.png" translatesAutoresizingMaskIntoConstraints="NO" id="ras-Bq-A7U">
+                                        <rect key="frame" x="20" y="22" width="138" height="106"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="727" translatesAutoresizingMaskIntoConstraints="NO" id="Cyi-m1-zNU">
+                                        <rect key="frame" x="173" y="32" width="727" height="89"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.46999999999999997" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -909,9 +927,11 @@
                     <navigationItem key="navigationItem" id="ckt-e1-Xd7"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="animalImageView" destination="ras-Bq-A7U" id="f7e-Ar-vb7"/>
                         <outlet property="ballonImageView" destination="LIK-7J-i4R" id="eD6-Ix-kJ5"/>
                         <outlet property="ballonView" destination="Ouj-6m-A8n" id="gv0-0u-jSd"/>
                         <outlet property="content" destination="2sI-sK-AeO" id="cvE-af-fXc"/>
+                        <outlet property="footerView" destination="Qa4-tM-qJg" id="uxF-Bz-qxf"/>
                         <outlet property="map" destination="ipV-iS-bIJ" id="LSJ-mg-VDB"/>
                         <outlet property="view" destination="68g-dE-HcW" id="XDB-jG-sVN"/>
                         <outletCollection property="button" destination="zm4-9Q-yZF" id="Bq8-pQ-nWD"/>
@@ -1194,8 +1214,15 @@
                                     <action selector="backButtonTapped:" destination="FD0-tC-sY8" eventType="touchUpInside" id="D39-Zp-XpX"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDY-Mg-HEi">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDY-Mg-HEi">
                                 <rect key="frame" x="738" y="29" width="148" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeT-0Q-ZJG">
+                                <rect key="frame" x="738" y="65" width="148" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1210,6 +1237,7 @@
                         <outlet property="alligatorView" destination="dX3-3M-yzG" id="z5g-Vj-YIy"/>
                         <outlet property="choiceImageView" destination="FBx-ig-xcf" id="oEn-5q-z8l"/>
                         <outlet property="drawAreaView" destination="03u-Fi-LIn" id="Umz-5k-Oqt"/>
+                        <outlet property="scoreLabel" destination="ZeT-0Q-ZJG" id="rGx-Qe-cDa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GS5-47-VR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
