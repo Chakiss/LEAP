@@ -160,12 +160,14 @@ AppDelegate *app;
 }
 - (IBAction)nextButtonTapped:(id)sender {
     
+     currentTextStory++;
+    
     clickSound = [[Sound alloc] init];
     [clickSound playSoundFile:@"Button_sound"];
        [clickSound play];
 
     if (currentTextStory < storyLineTextArray.count-1) {
-        currentTextStory++;
+       
         self.StoryLineTextView.text = storyLineTextArray[currentTextStory];
         
         self.storyLineImageView.image = [UIImage imageNamed:storyLineImageArray[currentTextStory/2]];
@@ -186,6 +188,11 @@ AppDelegate *app;
     [self checkHiddenButton];
     [soundBG play];
     [converSound play];
+    
+    if (currentTextStory == 6) {
+        [soundBG stop];
+        [converSound stop];
+    }
 
 
 }
@@ -224,6 +231,7 @@ AppDelegate *app;
     
     [soundBG play];
     [self checkHiddenButton];
+    
 
 
 }
