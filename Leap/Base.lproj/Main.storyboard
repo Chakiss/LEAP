@@ -176,11 +176,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipV-iS-bIJ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipV-iS-bIJ">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2sI-sK-AeO">
+                                    <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2sI-sK-AeO">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -897,6 +897,13 @@
                                         <rect key="frame" x="-25" y="-10" width="340" height="120"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4s-Gl-pRe">
+                                        <rect key="frame" x="47" y="53" width="129" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -934,6 +941,7 @@
                         <outlet property="content" destination="2sI-sK-AeO" id="cvE-af-fXc"/>
                         <outlet property="footerView" destination="Qa4-tM-qJg" id="uxF-Bz-qxf"/>
                         <outlet property="map" destination="ipV-iS-bIJ" id="LSJ-mg-VDB"/>
+                        <outlet property="scoreLabel" destination="R4s-Gl-pRe" id="3Pk-8i-N0v"/>
                         <outlet property="view" destination="68g-dE-HcW" id="XDB-jG-sVN"/>
                         <outletCollection property="button" destination="zm4-9Q-yZF" id="Bq8-pQ-nWD"/>
                         <outletCollection property="button" destination="MNd-Aq-70u" id="Q4p-Ls-j8P"/>

@@ -11,17 +11,19 @@
 #import "LocalizeDataStore.h"
 #import "AppDelegate.h"
 #import "Sound.h"
+#import "Score.h"
 
 @interface StageSelectViewController : UIViewController<SoundDelegate>
 {
      int	selectedCurveIndex;
      AppDelegate *app;
+    Score *score;
 }
 
 @property (nonatomic , strong) IBOutlet UIScrollView *map;
 @property (nonatomic , retain) IBOutlet UIView* content;
 @property (nonatomic , strong) IBOutletCollection(UIButton) NSArray* button;
-
+@property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutlet UIView *ballonView;
 @property (strong, nonatomic) IBOutlet UIImageView *ballonImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *animalImageView;

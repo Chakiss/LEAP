@@ -25,7 +25,6 @@ static int curveValues[] = {
     CGPoint center;
     
     CGSize			world;
-	CGFloat			scale;
 	NSMutableArray*		tiles;
 	NSMutableSet*		extraTiles;
 	CGRect			tileBox;
@@ -110,9 +109,10 @@ static int curveValues[] = {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     isConversation = true;
     
-     selectedCurveIndex = 1;
+    selectedCurveIndex = 1;
     
     stage = [Stage sharedInstance];
    // [stage setStage:10];
@@ -126,11 +126,18 @@ static int curveValues[] = {
         
     }
     
+    score = [Score sharedInstance];
+    
+    self.scoreLabel.text = [NSString stringWithFormat:@"%i",[score score]];
+    
     
     center = CGPointMake(self.view.frame.size.width, self.view.frame.size.height);
+  
     self.map.minimumZoomScale=1.0;
     self.map.maximumZoomScale=4.0;
-    self.map.contentSize=CGSizeMake(1280, 960);
+    self.map.contentSize=CGSizeMake(1024, 768);
+    
+    
     
     
 	// Do any additional setup after loading the view.
@@ -270,10 +277,22 @@ static int curveValues[] = {
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
-    
+ 
+
 }
 
-//}
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view //available starting with iOS 3.2
+{
+   
+    [scrollView setScrollEnabled:FALSE];
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale
+{
+    if(scale > 1)
+        [scrollView setScrollEnabled:TRUE];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
