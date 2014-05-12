@@ -741,6 +741,7 @@
 		2D44E9DF190F4D9C00CEC64E /* voice003.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D44E98D190F4D9C00CEC64E /* voice003.mp3 */; };
 		2D5F10771911EF2500507877 /* ui_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5F10761911EF2500507877 /* ui_left.png */; };
 		2D8F9AE81921226500B70DA3 /* book_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D8F9AE71921226500B70DA3 /* book_@2x.png */; };
+		2D8F9AEC1921297400B70DA3 /* buttonmore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D8F9AEB1921297400B70DA3 /* buttonmore@2x.png */; };
 		2DCCA20A191E81E4001A06EA /* UIView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCCA209191E81E4001A06EA /* UIView+Animation.m */; };
 		2DCCA20D191E8F9E001A06EA /* ResultScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCCA20C191E8F9E001A06EA /* ResultScoreViewController.m */; };
 /* End PBXBuildFile section */
@@ -1541,6 +1542,7 @@
 		2D44E98D190F4D9C00CEC64E /* voice003.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = voice003.mp3; sourceTree = "<group>"; };
 		2D5F10761911EF2500507877 /* ui_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ui_left.png; sourceTree = "<group>"; };
 		2D8F9AE71921226500B70DA3 /* book_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book_@2x.png"; sourceTree = "<group>"; };
+		2D8F9AEB1921297400B70DA3 /* buttonmore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonmore@2x.png"; sourceTree = "<group>"; };
 		2DCCA208191E81E4001A06EA /* UIView+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animation.h"; sourceTree = "<group>"; };
 		2DCCA209191E81E4001A06EA /* UIView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animation.m"; sourceTree = "<group>"; };
 		2DCCA20B191E8F9E001A06EA /* ResultScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultScoreViewController.h; sourceTree = "<group>"; };
@@ -2725,6 +2727,7 @@
 		2D173DF6190FD13800617354 /* (2) Ranking */ = {
 			isa = PBXGroup;
 			children = (
+				2D8F9AEB1921297400B70DA3 /* buttonmore@2x.png */,
 				2D173DFE190FD13800617354 /* Prop */,
 			);
 			path = "(2) Ranking";
@@ -3124,6 +3127,7 @@
 				222AE511190CA37B0002B228 /* ui_font_l_@2x.png in Resources */,
 				22098D2118C2D65900F5BDED /* coin@2x.png in Resources */,
 				2257F86919116D9C00D2FEF8 /* X.json in Resources */,
+				2D8F9AEC1921297400B70DA3 /* buttonmore@2x.png in Resources */,
 				2257F85D19116D9C00D2FEF8 /* L.json in Resources */,
 				22098DE418C2D65900F5BDED /* star.png in Resources */,
 				22098DE118C2D65900F5BDED /* squid.png.meta in Resources */,
