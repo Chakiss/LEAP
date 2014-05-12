@@ -70,7 +70,7 @@
     self.alligatorView.animationDuration = 0.5;
     self.alligatorView.animationRepeatCount = 1;
     
-    myscore = [Score sharedInstance];
+    myScore = [Score sharedInstance];
    // [ self.alligatorView startAnimating];
     
 }
