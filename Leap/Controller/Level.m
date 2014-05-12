@@ -28,7 +28,7 @@
   // initialize the object from the dictionary
   l.level = levelDict[@"level"];
   l.pointsPerTile = [levelDict[@"pointsPerTile"] intValue];
-  //l.timeToSolve = [levelDict[@"timeToSolve"] intValue];
+  
   
   return l;
 }
