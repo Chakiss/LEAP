@@ -37,8 +37,6 @@ static int curveValues[] = {
     
     Sound *soundBG;
     Sound *conversationSound;
-    Sound *conversationSound1;
-    Sound *conversationSound2;
     
 }
 
@@ -49,6 +47,7 @@ static int curveValues[] = {
 @synthesize ballonImageView;
 @synthesize ballonView;
 @synthesize footerView;
+@synthesize animalImageView;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -213,15 +212,32 @@ static int curveValues[] = {
     NSArray *animalArray = @[@"head_lion2.png",@"button_head_rat.png",@"head_lion2.png"];
     
     for (int i = 0; i < [converSound count]; i++) {
+      
+       
+        /*
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            //Add some method process in global queue - normal for data processing
+            
+            dispatch_async(dispatch_get_main_queue(), ^(){
+                //Add method, task you want perform on mainQueue
+                //Control UIView, IBOutlet all here
+                
+         
+                
+            });
+            
+            //Add some method process in global queue - normal for data processing
+            
+        });
+         */
+        
+        animalImageView.image = [animalArray objectAtIndex:i];
         
         [conversationSound playSoundFile:[converSound objectAtIndex:i]];
         [conversationSound play];
-        NSLog(@"Before Stop");
-        NSLog(@"Sound Time : % f",[conversationSound duration]);
+        
         [NSThread sleepForTimeInterval:[conversationSound duration]];
-        
-        NSLog(@"After Stop");
-        
         
     }
  
@@ -230,13 +246,11 @@ static int curveValues[] = {
     isConversation = false;
     
 }
-int a = 0;
-- (void) setImage{
+-(void)setNextImage:(NSString*)nextImage{
     
-    NSArray *animalArray = @[@"head_lion2.png",@"button_head_rat.png",@"head_lion2.png"];
-    self.animalImageView.image = [UIImage imageNamed:[animalArray objectAtIndex:1]];
-    
-    a++;
+   
+   
+    animalImageView.image = [UIImage imageNamed:nextImage];
     
 }
 
