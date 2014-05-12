@@ -14,5 +14,5 @@
 + (Score *) sharedInstance;
 - (int)highScore;
 - (int)score;
-- (void)setScore:(int)score andLevel:(int)levelHightScore;
+- (void)setScore:(int)score;
 @end
