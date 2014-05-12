@@ -40,6 +40,7 @@
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:sound_file error:&error];
     self.player.delegate = self;
     [self.player setNumberOfLoops:0];
+    duration = self.player.duration;
     [self.player prepareToPlay];
 }
 

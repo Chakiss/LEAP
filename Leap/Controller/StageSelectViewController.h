@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "UIView+Animation.h"
+#import "LocalizeDataStore.h"
+#import "AppDelegate.h"
 
 @interface StageSelectViewController : UIViewController
 {
      int	selectedCurveIndex;
+     AppDelegate *app;
 }
 
 @property (nonatomic , strong) IBOutlet UIScrollView *map;
@@ -20,6 +23,9 @@
 
 @property (strong, nonatomic) IBOutlet UIView *ballonView;
 @property (strong, nonatomic) IBOutlet UIImageView *ballonImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *animalImageView;
+@property (nonatomic, strong) LocalizeDataStore *localizeDataStore;
+@property (strong, nonatomic) IBOutlet UIView *footerView;
 
 - (IBAction)stageSelect:(id)sender;
 @end

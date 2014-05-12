@@ -126,6 +126,7 @@
     return YES;
 }
 #pragma mark - Delegate
+int c = 0;
 
 - (void)wtmGlyphDetectorView:(WTMGlyphDetectorView*)theView glyphDetected:(WTMGlyph *)glyph withScore:(float)score
 {
@@ -140,10 +141,12 @@
         
         if ([answerLetter isEqualToString:[alplabet[currentloop] uppercaseString]]) {
             NSLog(@"ถูกกกกกก");
+            c++;
             [self.drawAreaView reloadInputViews];
             [alphabetView removeFromSuperview];
             correctSound = [[Sound alloc] init];
             [correctSound playSoundFile:@"sound_magic"];
+            self.scoreLabel.text = [NSString stringWithFormat:@"%d",c];
             [correctSound play];
         }
         else{

@@ -11,6 +11,9 @@
 #import "ChinaGameViewController.h"
 
 #import "Stage.h"
+#import "Sound.h"
+
+static BOOL isConversation = true;
 
 static int curveValues[] = {
     UIViewAnimationOptionCurveEaseInOut,
@@ -27,9 +30,16 @@ static int curveValues[] = {
 	NSMutableSet*		extraTiles;
 	CGRect			tileBox;
     
+    
 	UIView*			content;
     
     Stage *stage;
+    
+    Sound *soundBG;
+    Sound *conversationSound;
+    Sound *conversationSound1;
+    Sound *conversationSound2;
+    
 }
 
 
@@ -38,6 +48,8 @@ static int curveValues[] = {
 @implementation StageSelectViewController
 @synthesize ballonImageView;
 @synthesize ballonView;
+@synthesize footerView;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,6 +63,7 @@ static int curveValues[] = {
 
 
 - (IBAction)stageSelect:(id)sender{
+    
     int stageNumber = ((UIButton *)sender).tag;
     UIImage* redButton = [UIImage imageNamed:@"UI_Icon_red.png"];
     
@@ -95,6 +108,7 @@ static int curveValues[] = {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    isConversation = true;
     
      selectedCurveIndex = 1;
     
@@ -116,6 +130,7 @@ static int curveValues[] = {
     self.map.maximumZoomScale=4.0;
     self.map.contentSize=CGSizeMake(1280, 960);
     
+    
 	// Do any additional setup after loading the view.
     
 
@@ -126,6 +141,10 @@ static int curveValues[] = {
     
     [super viewDidAppear:animated];
     
+    soundBG = [[Sound alloc] init];
+    [soundBG playSoundFile:@"selectcountry_music_bg"];
+    [soundBG play];
+    
     //********** Ballon ***********///////////
     
     UIButton *nextLevelButton = (UIButton *)[self.view viewWithTag:2];
@@ -135,7 +154,89 @@ static int curveValues[] = {
                  nextLevelButton.frame.origin.y - (ballonView.frame.size.height + 5.0))
               duration:3.0
                 option:curveValues[selectedCurveIndex]];
+    
+    if (isConversation) {
+        [self conversation];
+    }
+    
+    
+}
 
+- (void) conversation {
+    
+    app = [[UIApplication sharedApplication] delegate];
+    
+    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    
+    // getting an NSString object
+    NSString *languageString = [standardUserDefaults stringForKey:@"language"];
+    
+    NSString *lion1;
+    NSString *rat;
+    NSString *lion2;
+    
+    NSArray *converSound;
+    
+    
+    if ([languageString isEqualToString:@"TH"]) {
+        
+        
+        lion1 = @"    เมื่อสิ่งปลูกสร้างจากทั่วโลกถูกดอกเตอร์Xหนูจอมเวทย์สีม่วงใช้เวทย์มนต์ส่งลมพายุหมุนขนาดใหญ่ดูด   เอาสิ่งปลูกสร้างสวยงามจากทั่วโลกมาไว้ในหมู่เกาะขนาดใหญ่ของตน";
+        rat = @"     เพียงเพราะต้องการตกแต่ง หมู่เกาะของตนให้ดูสวยงามขึ้น";//((LocalizeDataStore *)[app.listArray objectAtIndex:1]).TH;
+        lion2 = @"     ทำให้ทีมนักผจญภัย LEAP ผู้รักในความยุติธรรม ประกอบไปด้วย เลโอสิงโตสีส้มผู้มีจิตใจกล้าหาญ , โปโป้ หมีแพนด้าสีขาวดำ ผู้มีพละกำลัง มหาศาล , รูบี้ กระต่ายสีชมพู  ผู้มีปัญญาฉลาดปราดเปรื่อง"; //((LocalizeDataStore *)[app.listArray objectAtIndex:2]).TH;
+        converSound =  @[@"lion sound_02",@"rat001",@"lion sound_03"];
+        
+    }
+    else if ([languageString isEqualToString:@"EN"]){
+        
+        lion1 = ((LocalizeDataStore *)[app.listArray objectAtIndex:0]).EN;
+        rat = ((LocalizeDataStore *)[app.listArray objectAtIndex:1]).EN;
+        lion2 = ((LocalizeDataStore *)[app.listArray objectAtIndex:2]).EN;
+        
+        converSound =  @[@"lion sound_02",@"rat001",@"lion sound_03"];
+    }
+    else if ([languageString isEqualToString:@"CN"]){
+        
+        lion1 = ((LocalizeDataStore *)[app.listArray objectAtIndex:0]).CN;
+        rat = ((LocalizeDataStore *)[app.listArray objectAtIndex:1]).CN;
+        lion2 = ((LocalizeDataStore *)[app.listArray objectAtIndex:2]).CN;
+        
+        converSound =  @[@"lion sound_02",@"rat001",@"lion sound_03"];
+        
+    }
+    
+    
+    
+    conversationSound = [[Sound alloc] init];
+    
+    
+    NSArray *animalArray = @[@"head_lion2.png",@"button_head_rat.png",@"head_lion2.png"];
+    
+    for (int i = 0; i < [converSound count]; i++) {
+        
+        [conversationSound playSoundFile:[converSound objectAtIndex:i]];
+        [conversationSound play];
+        NSLog(@"Before Stop");
+        NSLog(@"Sound Time : % f",[conversationSound duration]);
+        [NSThread sleepForTimeInterval:[conversationSound duration]];
+        
+        NSLog(@"After Stop");
+        
+        
+    }
+ 
+    
+    //footerView.hidden = YES;
+    isConversation = false;
+    
+}
+int a = 0;
+- (void) setImage{
+    
+    NSArray *animalArray = @[@"head_lion2.png",@"button_head_rat.png",@"head_lion2.png"];
+    self.animalImageView.image = [UIImage imageNamed:[animalArray objectAtIndex:1]];
+    
+    a++;
     
 }
 
