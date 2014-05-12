@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 Chakrit. All rights reserved.
 //
 
+@protocol SoundDelegate <NSObject>
+- (void)playFinish;
+@end
+
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
@@ -20,6 +24,7 @@
 @property (nonatomic, strong) AVAudioPlayer *player;
 @property(readonly, getter=isPlaying) BOOL playing;
 @property (readonly) NSTimeInterval duration;
+@property (nonatomic,strong) id<SoundDelegate> delegate;
 
 
 -(void)GetSoundFileDuration:(NSString *) sound_file_name;

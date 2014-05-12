@@ -47,6 +47,7 @@
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
     NSLog(@"audioPlayerDidFinishPlaying");
+    [self.delegate playFinish];
     playing = NO;
 }
 

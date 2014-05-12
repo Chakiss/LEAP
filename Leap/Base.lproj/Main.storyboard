@@ -863,12 +863,14 @@
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ouj-6m-A8n" userLabel="Balloon">
                                                 <rect key="frame" x="826" y="474" width="111" height="123"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="balloonM.png" translatesAutoresizingMaskIntoConstraints="NO" id="LIK-7J-i4R">
+                                                        <rect key="frame" x="0.0" y="0.0" width="111" height="123"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="balloonM.png" translatesAutoresizingMaskIntoConstraints="NO" id="LIK-7J-i4R">
-                                                <rect key="frame" x="841" y="523" width="111" height="123"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
@@ -928,7 +930,6 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="animalImageView" destination="ras-Bq-A7U" id="f7e-Ar-vb7"/>
-                        <outlet property="ballonImageView" destination="LIK-7J-i4R" id="eD6-Ix-kJ5"/>
                         <outlet property="ballonView" destination="Ouj-6m-A8n" id="gv0-0u-jSd"/>
                         <outlet property="content" destination="2sI-sK-AeO" id="cvE-af-fXc"/>
                         <outlet property="footerView" destination="Qa4-tM-qJg" id="uxF-Bz-qxf"/>

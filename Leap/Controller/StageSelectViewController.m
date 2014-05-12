@@ -33,6 +33,9 @@ static int curveValues[] = {
     
 	UIView*			content;
     
+    NSArray *converSound;
+    int currentSound;
+    
     Stage *stage;
     
     Sound *soundBG;
@@ -131,8 +134,7 @@ static int curveValues[] = {
     
     
 	// Do any additional setup after loading the view.
-    
-
+  
 
  }
 
@@ -153,6 +155,7 @@ static int curveValues[] = {
                  nextLevelButton.frame.origin.y - (ballonView.frame.size.height + 5.0))
               duration:3.0
                 option:curveValues[selectedCurveIndex]];
+
     
     if (isConversation) {
         [self conversation];
@@ -174,7 +177,7 @@ static int curveValues[] = {
     NSString *rat;
     NSString *lion2;
     
-    NSArray *converSound;
+   
     
     
     if ([languageString isEqualToString:@"TH"]) {
@@ -207,25 +210,50 @@ static int curveValues[] = {
     
     
     conversationSound = [[Sound alloc] init];
+    conversationSound.delegate = self;
+    currentSound = 0;
+    [self playSound:currentSound];
     
-    
-    NSArray *animalArray = @[@"head_lion2.png",@"button_head_rat.png",@"head_lion2.png"];
+   
     
   //  for (int i = 0; i < [converSound count]; i++) {
       
     
-        [conversationSound playSoundFile:[converSound objectAtIndex:0]];
-        [conversationSound play];
+      //  [conversationSound playSoundFile:[converSound objectAtIndex:0]];
+        //[conversationSound play];
         
-        [NSThread sleepForTimeInterval:[conversationSound duration]];
+      //  [NSThread sleepForTimeInterval:[conversationSound duration]];
         
    // }
  
     
-    //footerView.hidden = YES;
-    isConversation = false;
+    
+  
     
 }
+
+- (void)playSound:(int)index{
+    [conversationSound playSoundFile:[converSound objectAtIndex:index]];
+    [conversationSound play];
+     NSArray *animalArray = @[@"head_lion2.png",@"button_head_rat.png",@"head_lion2.png"];
+     animalImageView.image = [UIImage imageNamed:[animalArray objectAtIndex:index]];
+    
+    
+}
+- (void)playFinish{
+    currentSound++;
+    
+    if (currentSound < converSound.count) {
+       
+        [self playSound:currentSound];
+    }
+    else{
+        footerView.hidden = YES;
+        isConversation = false;
+    }
+    
+}
+
 -(void)setNextImage:(NSString*)nextImage{
     
    

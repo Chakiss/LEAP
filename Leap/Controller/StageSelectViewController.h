@@ -10,8 +10,9 @@
 #import "UIView+Animation.h"
 #import "LocalizeDataStore.h"
 #import "AppDelegate.h"
+#import "Sound.h"
 
-@interface StageSelectViewController : UIViewController
+@interface StageSelectViewController : UIViewController<SoundDelegate>
 {
      int	selectedCurveIndex;
      AppDelegate *app;
