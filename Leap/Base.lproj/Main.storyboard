@@ -103,10 +103,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="storyline1.png" translatesAutoresizingMaskIntoConstraints="NO" id="bIA-w8-A8d">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGa-kr-PM7">
                                 <rect key="frame" x="837" y="0.0" width="187" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -176,7 +172,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipV-iS-bIJ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipV-iS-bIJ">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
@@ -904,6 +900,16 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tT3-21-a1B" userLabel="Book Button">
+                                        <rect key="frame" x="184" y="20" width="84" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="book_.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressedProfile:" destination="u98-LD-TsY" eventType="touchUpInside" id="DBO-nS-SzX"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -1057,7 +1063,7 @@
         <!--Profile View Controller-->
         <scene sceneID="u9I-QJ-X3x">
             <objects>
-                <viewController id="G9W-Lm-bR9" customClass="ProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileView" id="G9W-Lm-bR9" customClass="ProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gN6-g5-6zd"/>
                         <viewControllerLayoutGuide type="bottom" id="RGB-Tf-7kD"/>
@@ -1114,8 +1120,12 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehc-FN-DKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="storyline1.png" id="bIA-w8-A8d">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
             </objects>
-            <point key="canvasLocation" x="-153" y="2088"/>
+            <point key="canvasLocation" x="2603" y="1412"/>
         </scene>
         <!--USA Game View Controller-->
         <scene sceneID="thW-X2-Z8X">
@@ -2204,7 +2214,8 @@
         <image name="UI_Icon_red.png" width="119" height="109"/>
         <image name="balloonM.png" width="2112" height="2352"/>
         <image name="bg_gameusa.png" width="1024" height="768"/>
-        <image name="buttonmore.png" width="177" height="80"/>
+        <image name="book_.png" width="100" height="81"/>
+        <image name="buttonmore.png" width="473" height="214"/>
         <image name="flag_america.png" width="400" height="267"/>
         <image name="flag_china.png" width="400" height="267"/>
         <image name="flag_thai.png" width="400" height="267"/>
@@ -2216,10 +2227,10 @@
         <image name="linea.png" width="228" height="269"/>
         <image name="picture_frame.png" width="423" height="285"/>
         <image name="profile_shop.png" width="1024" height="768"/>
-        <image name="rankingbutton.png" width="469" height="215"/>
+        <image name="rankingbutton.png" width="234" height="107"/>
         <image name="selactcountry.png" width="2048" height="1536"/>
-        <image name="settingbutton.png" width="459" height="210"/>
-        <image name="shopbutton.png" width="473" height="214"/>
+        <image name="settingbutton.png" width="229" height="105"/>
+        <image name="shopbutton.png" width="236" height="107"/>
         <image name="startscreen.png" width="2048" height="1536"/>
         <image name="storyline1.png" width="1024" height="768"/>
         <image name="ui_font_a_.png" width="110" height="108"/>

@@ -9,6 +9,7 @@
 #import "StageSelectViewController.h"
 #import "PhonicGameViewController.h"
 #import "ChinaGameViewController.h"
+#import "ProfileViewController.h"
 
 #import "Stage.h"
 #import "Sound.h"
@@ -50,6 +51,7 @@ static int curveValues[] = {
 @synthesize ballonView;
 @synthesize footerView;
 @synthesize animalImageView;
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -101,6 +103,14 @@ static int curveValues[] = {
     
 }
 
+- (IBAction)pressedProfile:(id)sender {
+    
+    ProfileViewController *profileView = [self.storyboard instantiateViewControllerWithIdentifier:@"ProfileView"];
+    [self presentViewController:profileView animated:YES completion:nil];
+    
+    
+}
+
 
 -(BOOL) prefersStatusBarHidden
 {
@@ -126,9 +136,10 @@ static int curveValues[] = {
         
     }
     
-    score = [Score sharedInstance];
-    
-    self.scoreLabel.text = [NSString stringWithFormat:@"%i",[score score]];
+    heightScore = [Score sharedInstance];
+   // [heightScore setScore:10];
+   
+    self.scoreLabel.text = [NSString stringWithFormat:@"%i",[heightScore score]];
     
     
     center = CGPointMake(self.view.frame.size.width, self.view.frame.size.height);
