@@ -8,11 +8,15 @@
 
 #import "ProfileViewController.h"
 
+#import "ProfileCell.h"
+
 @interface ProfileViewController ()
 
 @end
 
 @implementation ProfileViewController
+
+
 
 -(BOOL)prefersStatusBarHidden{
     return YES;
@@ -31,6 +35,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIImage *tableImage = [UIImage imageNamed:@"bg_ui_ranking.png"];
+    
+    UIImageView *img = [[UIImageView alloc] initWithFrame:self.myTableView.frame];
+    [img setImage:tableImage];
+    self.myTableView.backgroundView = img;
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,5 +59,52 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)pressedMore:(id)sender {
+    
+    
+}
+
+- (IBAction)pressedSetting:(id)sender {
+    
+    self.frontView.hidden = NO;
+    self.woodView.hidden = YES;
+    self.woodImageView.hidden = YES;
+    
+    UIImage *imageSettingBG = [UIImage imageNamed:@"bg_setting.png"];
+    self.backgroudImageView.image = imageSettingBG;
+    
+    
+    
+}
+
+- (IBAction)pressedShop:(id)sender {
+}
+
+- (IBAction)pressedRanking:(id)sender {
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"profileItem";
+    
+    ProfileCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    
+    cell.contentView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@""]];
+    
+    
+    
+   // cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
+    return cell;
+}
+
+
 
 @end
