@@ -28,7 +28,7 @@
     Sound *correctSound;
     Sound *crocodileSound;
     
-    Score *score;
+    Score *myScore;
     
 }
 
