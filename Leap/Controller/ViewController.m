@@ -7,13 +7,14 @@
 //
 
 #import "ViewController.h"
-
-
+#import "ButtonAnimation.h"
 
 @interface ViewController ()
 {
     Sound *soundBG;
     Sound *soundClick;
+    
+    ButtonAnimation *animaton;
 }
 @end
 
@@ -59,8 +60,9 @@
     
     [soundClick play];
     
-    
     settingLanguageView.hidden = NO;
+
+    [self.languageButton.layer addAnimation:[ButtonAnimation animationButton] forKey:@"zoom"];
     
 }
 
@@ -68,8 +70,6 @@
     
 
     [soundClick play];
-    
-    
    NSInteger tagLanguageButton =  [sender tag];
    
     NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
@@ -92,6 +92,7 @@
     settingLanguageView.hidden = YES;
     
    [languageButton setImage:languageImage forState:UIControlStateNormal];
+  
 
 }
 
