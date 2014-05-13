@@ -4,11 +4,11 @@
 <dict>
 	<key>level</key>
 	<array>
-		<string>baguthfnd</string>
-		<string>bedfjfjfjf</string>
-		<string>bookfjriro</string>
-		<string>goatqweri</string>
-		<string>boypokmvx</string>
+		<string>bag</string>
+		<string>bed</string>
+		<string>book</string>
+		<string>goat</string>
+		<string>boy</string>
 	</array>
 	<key>timeToSolve</key>
 	<integer>600</integer>
