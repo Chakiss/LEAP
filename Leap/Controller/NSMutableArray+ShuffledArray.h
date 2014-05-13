@@ -2,6 +2,6 @@
 #import <Foundation/Foundation.h>
 
 
-@interface NSMutableArray (Shuffle)
+@interface NSMutableArray (Shuffling)
 - (void)shuffle;
 @end

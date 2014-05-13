@@ -14,6 +14,7 @@
 #import "USAGame.h"
 #import "AnswerView.h"
 #import "NSString+ShuffledString.h"
+#import "NSMutableArray+ShuffledArray.h"
 @interface USAGameViewController (){
     
     //tile lists
@@ -27,6 +28,8 @@
     NSTimer* _timer;
     KKProgressTimer *timer1;
     int currentLetter;
+    
+    int currentWord;
 }
 
 @end
@@ -62,37 +65,58 @@
     tilesArray = @[self.answer1,self.answer2,self.answer3,self.answer4,self.answer5,self.answer6,self.answer7,self.answer8,self.answer9,self.answer10];
     
     self.level = [Level levelWithNum:33];
-    [self randomWordInLevel];
+    
+    [self.level.level shuffle];
+    
+    
     [self playGame];
     
     // Do any additional setup after loading the view.
 }
 
+- (void)playGame{
+
+    UIView *clockView = [[UIView alloc] initWithFrame:CGRectMake(804, 548, 200, 200)];
+    timer1 = [[KKProgressTimer alloc] initWithFrame:clockView.bounds];
+    [clockView addSubview:timer1];
+    timer1.delegate = self;
+    timer1.tag = 1;
+    
+    [self.view addSubview:clockView];
+    
+    currentLetter = 0;
+    currentWord = 0;
+    
+    [self randomWordInLevel:self.level.level[currentWord]];
+    usaGame = [[USAGame alloc] init];
+    
+    [self startGame];
+    
+}
 
 
--(void)randomWordInLevel{
+-(void)randomWordInLevel:(NSString *)string{
     
     NSAssert(self.level.level, @"no level loaded");
-    
-    int randomIndex = arc4random()%[self.level.level count];
-    NSString* word = self.level.level[ randomIndex ];
+   
+    //int randomIndex = arc4random()%[self.level.level count];
+    NSString* word = string;//self.level.level[ randomIndex ];
     int wordLen = [word length];
     
-    NSLog(@"phrase1[%i]: %@", wordLen, word);
-    
-    float tileSide = ceilf( kScreenWidth*0.3 / (float)wordLen ) - kTileMargin;
-    
-    float xOffset = (kScreenWidth - wordLen * (tileSide + kTileMargin))/2;
-    
-    //adjust for tile center (instead of the tile's origin)
-    xOffset += tileSide/2;
-    
+  
+    //create answer
     NSString *questionWord = word;
-    if (wordLen < 6) {
+    if (wordLen > 2 && wordLen < 6) {
         for (int i = word.length ; i < 5; i++) {
             questionWord = [questionWord stringByAppendingString:[self randomStringWithLength:1]];
         }
     }
+    else{
+        for (int i = word.length ; i < 10; i++) {
+            questionWord = [questionWord stringByAppendingString:[self randomStringWithLength:1]];
+        }
+    }
+    
     
     NSLog(@"%@",[questionWord shuffle]);
     questionWord = [questionWord shuffle];
@@ -101,8 +125,8 @@
         
         //3
         if (![letter isEqualToString:@" "]) {
-            NSLog(@"%@", tilesArray[i]);
             TileView* tile =  tilesArray[i];
+            tile.hidden = NO;
             [tile setLetter:letter];
         }
     }
@@ -132,33 +156,15 @@
     for (int i=0;i<wordLen;i++) {
         NSString* letter = [word substringWithRange:NSMakeRange(i, 1)];
         if (![letter isEqualToString:@" "]) {
-            TargetView* target = [[TargetView alloc] initWithLetter:letter andSideLength:tileSide];
-            target.center = CGPointMake(xOffset + i*(tileSide + kTileMargin), kScreenHeight/2+100);
+            TargetView* target = [[TargetView alloc] initWithLetter:letter andSideLength:10];
             [_targets addObject: target];
         }
     }
     
     AnswerView *answer = [[AnswerView alloc] init];
-    answer.center = CGPointMake(kScreenWidth/2, kScreenHeight/2-100);
     [self.view addSubview:answer];
 }
 
-- (void)playGame{
-    
-    UIView *clockView = [[UIView alloc] initWithFrame:CGRectMake(804, 548, 200, 200)];
-    timer1 = [[KKProgressTimer alloc] initWithFrame:clockView.bounds];
-    [clockView addSubview:timer1];
-    timer1.delegate = self;
-    timer1.tag = 1;
-    
-    [self.view addSubview:clockView];
-    
-    currentLetter = 0;
-    usaGame = [[USAGame alloc] init];
-    
-    [self startGame];
-    
-}
 
 - (void)startGame{
     int wordLen = _targets.count;
@@ -172,7 +178,14 @@
         }];
         
     }else{
-        NSLog(@"xxx");
+        NSLog(@"จบ 1 คำ");
+        currentWord++;
+        if (currentWord < self.level.level.count) {
+            currentLetter = 0;
+            [self resetQuestionView];
+            [self randomWordInLevel:self.level.level[currentWord]];
+            [self startGame];
+        }
         
     }
 }
@@ -227,7 +240,9 @@
     
 }
 
-
+- (void)resetQuestionView{
+    
+}
 
 
 

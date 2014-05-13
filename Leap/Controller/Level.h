@@ -12,7 +12,7 @@
 
 
 @property (assign, nonatomic) int pointsPerTile;
-@property (strong, nonatomic) NSArray* level;
+@property (strong, nonatomic) NSMutableArray* level;
 
 
 +(instancetype)levelWithNum:(int)levelNum;

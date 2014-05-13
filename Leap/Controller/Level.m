@@ -26,7 +26,7 @@
   Level* l = [[Level alloc] init];
   
   // initialize the object from the dictionary
-  l.level = levelDict[@"level"];
+    l.level = [NSMutableArray arrayWithArray:levelDict[@"level"]];
   l.pointsPerTile = [levelDict[@"pointsPerTile"] intValue];
   
   
