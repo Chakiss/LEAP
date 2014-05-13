@@ -33,6 +33,14 @@
     
     soundClick = [[Sound alloc] init];
     [soundClick playSoundFile:@"Button_sound"];
+    
+    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    
+    // getting an NSString object
+    NSString *getLanguage = [standardUserDefaults stringForKey:@"language"];
+    
+    if(!getLanguage)
+        [standardUserDefaults setObject:@"TH" forKey:@"language"];
 
 }
 
@@ -69,7 +77,7 @@
     UIImage *languageImage;
     
     if (tagLanguageButton == 1){
-         [standardUserDefaults setObject:@"TH" forKey:@"language"];
+        [standardUserDefaults setObject:@"TH" forKey:@"language"];
         languageImage = [UIImage imageNamed:@"flag_thai.png"];
     }else if (tagLanguageButton == 2){
         [standardUserDefaults setObject:@"EN" forKey:@"language"];
