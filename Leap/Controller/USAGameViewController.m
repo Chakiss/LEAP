@@ -48,7 +48,7 @@
     self = [super initWithCoder:decoder];
     if (self != nil) {
         //create the game controller
-       // self.controller = [[GameController alloc] init];
+        // self.controller = [[GameController alloc] init];
     }
     return self;
 }
@@ -57,14 +57,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     tilesArray = [NSArray array];
     tilesArray = @[self.answer1,self.answer2,self.answer3,self.answer4,self.answer5,self.answer6,self.answer7,self.answer8,self.answer9,self.answer10];
     
     self.level = [Level levelWithNum:33];
     [self randomWordInLevel];
     [self playGame];
-
+    
     // Do any additional setup after loading the view.
 }
 
@@ -87,8 +87,6 @@
     //adjust for tile center (instead of the tile's origin)
     xOffset += tileSide/2;
     
-
-
     NSString *questionWord = word;
     if (wordLen < 6) {
         for (int i = word.length ; i < 5; i++) {
@@ -108,17 +106,34 @@
             [tile setLetter:letter];
         }
     }
-    _targets = [NSMutableArray arrayWithCapacity: wordLen];
     
+    
+    
+    _targets = [NSMutableArray arrayWithCapacity: wordLen];
     // create targets
+    
+    NSLog(@"%d",wordLen);
+    if (wordLen == 3) {
+        self.questionView3.hidden = NO;
+    }else if (wordLen == 4) {
+        self.questionView4.hidden = NO;
+    }else if (wordLen == 5) {
+        self.questionView5.hidden = NO;
+    }else if (wordLen == 6) {
+        self.questionView6.hidden = NO;
+    }else if (wordLen == 7) {
+        self.questionView7.hidden = NO;
+    }else if (wordLen == 8) {
+        self.questionView8.hidden = NO;
+    }else if (wordLen == 9) {
+        self.questionView9.hidden = NO;
+    }
+    
     for (int i=0;i<wordLen;i++) {
         NSString* letter = [word substringWithRange:NSMakeRange(i, 1)];
-        
         if (![letter isEqualToString:@" "]) {
             TargetView* target = [[TargetView alloc] initWithLetter:letter andSideLength:tileSide];
             target.center = CGPointMake(xOffset + i*(tileSide + kTileMargin), kScreenHeight/2+100);
-            
-            [self.view addSubview:target];
             [_targets addObject: target];
         }
     }
@@ -146,7 +161,8 @@
 }
 
 - (void)startGame{
-    if (_targets[currentLetter]) {
+    int wordLen = _targets.count;
+    if (currentLetter < wordLen) {
         TargetView* target = _targets[currentLetter];
         [usaGame playSoundWithLetter:target.letter];
         
@@ -155,8 +171,65 @@
             return i1++ / 400;
         }];
         
+    }else{
+        NSLog(@"xxx");
+        
     }
 }
+
+
+#pragma mark KKProgressTimerDelegate Method
+- (void)didUpdateProgressTimer:(KKProgressTimer *)progressTimer percentage:(CGFloat)percentage {
+    if (percentage >= 1) {
+        [progressTimer stop];
+    }
+}
+- (void)didStopProgressTimer:(KKProgressTimer *)progressTimer percentage:(CGFloat)percentage {
+    
+    if (currentLetter > _targets.count){
+        NSLog(@"END!!!");
+        [timer1 stop];
+    
+     }else{
+    currentLetter++;
+    [self startGame];
+    
+    }
+}
+
+- (void)touchLetter:(NSString *)letter{
+    int wordLen = _targets.count;
+    if (currentLetter < wordLen){
+        if ([letter isEqualToString:((TargetView *)_targets[currentLetter]).letter]) {
+            /////// ถูกกกกกกกกกก
+            
+            int wordLen = _targets.count;
+            if (wordLen == 3) {
+                [self.question3[currentLetter] setImageWithLetter:letter];
+            }else if (wordLen == 4) {
+                [self.question4[currentLetter] setImageWithLetter:letter];
+            }else if (wordLen == 5) {
+                [self.question5[currentLetter] setImageWithLetter:letter];
+            }else if (wordLen == 6) {
+                [self.question6[currentLetter] setImageWithLetter:letter];
+            }else if (wordLen == 7) {
+                [self.question7[currentLetter] setImageWithLetter:letter];
+            }else if (wordLen == 8) {
+                [self.question8[currentLetter] setImageWithLetter:letter];;
+            }else if (wordLen == 9) {
+                [self.question9[currentLetter] setImageWithLetter:letter];
+            }
+            currentLetter ++;
+            [self startGame];
+            
+        }
+    }
+    
+}
+
+
+
+
 
 NSString *letters = @"abcdefghijklmnopqrstuvwxyz";
 

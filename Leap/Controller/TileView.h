@@ -13,7 +13,7 @@
 
 @protocol TileTouchDelegate <NSObject>
 //-(void)tileView:(TileView*)tileView didDragToPoint:(CGPoint)pt;
-- (NSString *)letterOfView:(NSString *)letter;;
+- (void)touchLetter:(NSString *)letter;
 @end
 
 
@@ -21,7 +21,7 @@
 
 @property (strong, nonatomic, readonly) NSString* letter;
 @property (assign, nonatomic) BOOL isMatched;
-@property (weak, nonatomic) id<TileTouchDelegate> delegate;
+@property (weak, nonatomic) IBOutlet id<TileTouchDelegate> delegate;
 
 -(instancetype)initWithLetter:(NSString*)letter andSideLength:(float)sideLength;
 - (void)setLetter:(NSString *)letter;
