@@ -750,6 +750,7 @@
 		2D6985921921525F0063F203 /* sliderhandle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6985901921525F0063F203 /* sliderhandle.png */; };
 		2D6985931921525F0063F203 /* sliderhandle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D6985911921525F0063F203 /* sliderhandle@2x.png */; };
 		2D69859619222D5C0063F203 /* Gold.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D69859519222D5C0063F203 /* Gold.m */; };
+		2D69859919228AE90063F203 /* ButtonAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D69859819228AE90063F203 /* ButtonAnimation.m */; };
 		2D8F9AE81921226500B70DA3 /* book_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D8F9AE71921226500B70DA3 /* book_@2x.png */; };
 		2D8F9AEC1921297400B70DA3 /* buttonmore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D8F9AEB1921297400B70DA3 /* buttonmore@2x.png */; };
 		2D8F9AEF1921312A00B70DA3 /* settingpage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D8F9AED1921312A00B70DA3 /* settingpage.png */; };
@@ -1568,6 +1569,8 @@
 		2D6985911921525F0063F203 /* sliderhandle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sliderhandle@2x.png"; sourceTree = "<group>"; };
 		2D69859419222D5C0063F203 /* Gold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gold.h; sourceTree = "<group>"; };
 		2D69859519222D5C0063F203 /* Gold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gold.m; sourceTree = "<group>"; };
+		2D69859719228AE90063F203 /* ButtonAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonAnimation.h; sourceTree = "<group>"; };
+		2D69859819228AE90063F203 /* ButtonAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonAnimation.m; sourceTree = "<group>"; };
 		2D8F9AE71921226500B70DA3 /* book_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book_@2x.png"; sourceTree = "<group>"; };
 		2D8F9AEB1921297400B70DA3 /* buttonmore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonmore@2x.png"; sourceTree = "<group>"; };
 		2D8F9AED1921312A00B70DA3 /* settingpage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingpage.png; sourceTree = "<group>"; };
@@ -2432,6 +2435,8 @@
 			children = (
 				2DCCA208191E81E4001A06EA /* UIView+Animation.h */,
 				2DCCA209191E81E4001A06EA /* UIView+Animation.m */,
+				2D69859719228AE90063F203 /* ButtonAnimation.h */,
+				2D69859819228AE90063F203 /* ButtonAnimation.m */,
 				2D44E923190F4C7700CEC64E /* Sound.h */,
 				2D44E924190F4C7700CEC64E /* Sound.m */,
 				2D173DC7190F7DD800617354 /* LocalizeData.h */,
@@ -3898,6 +3903,7 @@
 				225250A018C31C3B00D8D85C /* NSMutableArray+ShuffledArray.m in Sources */,
 				2D44E925190F4C7700CEC64E /* Sound.m in Sources */,
 				22A45F2C1911374900BEA218 /* WTMGlyphDetector.m in Sources */,
+				2D69859919228AE90063F203 /* ButtonAnimation.m in Sources */,
 				22A45F321911384700BEA218 /* WTMGlyphDetectorView.m in Sources */,
 				22A45F1D1911374900BEA218 /* CJSONSerialization.m in Sources */,
 				22098E2618C2E2A400F5BDED /* StageSelectViewController.m in Sources */,
