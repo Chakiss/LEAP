@@ -10,8 +10,10 @@
 #import "Level.h"
 #import "KKProgressTimer.h"
 #import "TileView.h"
+#import "TargetView.h"
 
-@interface USAGameViewController : UIViewController<KKProgressTimerDelegate>
+
+@interface USAGameViewController : UIViewController<KKProgressTimerDelegate , TileTouchDelegate>
 
 
 
@@ -28,15 +30,15 @@
 @property (nonatomic, weak) IBOutlet UIView *questionView7;
 @property (nonatomic, weak) IBOutlet UIView *questionView8;
 @property (nonatomic, weak) IBOutlet UIView *questionView9;
-@property (nonatomic, weak) IBOutlet UIButton *question1;
-@property (nonatomic, weak) IBOutlet UIButton *question2;
-@property (nonatomic, weak) IBOutlet UIButton *question3;
-@property (nonatomic, weak) IBOutlet UIButton *question4;
-@property (nonatomic, weak) IBOutlet UIButton *question5;
-@property (nonatomic, weak) IBOutlet UIButton *question6;
-@property (nonatomic, weak) IBOutlet UIButton *question7;
-@property (nonatomic, weak) IBOutlet UIButton *question8;
-@property (nonatomic, weak) IBOutlet UIButton *question9;
+
+
+@property (nonatomic, strong) IBOutletCollection(TargetView) NSArray *question3;
+@property (nonatomic, strong) IBOutletCollection(TargetView) NSArray *question4;
+@property (nonatomic, strong) IBOutletCollection(TargetView) NSArray *question5;
+@property (nonatomic, strong) IBOutletCollection(TargetView) NSArray *question6;
+@property (nonatomic, strong) IBOutletCollection(TargetView) NSArray *question7;
+@property (nonatomic, strong) IBOutletCollection(TargetView) NSArray *question8;
+@property (nonatomic, strong) IBOutletCollection(TargetView) NSArray *question9;
 
 
 @property (nonatomic, weak) IBOutlet TileView *answer1;

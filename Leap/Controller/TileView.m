@@ -76,7 +76,7 @@
     [zoomAnimation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
     [self.layer addAnimation:zoomAnimation forKey:@"zoom"];
     
-    [self.delegate letterOfView:self.letter];
+    [self.delegate touchLetter:self.letter];
 
 }
 
