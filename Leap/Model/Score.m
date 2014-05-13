@@ -7,6 +7,7 @@
 //
 
 #import "Score.h"
+#import "Gold.h"
 
 static Score *sharedInstance;
 
@@ -31,26 +32,36 @@ static Score *sharedInstance;
     [defaults setInteger:score forKey:@"totalScore"];
 }
 
+- (NSInteger)totalScore{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger score = [defaults integerForKey:@"totalScore"];
+    
+    return score;
+}
+
 - (void)setHeightScore:(int)score andLevel:(int)level{
-   
+    NSLog(@"LevelHeightScore%d",level);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     NSInteger heightScore = [defaults integerForKey:[NSString stringWithFormat:@"LevelHeightScore%d",level]];
 
-    
+   // NSInteger s =100;
     if (heightScore < score) {
-         [defaults setInteger:score forKey:[NSString stringWithFormat:@"LevelHeightScore%d",level]];
-
+        [defaults setInteger:score forKey:[NSString stringWithFormat:@"LevelHeightScore%d",level]];
     }
     
     [self setTotalScore:score];
-
     
-  //  [defaults synchronize];
+    Gold *gold = [[Gold alloc] init];
+    [gold setGold:score withLevel:level];
+    
+
+    [defaults synchronize];
 }
 
 - (NSInteger)getLevelHeightScore:(int)level{
-    
+    NSLog(@"LevelHeightScore%d",level);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSInteger heightScore = [defaults integerForKey:[NSString stringWithFormat:@"LevelHeightScore%d",level]];
     

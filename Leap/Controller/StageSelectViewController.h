@@ -12,12 +12,14 @@
 #import "AppDelegate.h"
 #import "Sound.h"
 #import "Score.h"
+#import "Gold.h"
 
 @interface StageSelectViewController : UIViewController<SoundDelegate>
 {
-     int	selectedCurveIndex;
-     AppDelegate *app;
+    int	selectedCurveIndex;
+    AppDelegate *app;
     Score *heightScore;
+    Gold *gold;
 }
 
 @property (nonatomic , strong) IBOutlet UIScrollView *map;
@@ -30,6 +32,7 @@
 @property (nonatomic, strong) LocalizeDataStore *localizeDataStore;
 @property (strong, nonatomic) IBOutlet UIView *footerView;
 @property (strong, nonatomic) IBOutlet UIButton *bookButton;
+@property (strong, nonatomic) IBOutlet UILabel *goldLabel;
 
 - (IBAction)stageSelect:(id)sender;
 - (IBAction)pressedProfile:(id)sender;

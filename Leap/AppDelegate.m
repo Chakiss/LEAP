@@ -31,7 +31,7 @@
     //Gold
     [defaults setDouble:0 forKey:@"gold"];
     
-     [defaults setInteger:10 forKey:@"LevelHeightScore1"];
+     [defaults setInteger:1 forKey:@"LevelHeightScore1"];
     
 }
 

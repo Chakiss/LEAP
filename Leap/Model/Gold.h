@@ -11,5 +11,6 @@
 @interface Gold : NSObject
 
 -(void)setGold:(int)score withLevel:(int)level;
+-(NSInteger)getTotalGold;
 
 @end

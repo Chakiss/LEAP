@@ -30,6 +30,9 @@
     
     UIImage *imageBackgroud = [UIImage imageNamed:@"popupmissioncomplete.png"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:imageBackgroud];
+    
+    self.scoreLabel.text =[NSString stringWithFormat:@"     %ld",(long)self.scoreResult];
+    self.goldLabel.text =[NSString stringWithFormat:@"     %ld",(long)self.goleResult];
 }
 
 - (void)didReceiveMemoryWarning
