@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ANPopoverSlider.h"
 
 @interface ProfileViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
@@ -17,10 +18,13 @@
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong, nonatomic) IBOutlet UIView *frontView;
 @property (strong, nonatomic) IBOutlet UIImageView *backgroudImageView;
+@property (strong, nonatomic) IBOutlet ANPopoverSlider *musicSlider;
 
 - (IBAction)pressedMore:(id)sender;
 - (IBAction)pressedSetting:(id)sender;
 - (IBAction)pressedShop:(id)sender;
 - (IBAction)pressedRanking:(id)sender;
+- (IBAction)musicValueChanged:(id)sender;
+
 
 @end

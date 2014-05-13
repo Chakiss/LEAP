@@ -12,7 +12,9 @@
 
 
 + (Score *) sharedInstance;
-- (int)highScore;
-- (int)score;
-- (void)setScore:(int)score;
+
+- (void)setTotalScore:(int)score;
+- (void)setHeightScore:(int)score andLevel:(int)level;
+- (NSInteger)getLevelHeightScore:(int)level;
+
 @end

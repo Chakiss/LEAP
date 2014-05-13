@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="vfN-cn-Mey">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="u98-LD-TsY">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -163,7 +163,7 @@
         <!--Stage Select View Controller-->
         <scene sceneID="0Eh-H6-tsg">
             <objects>
-                <viewController id="u98-LD-TsY" customClass="StageSelectViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stageView" id="u98-LD-TsY" customClass="StageSelectViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KqY-lR-G2Y"/>
                         <viewControllerLayoutGuide type="bottom" id="Y6N-1M-Bhs"/>
@@ -1120,11 +1120,14 @@
                                 <rect key="frame" x="478" y="108" width="503" height="640"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="146" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="w5i-rv-WrT">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="146" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="w5i-rv-WrT">
                                         <rect key="frame" x="64" y="155" width="374" height="415"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileItem" rowHeight="146" id="6Bi-Hj-aaW" customClass="ProfileCell">
                                                 <rect key="frame" x="0.0" y="22" width="374" height="146"/>
@@ -1169,7 +1172,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </tableViewCellContentView>
-                                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -1184,7 +1187,7 @@
                                 <rect key="frame" x="474" y="114" width="516" height="595"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8GN-Ut-KeF" userLabel="Front View">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8GN-Ut-KeF" userLabel="Front View">
                                 <rect key="frame" x="38" y="114" width="943" height="634"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -1199,6 +1202,9 @@
                                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gg6-21-gOz" customClass="ANPopoverSlider">
                                                 <rect key="frame" x="36" y="80" width="482" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="musicValueChanged:" destination="G9W-Lm-bR9" eventType="valueChanged" id="oov-RZ-jc9"/>
+                                                </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iJ9-a4-Hlq">
                                                 <rect key="frame" x="36" y="189" width="482" height="31"/>
@@ -1210,6 +1216,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mom-Mw-dw9" userLabel="Close Button">
+                                <rect key="frame" x="885" y="0.0" width="119" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="close.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedClose:" destination="G9W-Lm-bR9" eventType="touchUpInside" id="lUI-2u-EZZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -1218,6 +1234,7 @@
                     <connections>
                         <outlet property="backgroudImageView" destination="Uw1-i0-AfW" id="3jP-aK-xQW"/>
                         <outlet property="frontView" destination="8GN-Ut-KeF" id="k2r-nn-yHi"/>
+                        <outlet property="musicSlider" destination="gg6-21-gOz" id="c2m-iC-m4J"/>
                         <outlet property="myTableView" destination="w5i-rv-WrT" id="4V3-RD-nXV"/>
                         <outlet property="woodImageView" destination="gGj-7L-3bX" id="g0K-En-F87"/>
                         <outlet property="woodView" destination="05D-re-wcV" id="MVR-s6-r8i"/>
@@ -1708,6 +1725,7 @@
                         <outlet property="alligatorView" destination="dX3-3M-yzG" id="z5g-Vj-YIy"/>
                         <outlet property="choiceImageView" destination="FBx-ig-xcf" id="oEn-5q-z8l"/>
                         <outlet property="drawAreaView" destination="03u-Fi-LIn" id="Umz-5k-Oqt"/>
+                        <outlet property="heightScoreLabel" destination="YDY-Mg-HEi" id="2QV-Tk-YI4"/>
                         <outlet property="scoreLabel" destination="ZeT-0Q-ZJG" id="rGx-Qe-cDa"/>
                     </connections>
                 </viewController>
@@ -2132,6 +2150,7 @@
         <image name="bg_gameusa.png" width="1024" height="768"/>
         <image name="book_.png" width="100" height="81"/>
         <image name="buttonmore.png" width="473" height="214"/>
+        <image name="close.png" width="1024" height="768"/>
         <image name="flag_america.png" width="400" height="267"/>
         <image name="flag_china.png" width="400" height="267"/>
         <image name="flag_thai.png" width="400" height="267"/>

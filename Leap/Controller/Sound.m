@@ -55,7 +55,17 @@
 - (void) play
 {
     NSLog(@"Play Called");
-    [self.player setVolume:1.0];
+    
+    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    
+    float tuneF = [standardUserDefaults floatForKey:@"tune"];
+    if (tuneF == 0) {
+        tuneF = 1.0;
+    }
+        
+    NSLog(@"tuneF : %f", tuneF);
+    
+    [self.player setVolume:tuneF];
     [self.player play];
     playing = YES;
 }

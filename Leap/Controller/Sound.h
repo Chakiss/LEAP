@@ -19,11 +19,14 @@
     
     BOOL playing;
     NSTimeInterval duration;
+    
+    float tune;
 }
 
 @property (nonatomic, strong) AVAudioPlayer *player;
 @property(readonly, getter=isPlaying) BOOL playing;
 @property (readonly) NSTimeInterval duration;
+@property (nonatomic,assign) float tune;
 @property (nonatomic,strong) id<SoundDelegate> delegate;
 
 

@@ -9,8 +9,13 @@
 #import "ProfileViewController.h"
 
 #import "ProfileCell.h"
+#import "Sound.h"
+#import "StageSelectViewController.h"
 
 @interface ProfileViewController ()
+{
+    Sound *tuneSound;
+}
 
 @end
 
@@ -41,6 +46,15 @@
     UIImageView *img = [[UIImageView alloc] initWithFrame:self.myTableView.frame];
     [img setImage:tableImage];
     self.myTableView.backgroundView = img;
+    self.myTableView.backgroundColor = [UIColor clearColor];
+    
+    //Sound
+    
+    tuneSound = [[Sound alloc] init];
+    
+    //**************** --- shop -- ************************///
+    
+    self.frontView.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,6 +98,23 @@
 - (IBAction)pressedRanking:(id)sender {
 }
 
+- (IBAction)musicValueChanged:(ANPopoverSlider *)sender {
+    
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    [standardUserDefaults setFloat:[sender value] forKey:@"tune"];
+ 
+   // tuneSound.tune = [sender value];
+    
+  
+}
+
+- (IBAction)pressedClose:(id)sender {
+    
+    StageSelectViewController *stageView = [self.storyboard instantiateViewControllerWithIdentifier:@"stageView"];
+    
+    [self presentViewController:stageView animated:YES completion:nil];
+    
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -96,13 +127,15 @@
     
     ProfileCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
+    cell.backgroundColor = [UIColor clearColor];
+  //  cell.contentView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@""]];
     
-    cell.contentView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@""]];
     
-    
-    
-   // cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
+    // cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
     return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 

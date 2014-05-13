@@ -124,12 +124,12 @@ static int curveValues[] = {
     
     selectedCurveIndex = 1;
     
-    stage = [Stage sharedInstance];
+   
    // [stage setStage:10];
     NSLog(@"%d",[stage currentStage]);
     for (UIButton* object in self.button) {
         if (object.tag <= [stage currentStage]) {
-            NSLog(@"object = %d",object.tag);
+            NSLog(@"object = %ld",(long)object.tag);
             [object setImage:[UIImage imageNamed:@"UI_Icon_greed"] forState:UIControlStateNormal];
             
         }
@@ -139,9 +139,6 @@ static int curveValues[] = {
     heightScore = [Score sharedInstance];
    // [heightScore setScore:10];
    
-    self.scoreLabel.text = [NSString stringWithFormat:@"%i",[heightScore score]];
-    
-    
     center = CGPointMake(self.view.frame.size.width, self.view.frame.size.height);
   
     self.map.minimumZoomScale=1.0;
@@ -159,14 +156,26 @@ static int curveValues[] = {
 - (void) viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:animated];
+    UIButton *nextLevelButton ;
+    stage = [Stage sharedInstance];
+    int currentStage = [stage currentStage];
+    NSLog(@"current stage = %d",currentStage);
+    for (UIButton *object in self.button) {
+        
+        if (object.tag <= currentStage) {
+            [object setImage:[UIImage imageNamed:@"UI_Icon_greed.png"] forState:UIControlStateNormal];
+            nextLevelButton = object;
+        }
+    }
+    
     
     soundBG = [[Sound alloc] init];
     [soundBG playSoundFile:@"selectcountry_music_bg"];
     [soundBG play];
     
     //********** Ballon ***********///////////
-    
-    UIButton *nextLevelButton = (UIButton *)[self.view viewWithTag:2];
+   
+    //UIButton *nextLevelButton = (UIButton *)[self.view viewWithTag:2];
     
     [ballonView moveTo:
      CGPointMake(nextLevelButton.center.x - (ballonView.frame.size.width/2),

@@ -24,6 +24,17 @@
     [[UISlider appearance] setThumbImage:thumbImage forState:UIControlStateNormal];
 }
 
+- (void)info {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    //Gold
+    [defaults setDouble:0 forKey:@"gold"];
+    
+     [defaults setInteger:10 forKey:@"LevelHeightScore1"];
+    
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
@@ -45,7 +56,9 @@
     else {
         NSLog(@"boo");
     }
-
+    
+    [self info];
+    
     // Override point for customization after application launch.
     return YES;
 }

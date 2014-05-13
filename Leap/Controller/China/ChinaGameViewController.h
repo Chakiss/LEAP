@@ -18,6 +18,7 @@
 
 @property (nonatomic, assign) int level;
 @property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (strong, nonatomic) IBOutlet UILabel *heightScoreLabel;
 
 @property (nonatomic, strong) WTMGlyphDetectorView *gestureDetectorView;
 @property (nonatomic, strong) IBOutlet UIView *drawAreaView;
