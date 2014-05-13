@@ -41,6 +41,8 @@ static int curveValues[] = {
     Sound *soundBG;
     Sound *conversationSound;
     
+
+    
 }
 
 
@@ -51,6 +53,7 @@ static int curveValues[] = {
 @synthesize ballonView;
 @synthesize footerView;
 @synthesize animalImageView;
+@synthesize goldLabel;
 
 
 
@@ -137,7 +140,8 @@ static int curveValues[] = {
     }
     
     heightScore = [Score sharedInstance];
-   // [heightScore setScore:10];
+    
+    gold = [[Gold alloc] init];
    
     center = CGPointMake(self.view.frame.size.width, self.view.frame.size.height);
   
@@ -145,10 +149,11 @@ static int curveValues[] = {
     self.map.maximumZoomScale=4.0;
     self.map.contentSize=CGSizeMake(1024, 768);
     
+    NSInteger myTotalScore = [heightScore totalScore];
+    NSInteger myGold = [gold getTotalGold];
     
-    
-    
-	// Do any additional setup after loading the view.
+    self.goldLabel.text = [NSString stringWithFormat:@"%li",(long)myGold];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%li",(long)myTotalScore];
   
 
  }
@@ -188,7 +193,7 @@ static int curveValues[] = {
         [self conversation];
     }
     
-    
+   
 }
 
 - (void) conversation {
@@ -203,9 +208,7 @@ static int curveValues[] = {
     NSString *lion1;
     NSString *rat;
     NSString *lion2;
-    
-   
-    
+
     
     if ([languageString isEqualToString:@"TH"]) {
         
@@ -234,8 +237,7 @@ static int curveValues[] = {
         
     }
     
-    
-    
+
     conversationSound = [[Sound alloc] init];
     conversationSound.delegate = self;
     currentSound = 0;

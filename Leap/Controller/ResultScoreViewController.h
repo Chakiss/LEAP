@@ -10,6 +10,12 @@
 
 @interface ResultScoreViewController : UIViewController
 
+@property (assign, nonatomic) NSInteger scoreResult;
+@property (assign, nonatomic) NSInteger goleResult;
+
+@property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (strong, nonatomic) IBOutlet UILabel *goldLabel;
+
 -(IBAction)backButton:(id)sender;
 
 @end

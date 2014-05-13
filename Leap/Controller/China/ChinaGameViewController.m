@@ -16,6 +16,7 @@
 #import "Score.h"
 #import "Stage.h"
 
+
 @interface ChinaGameViewController (){
     
     AlphabetView *alphabetView;
@@ -31,6 +32,8 @@
     Score *myScore;
     
     int scoreChina;
+    
+    NSUserDefaults *defaults;
 }
 
 
@@ -51,6 +54,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    defaults = [NSUserDefaults standardUserDefaults];
+    
     currentloop = 0;
     scoreChina = 0;
     
@@ -80,7 +86,7 @@
 }
 
 -(void)score{
-    NSLog(@"height %ld",(long)[myScore getLevelHeightScore:self.level]);
+     NSLog(@"height %ld",(long)[myScore getLevelHeightScore:self.level]);
      self.heightScoreLabel.text = [NSString stringWithFormat:@"%ld",(long)[myScore getLevelHeightScore:self.level]];
      self.scoreLabel.text = @"0";
  
@@ -101,6 +107,10 @@
     else{
         NSLog(@"FINISH!!!");
         
+      
+        
+        
+        
         [backgroundSound stop];
         [crocodileSound stop];
         [self.drawAreaView removeFromSuperview];
@@ -110,11 +120,16 @@
         Stage *stage = [Stage new];
         [stage setStage:self.level];
         
-        [myScore setHeightScore:scoreChina andLevel:self.level];
+        [myScore setHeightScore:scoreChina andLevel:self.level-1];
+        
+        
+        NSInteger goldInteger = [defaults integerForKey:@"gold"];
+        
         
         UIStoryboard *storyboard     = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
         ResultScoreViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ResultScore"];
-        
+        vc.scoreResult = scoreChina;
+        vc.goleResult = goldInteger;
         [self presentViewController:vc animated:NO completion:nil];
     }
     
