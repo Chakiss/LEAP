@@ -24,28 +24,38 @@ static Score *sharedInstance;
     }
     return sharedInstance;
 }
-- (int)highScore{
+
+- (void)setTotalScore:(int)score{
+   
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    return [[defaults objectForKey:@"highScore"] integerValue];
+    [defaults setInteger:score forKey:@"totalScore"];
 }
 
-- (int)score{
+- (void)setHeightScore:(int)score andLevel:(int)level{
+   
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    return [[defaults objectForKey:@"score"] integerValue];
-}
 
-- (void)setScore:(int)score andLevel:(int)levelHightScore{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults objectForKey:[NSString stringWithFormat:@"highScore_%d",levelHightScore]];
-    //[defaults setObject:[NSNumber numberWithInt:score] forKey:@"score"];
-    /*
-    if ([defaults objectForKey:@"score"] > [defaults objectForKey:@"highScore"]) {
-        [defaults setObject:[NSNumber numberWithInt:score] forKey:@"highScore"];
+    NSInteger heightScore = [defaults integerForKey:[NSString stringWithFormat:@"LevelHeightScore%d",level]];
+
+    
+    if (heightScore < score) {
+         [defaults setInteger:score forKey:[NSString stringWithFormat:@"LevelHeightScore%d",level]];
+
     }
-     */
     
+    [self setTotalScore:score];
+
     
-    
-    [defaults synchronize];
+  //  [defaults synchronize];
 }
+
+- (NSInteger)getLevelHeightScore:(int)level{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger heightScore = [defaults integerForKey:[NSString stringWithFormat:@"LevelHeightScore%d",level]];
+    
+    return heightScore;
+   
+}
+
 @end

@@ -37,7 +37,7 @@ static Stage *sharedInstance;
 
 - (int)currentStage{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    return [[defaults objectForKey:@"stage"] integerValue];
+    return [[defaults objectForKey:@"stage"] intValue];
 }
 
 - (void)setStage:(int)stage{

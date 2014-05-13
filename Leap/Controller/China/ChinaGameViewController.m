@@ -6,7 +6,7 @@
 //  Copyright (c) 2557 Chakrit. All rights reserved.
 //
 
-#define GESTURE_SCORE_THRESHOLD         0.7f
+#define GESTURE_SCORE_THRESHOLD  0.7f
 
 #import "ChinaGameViewController.h"
 #import "ResultScoreViewController.h"
@@ -30,6 +30,7 @@
     
     Score *myScore;
     
+    int scoreChina;
 }
 
 
@@ -51,6 +52,7 @@
 {
     [super viewDidLoad];
     currentloop = 0;
+    scoreChina = 0;
     
     self.gestureDetectorView = [[WTMGlyphDetectorView alloc] initWithFrame:self.drawAreaView.bounds];
     self.gestureDetectorView.delegate = self;
@@ -74,8 +76,15 @@
     myScore = [Score sharedInstance];
    // [ self.alligatorView startAnimating];
     
+    [self score];
 }
 
+-(void)score{
+    NSLog(@"height %ld",(long)[myScore getLevelHeightScore:self.level]);
+     self.heightScoreLabel.text = [NSString stringWithFormat:@"%ld",(long)[myScore getLevelHeightScore:self.level]];
+     self.scoreLabel.text = @"0";
+ 
+}
 
 - (void)playGame{
     NSLog(@"play game");
@@ -96,6 +105,12 @@
         [crocodileSound stop];
         [self.drawAreaView removeFromSuperview];
         [self.choiceImageView removeFromSuperview];
+        self.level++;
+        
+        Stage *stage = [Stage new];
+        [stage setStage:self.level];
+        
+        [myScore setHeightScore:scoreChina andLevel:self.level];
         
         UIStoryboard *storyboard     = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
         ResultScoreViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ResultScore"];
@@ -128,7 +143,6 @@
     return YES;
 }
 #pragma mark - Delegate
-int c = 0;
 
 - (void)wtmGlyphDetectorView:(WTMGlyphDetectorView*)theView glyphDetected:(WTMGlyph *)glyph withScore:(float)score
 {
@@ -143,12 +157,13 @@ int c = 0;
         
         if ([answerLetter isEqualToString:[alplabet[currentloop] uppercaseString]]) {
             NSLog(@"ถูกกกกกก");
-            c++;
+            scoreChina++;
+            self.scoreLabel.text = [NSString stringWithFormat:@"%d",scoreChina];
             [self.drawAreaView reloadInputViews];
             [alphabetView removeFromSuperview];
             correctSound = [[Sound alloc] init];
             [correctSound playSoundFile:@"sound_magic"];
-            self.scoreLabel.text = [NSString stringWithFormat:@"%d",c];
+            
             [correctSound play];
         }
         else{
