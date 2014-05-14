@@ -842,6 +842,9 @@
 		2D8F9AF31921393700B70DA3 /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8F9AF21921393700B70DA3 /* ProfileCell.m */; };
 		2DCCA20A191E81E4001A06EA /* UIView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCCA209191E81E4001A06EA /* UIView+Animation.m */; };
 		2DCCA20D191E8F9E001A06EA /* ResultScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCCA20C191E8F9E001A06EA /* ResultScoreViewController.m */; };
+		2DD31EB31923BB6D00B2647E /* GeneralUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD31EB21923BB6D00B2647E /* GeneralUtility.m */; };
+		2DD31EB71923C11E00B2647E /* arial unicode ms.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DD31EB51923C11E00B2647E /* arial unicode ms.ttf */; };
+		2DD31EB81923C11E00B2647E /* SimSun.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DD31EB61923C11E00B2647E /* SimSun.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1752,6 +1755,10 @@
 		2DCCA209191E81E4001A06EA /* UIView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animation.m"; sourceTree = "<group>"; };
 		2DCCA20B191E8F9E001A06EA /* ResultScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultScoreViewController.h; sourceTree = "<group>"; };
 		2DCCA20C191E8F9E001A06EA /* ResultScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultScoreViewController.m; sourceTree = "<group>"; };
+		2DD31EB11923BB6D00B2647E /* GeneralUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralUtility.h; sourceTree = "<group>"; };
+		2DD31EB21923BB6D00B2647E /* GeneralUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralUtility.m; sourceTree = "<group>"; };
+		2DD31EB51923C11E00B2647E /* arial unicode ms.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "arial unicode ms.ttf"; sourceTree = "<group>"; };
+		2DD31EB61923C11E00B2647E /* SimSun.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimSun.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1829,6 +1836,7 @@
 		2209888218C2D4C200F5BDED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2DD31EB41923C11E00B2647E /* Font */,
 				2209888318C2D4C200F5BDED /* Leap-Info.plist */,
 				2209888418C2D4C200F5BDED /* InfoPlist.strings */,
 				2209888718C2D4C200F5BDED /* main.m */,
@@ -2991,6 +2999,8 @@
 		22CB72BD191DFED600224BBF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2DD31EB11923BB6D00B2647E /* GeneralUtility.h */,
+				2DD31EB21923BB6D00B2647E /* GeneralUtility.m */,
 				22CB72BE191DFFCA00224BBF /* Stage.h */,
 				22CB72BF191DFFCA00224BBF /* Stage.m */,
 				22CB72C1191E104E00224BBF /* Score.h */,
@@ -3355,6 +3365,15 @@
 			path = Graphic/CustomSlider;
 			sourceTree = "<group>";
 		};
+		2DD31EB41923C11E00B2647E /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				2DD31EB51923C11E00B2647E /* arial unicode ms.ttf */,
+				2DD31EB61923C11E00B2647E /* SimSun.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3513,6 +3532,7 @@
 				22098B9918C2D65900F5BDED /* 23.png in Resources */,
 				22098D0918C2D65900F5BDED /* button_head_rat.png in Resources */,
 				2D44E9DF190F4D9C00CEC64E /* voice003.mp3 in Resources */,
+				2DD31EB71923C11E00B2647E /* arial unicode ms.ttf in Resources */,
 				22AB12E419232FF5000F4EAD /* cat.png in Resources */,
 				22098DDE18C2D65900F5BDED /* snow.png in Resources */,
 				2257F85E19116D9C00D2FEF8 /* M.json in Resources */,
@@ -3549,6 +3569,7 @@
 				22098BA418C2D65900F5BDED /* 33.png in Resources */,
 				22AB12E619232FF5000F4EAD /* corn.png in Resources */,
 				22098C5518C2D65900F5BDED /* linev.png in Resources */,
+				2DD31EB81923C11E00B2647E /* SimSun.ttf in Resources */,
 				22098C6E18C2D65900F5BDED /* game1_open@2x.png in Resources */,
 				2225500D18C30430002F6271 /* M.mp3 in Resources */,
 				22AB12CB19232FF5000F4EAD /* bear.png in Resources */,
@@ -4263,6 +4284,7 @@
 				22A45F2C1911374900BEA218 /* WTMGlyphDetector.m in Sources */,
 				2D69859919228AE90063F203 /* ButtonAnimation.m in Sources */,
 				22A45F321911384700BEA218 /* WTMGlyphDetectorView.m in Sources */,
+				2DD31EB31923BB6D00B2647E /* GeneralUtility.m in Sources */,
 				22A45F1D1911374900BEA218 /* CJSONSerialization.m in Sources */,
 				22098E2618C2E2A400F5BDED /* StageSelectViewController.m in Sources */,
 				222AE531190CE0810002B228 /* GameController.m in Sources */,

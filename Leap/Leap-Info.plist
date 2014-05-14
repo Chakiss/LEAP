@@ -37,5 +37,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>arial unicode ms</string>
+		<string>SimSun</string>
+	</array>
 </dict>
 </plist>

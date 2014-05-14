@@ -10,6 +10,7 @@
 
 #import "AppDelegate.h"
 #import "ButtonAnimation.h"
+#import "GeneralUtility.h"
 
 @interface StoryLineViewController (){
     
@@ -72,12 +73,12 @@ AppDelegate *app;
     if ([languageString isEqualToString:@"TH"]) {
         
         //Storyline1 = ((LocalizeDataStore *)[app.listArray objectAtIndex:0]).TH;
-        Storyline1 = @"    เมื่อสิ่งปลูกสร้างจากทั่วโลกถูกดอกเตอร์Xหนูจอมเวทย์สีม่วงใช้เวทย์มนต์ส่งลมพายุหมุนขนาดใหญ่ดูด   เอาสิ่งปลูกสร้างสวยงามจากทั่วโลกมาไว้ในหมู่เกาะขนาดใหญ่ของตน";
-        Storyline11 = @"     เพียงเพราะต้องการตกแต่ง หมู่เกาะของตนให้ดูสวยงามขึ้น";//((LocalizeDataStore *)[app.listArray objectAtIndex:1]).TH;
-        Storyline2 = @"     ทำให้ทีมนักผจญภัย LEAP ผู้รักในความยุติธรรม ประกอบไปด้วย เลโอสิงโตสีส้มผู้มีจิตใจกล้าหาญ , โปโป้ หมีแพนด้าสีขาวดำ ผู้มีพละกำลัง มหาศาล , รูบี้ กระต่ายสีชมพู  ผู้มีปัญญาฉลาดปราดเปรื่อง"; //((LocalizeDataStore *)[app.listArray objectAtIndex:2]).TH;
-        Storyline21 = @"     ต้องการที่จะทวงสิ่งปลูกสร้างที่ถูกขโมยไป ให้กลับคืนมาไว้ดังเดิม";//((LocalizeDataStore *)[app.listArray objectAtIndex:3]).TH;
-        Storyline3 = @"    พวกเขาทั้งสามจึงได้เดินทางไปยังหมู่เกาะของจอมเวทย์สีม่วง";//((LocalizeDataStore *)[app.listArray objectAtIndex:4]).TH;
-        Storyline32 = @"    เพื่อทำลายเวทย์มนต์และนำสิ่งปลูกสร้างที่ถูกขโมยไป ให้กลับคืนมาให้จงได้";//((LocalizeDataStore *)[app.listArray objectAtIndex:5]).TH;
+        Storyline1 = @"\n    เมื่อสิ่งปลูกสร้างจากทั่วโลกถูกดอกเตอร์Xหนูจอมเวทย์สีม่วงใช้เวทย์มนต์ส่งลมพายุหมุนขนาดใหญ่ดูด   เอาสิ่งปลูกสร้างสวยงามจากทั่วโลกมาไว้ในหมู่เกาะขนาดใหญ่ของตน";
+        Storyline11 = @"\n     เพียงเพราะต้องการตกแต่ง หมู่เกาะของตนให้ดูสวยงามขึ้น";//((LocalizeDataStore *)[app.listArray objectAtIndex:1]).TH;
+        Storyline2 = @"\n     ทำให้ทีมนักผจญภัย LEAP ผู้รักในความยุติธรรม ประกอบไปด้วย เลโอสิงโตสีส้มผู้มีจิตใจกล้าหาญ , โปโป้ หมีแพนด้าสีขาวดำ ผู้มีพละกำลัง มหาศาล , รูบี้ กระต่ายสีชมพู  ผู้มีปัญญาฉลาดปราดเปรื่อง"; //((LocalizeDataStore *)[app.listArray objectAtIndex:2]).TH;
+        Storyline21 = @"\n     ต้องการที่จะทวงสิ่งปลูกสร้างที่ถูกขโมยไป ให้กลับคืนมาไว้ดังเดิม";//((LocalizeDataStore *)[app.listArray objectAtIndex:3]).TH;
+        Storyline3 = @"\n    พวกเขาทั้งสามจึงได้เดินทางไปยังหมู่เกาะของจอมเวทย์สีม่วง";//((LocalizeDataStore *)[app.listArray objectAtIndex:4]).TH;
+        Storyline32 = @"\n    เพื่อทำลายเวทย์มนต์และนำสิ่งปลูกสร้างที่ถูกขโมยไป ให้กลับคืนมาให้จงได้";//((LocalizeDataStore *)[app.listArray objectAtIndex:5]).TH;
         
         nameSoundArray = @[@"voice001",@"voice002",@"voice003"];
         
@@ -120,7 +121,8 @@ AppDelegate *app;
     storyLineImageArray = @[@"storyline1",@"storyline2",@"storyline3"];
     storyLineTextArray = @[Storyline1,Storyline11,Storyline2,Storyline21,Storyline3,Storyline32];
     
-    self.StoryLineTextView.text = storyLineTextArray[currentTextStory];
+    self.StoryLineTextView.text =[storyLineTextArray[currentTextStory] stringByReplacingOccurrencesOfString: @"\\n" withString: @"\n"];
+    self.StoryLineTextView.font = [GeneralUtility fontThaiAndEng];
     
   
     
