@@ -95,7 +95,7 @@
         <!--Story Line View Controller-->
         <scene sceneID="TY0-Ab-xmz">
             <objects>
-                <viewController id="jVp-Qd-Qaq" customClass="StoryLineViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StorylineView" id="jVp-Qd-Qaq" customClass="StoryLineViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MR1-Ir-cSC"/>
                         <viewControllerLayoutGuide type="bottom" id="fKo-SR-87E"/>
@@ -887,7 +887,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonTapped:" destination="jVp-Qd-Qaq" eventType="touchUpInside" id="A2f-da-YgN"/>
+                                    <action selector="backAction:" destination="u98-LD-TsY" eventType="touchUpInside" id="Ow0-St-DT5"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5OB-Xa-aDU" userLabel="ProfileView">
@@ -955,6 +955,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="animalImageView" destination="ras-Bq-A7U" id="f7e-Ar-vb7"/>
+                        <outlet property="backButton" destination="KiN-hK-QRs" id="4xs-xa-Bpn"/>
                         <outlet property="ballonView" destination="Ouj-6m-A8n" id="gv0-0u-jSd"/>
                         <outlet property="content" destination="2sI-sK-AeO" id="cvE-af-fXc"/>
                         <outlet property="footerView" destination="Qa4-tM-qJg" id="uxF-Bz-qxf"/>
