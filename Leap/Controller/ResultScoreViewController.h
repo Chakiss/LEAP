@@ -12,9 +12,11 @@
 
 @property (assign, nonatomic) NSInteger scoreResult;
 @property (assign, nonatomic) NSInteger goleResult;
+@property (assign, nonatomic) NSInteger completeResult;
 
 @property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutlet UILabel *goldLabel;
+@property (strong, nonatomic) IBOutlet UILabel *completeLabel;
 
 -(IBAction)backButton:(id)sender;
 

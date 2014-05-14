@@ -28,10 +28,12 @@
     Sound *backgroundSound;
     Sound *correctSound;
     Sound *crocodileSound;
+    Sound *guideSound;
     
     Score *myScore;
     
     int scoreChina;
+    int fullMarks;
     
     NSUserDefaults *defaults;
 }
@@ -55,6 +57,12 @@
 {
     [super viewDidLoad];
     
+    if (!self.level) {
+        self.level = 1;
+    }
+    
+    self.footerView.hidden = YES;
+
     defaults = [NSUserDefaults standardUserDefaults];
     
     currentloop = 0;
@@ -86,7 +94,7 @@
 }
 
 -(void)score{
-     NSLog(@"height %ld",(long)[myScore getLevelHeightScore:self.level]);
+    
      self.heightScoreLabel.text = [NSString stringWithFormat:@"%ld",(long)[myScore getLevelHeightScore:self.level]];
      self.scoreLabel.text = @"0";
  
@@ -107,10 +115,6 @@
     else{
         NSLog(@"FINISH!!!");
         
-      
-        
-        
-        
         [backgroundSound stop];
         [crocodileSound stop];
         [self.drawAreaView removeFromSuperview];
@@ -121,6 +125,7 @@
         [stage setStage:self.level];
         
         [myScore setHeightScore:scoreChina andLevel:self.level-1];
+        NSInteger completedScore = [myScore completeScore:scoreChina andFullMarksLevel:fullMarks];
         
         
         NSInteger goldInteger = [defaults integerForKey:@"gold"];
@@ -130,6 +135,8 @@
         ResultScoreViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ResultScore"];
         vc.scoreResult = scoreChina;
         vc.goleResult = goldInteger;
+        vc.completeResult = completedScore;
+        
         [self presentViewController:vc animated:NO completion:nil];
     }
     
@@ -137,14 +144,14 @@
 }
 
 - (void)end{
+    
     crocodileSound = [[Sound alloc] init];
     [crocodileSound playSoundFile:@"mouth_croccodile"];
     [crocodileSound play];
     currentloop++;
     [ self.alligatorView startAnimating];
     [self playGame];
-    
-    
+   
 }
 
 - (void)didReceiveMemoryWarning
@@ -184,14 +191,14 @@
         else{
             NSLog(@"ผิดดดดดดด");
         }
+        
+         fullMarks++;
     }
     else{
         NSLog(@"NO");
     }
-    
-    
-    
-    
+   
+ 
 }
 - (void)checkLevel{
     if (self.level == 1){
@@ -288,6 +295,23 @@
         int n = (arc4random() % nElements) + i;
         [alplabet exchangeObjectAtIndex:i withObjectAtIndex:n];
     }
+    
+}
+
+- (IBAction)pressedPandaGuide:(id)sender {
+    
+    
+    
+    self.footerView.hidden = NO;
+    
+    guideSound = [[Sound alloc] init];
+    
+    guideSound = [[Sound alloc] init];
+    [guideSound playSoundFile:@"panda001"];
+    [guideSound play];
+    
+    self.guideLabel.text = @"";
+    
     
 }
 

@@ -69,4 +69,14 @@ static Score *sharedInstance;
    
 }
 
+- (NSInteger)completeScore:(int)score andFullMarksLevel:(int)fullMarks{
+    
+   NSInteger completeResultScore = 0;
+    
+   completeResultScore = (score * 100) / fullMarks;
+    
+   return completeResultScore;
+    
+}
+
 @end
