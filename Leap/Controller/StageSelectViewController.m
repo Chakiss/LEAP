@@ -89,7 +89,7 @@ static int curveValues[] = {
             
             UIStoryboard *storyboard     = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
             PhonicGameViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"GameThai"];
-            vc.stage = stageNumber;
+            vc.level = stageNumber;
             [self presentViewController:vc animated:NO completion:nil];
             
         }
@@ -97,7 +97,7 @@ static int curveValues[] = {
             
             UIStoryboard *storyboard     = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
             PhonicGameViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"GameUSA"];
-            vc.stage = stageNumber;
+            vc.level = stageNumber;
             [self presentViewController:vc animated:NO completion:nil];
         } 
         

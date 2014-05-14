@@ -300,8 +300,6 @@
 
 - (IBAction)pressedPandaGuide:(id)sender {
     
-    
-    
     self.footerView.hidden = NO;
     
     guideSound = [[Sound alloc] init];
