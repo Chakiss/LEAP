@@ -33,7 +33,13 @@
     return self;
 }
 
+- (void)setDefaultImage{
+    UIImage* img = [UIImage imageNamed:@"question_mark.png"];
+    self.image = img;
+    
+}
 - (void)answerImageWithWord:(NSString *)word{
+    NSLog(@"ANSWER WORD = %@",[NSString stringWithFormat:@"%@.png",word]);
     UIImage* img = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",word]];
     self.image = img;
 }

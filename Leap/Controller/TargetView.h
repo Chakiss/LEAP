@@ -14,6 +14,7 @@
 @property (strong, nonatomic, readonly) NSString* letter;
 @property (assign, nonatomic) BOOL isMatched;
 
--(instancetype)initWithLetter:(NSString*)letter andSideLength:(float)sideLength;
--(void)setImageWithLetter:(NSString *)letter;
+- (instancetype)initWithLetter:(NSString*)letter andSideLength:(float)sideLength;
+- (void)setImageWithLetter:(NSString *)letter;
+- (void)setDefaultImage;
 @end
