@@ -68,8 +68,7 @@
 
 - (IBAction)pressedChooseLanguage:(id)sender {
     
-
-    [soundClick play];
+   [soundClick play];
    NSInteger tagLanguageButton =  [sender tag];
    
     NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
@@ -93,12 +92,13 @@
     
    [languageButton setImage:languageImage forState:UIControlStateNormal];
   
-
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
      if ([segue.identifier isEqualToString:@"storylineSegue"]) {
+         
+        [self.nextButton.layer addAnimation:[ButtonAnimation animationButton] forKey:@"zoom"];
          
          [soundClick play];
          

@@ -84,6 +84,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="languageButton" destination="GnU-ay-qQ4" id="GUv-DD-2Ga"/>
+                        <outlet property="nextButton" destination="Gfb-s6-836" id="ETV-N6-0EJ"/>
                         <outlet property="settingLanguageView" destination="2u3-I0-Blj" id="6XS-u2-uF7"/>
                     </connections>
                 </viewController>
