@@ -9,6 +9,7 @@
 #import "StoryLineViewController.h"
 
 #import "AppDelegate.h"
+#import "ButtonAnimation.h"
 
 @interface StoryLineViewController (){
     
@@ -160,7 +161,9 @@ AppDelegate *app;
 }
 - (IBAction)nextButtonTapped:(id)sender {
     
-     currentTextStory++;
+    [self.nextButton.layer addAnimation:[ButtonAnimation animationButton] forKey:@"zoom"];
+    
+    currentTextStory++;
     
     clickSound = [[Sound alloc] init];
     [clickSound playSoundFile:@"Button_sound"];
@@ -198,6 +201,8 @@ AppDelegate *app;
 }
 
 - (IBAction)backButtonTapped:(id)sender {
+    
+    [self.backButton.layer addAnimation:[ButtonAnimation animationButton] forKey:@"zoom"];
     
     clickSound = [[Sound alloc] init];
     [clickSound playSoundFile:@"Button_sound"];

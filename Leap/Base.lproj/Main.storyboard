@@ -95,7 +95,7 @@
         <!--Story Line View Controller-->
         <scene sceneID="TY0-Ab-xmz">
             <objects>
-                <viewController id="jVp-Qd-Qaq" customClass="StoryLineViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StorylineView" id="jVp-Qd-Qaq" customClass="StoryLineViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MR1-Ir-cSC"/>
                         <viewControllerLayoutGuide type="bottom" id="fKo-SR-87E"/>
@@ -104,6 +104,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="storyline1.png" translatesAutoresizingMaskIntoConstraints="NO" id="bIA-w8-A8d">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGa-kr-PM7">
                                 <rect key="frame" x="837" y="0.0" width="187" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -883,7 +887,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonTapped:" destination="jVp-Qd-Qaq" eventType="touchUpInside" id="A2f-da-YgN"/>
+                                    <action selector="backAction:" destination="u98-LD-TsY" eventType="touchUpInside" id="Ow0-St-DT5"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5OB-Xa-aDU" userLabel="ProfileView">
@@ -951,6 +955,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="animalImageView" destination="ras-Bq-A7U" id="f7e-Ar-vb7"/>
+                        <outlet property="backButton" destination="KiN-hK-QRs" id="4xs-xa-Bpn"/>
                         <outlet property="ballonView" destination="Ouj-6m-A8n" id="gv0-0u-jSd"/>
                         <outlet property="content" destination="2sI-sK-AeO" id="cvE-af-fXc"/>
                         <outlet property="footerView" destination="Qa4-tM-qJg" id="uxF-Bz-qxf"/>
@@ -1266,10 +1271,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehc-FN-DKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="storyline1.png" id="bIA-w8-A8d">
-                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                </imageView>
             </objects>
             <point key="canvasLocation" x="2603" y="1412"/>
         </scene>

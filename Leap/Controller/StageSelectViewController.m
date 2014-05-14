@@ -13,7 +13,8 @@
 
 #import "Stage.h"
 #import "Sound.h"
-
+#import "StoryLineViewController.h"
+#import "ButtonAnimation.h"
 static BOOL isConversation = true;
 
 static int curveValues[] = {
@@ -114,6 +115,16 @@ static int curveValues[] = {
     
 }
 
+- (IBAction)backAction:(id)sender {
+    
+  [self.backButton.layer addAnimation:[ButtonAnimation animationButton] forKey:@"zoom"];
+    
+    StoryLineViewController *storyView = [self.storyboard instantiateViewControllerWithIdentifier:@"StorylineView"];
+    
+    [self presentViewController:storyView animated:YES completion:nil];
+    
+}
+
 
 -(BOOL) prefersStatusBarHidden
 {
@@ -154,6 +165,7 @@ static int curveValues[] = {
     
     self.goldLabel.text = [NSString stringWithFormat:@"%li",(long)myGold];
     self.scoreLabel.text = [NSString stringWithFormat:@"%li",(long)myTotalScore];
+    
   
 
  }

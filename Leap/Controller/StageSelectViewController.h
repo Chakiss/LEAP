@@ -31,9 +31,11 @@
 @property (strong, nonatomic) IBOutlet UIImageView *animalImageView;
 @property (nonatomic, strong) LocalizeDataStore *localizeDataStore;
 @property (strong, nonatomic) IBOutlet UIView *footerView;
-@property (strong, nonatomic) IBOutlet UIButton *bookButton;
+@property (strong, nonatomic) IBOutlet UIButton *backButton;
 @property (strong, nonatomic) IBOutlet UILabel *goldLabel;
 
 - (IBAction)stageSelect:(id)sender;
 - (IBAction)pressedProfile:(id)sender;
+- (IBAction)backAction:(id)sender;
+
 @end
