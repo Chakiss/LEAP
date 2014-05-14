@@ -21,7 +21,6 @@
     NSArray* tilesArray;
     NSMutableArray* _targets;
     
-    
     //stopwatch variables
     USAGame *usaGame;
     int _secondsLeft;
@@ -72,6 +71,14 @@
     [self playGame];
     
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    
+    
 }
 
 - (void)playGame{

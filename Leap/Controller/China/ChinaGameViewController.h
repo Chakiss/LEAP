@@ -27,10 +27,13 @@
 @property (nonatomic, strong) IBOutlet UIImageView *alligatorView;
 @property (nonatomic, strong) IBOutlet UIImageView *eyeView;
 //@property (nonatomic, strong) IBOutlet AlphabetView *alphabetView;
+@property (strong, nonatomic) IBOutlet UIView *footerView;
+@property (strong, nonatomic) IBOutlet UILabel *guideLabel;
 
 @property (weak, nonatomic) IBOutlet KKProgressTimer *timer1;
 
 
+- (IBAction)pressedPandaGuide:(id)sender;
 
 - (IBAction)backButtonTapped:(id)sender;
 @end

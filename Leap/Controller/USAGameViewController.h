@@ -53,6 +53,12 @@
 @property (nonatomic, weak) IBOutlet TileView *answer10;
 
 @property (nonatomic, weak) IBOutlet AnswerView *answer;
+
+@property (strong, nonatomic) IBOutlet UILabel *heightScoreLabel;
+@property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
+
+
+
 - (void)playGame;
 - (IBAction)backButtonTapped:(id)sender;
 @end

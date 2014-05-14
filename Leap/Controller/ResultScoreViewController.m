@@ -33,6 +33,7 @@
     
     self.scoreLabel.text =[NSString stringWithFormat:@"     %ld",(long)self.scoreResult];
     self.goldLabel.text =[NSString stringWithFormat:@"     %ld",(long)self.goleResult];
+    self.completeLabel.text =[NSString stringWithFormat:@"%ld",(long)self.completeResult];
 }
 
 - (void)didReceiveMemoryWarning

@@ -13,13 +13,18 @@
 
 
 @property (weak, nonatomic) IBOutlet KKProgressTimer *timer1;
-@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *alphabetBotton;
-@property (assign, nonatomic) int stage;
+@property (strong, nonatomic) IBOutlet UIButton *backButton;
+@property (assign, nonatomic) int level;
+@property (strong, nonatomic) IBOutlet UILabel *heightScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+
 
 
 - (IBAction)backButtonTapped:(id)sender;
 - (IBAction)playaction:(id)sender;
 - (IBAction)platCurrentSound:(id)sender;
+- (IBAction)profileTapped:(id)sender;
 
 @end

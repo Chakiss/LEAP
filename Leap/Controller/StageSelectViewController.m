@@ -15,6 +15,8 @@
 #import "Sound.h"
 #import "StoryLineViewController.h"
 #import "ButtonAnimation.h"
+#import "GeneralUtility.h"
+
 static BOOL isConversation = true;
 
 static int curveValues[] = {
@@ -33,17 +35,15 @@ static int curveValues[] = {
     
     
 	UIView*			content;
-    
     NSArray *converSound;
+    NSArray *conversationTextArray;
     int currentSound;
     
     Stage *stage;
     
     Sound *soundBG;
     Sound *conversationSound;
-    
 
-    
 }
 
 
@@ -91,7 +91,7 @@ static int curveValues[] = {
             
             UIStoryboard *storyboard     = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
             PhonicGameViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"GameThai"];
-            vc.stage = stageNumber;
+            vc.level = stageNumber;
             [self presentViewController:vc animated:NO completion:nil];
             
         }
@@ -99,7 +99,7 @@ static int curveValues[] = {
             
             UIStoryboard *storyboard     = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
             PhonicGameViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"GameUSA"];
-            vc.stage = stageNumber;
+            vc.level = stageNumber;
             [self presentViewController:vc animated:NO completion:nil];
         } 
         
@@ -220,14 +220,14 @@ static int curveValues[] = {
     NSString *lion1;
     NSString *rat;
     NSString *lion2;
-
     
+
     if ([languageString isEqualToString:@"TH"]) {
         
         
-        lion1 = @"    เมื่อสิ่งปลูกสร้างจากทั่วโลกถูกดอกเตอร์Xหนูจอมเวทย์สีม่วงใช้เวทย์มนต์ส่งลมพายุหมุนขนาดใหญ่ดูด   เอาสิ่งปลูกสร้างสวยงามจากทั่วโลกมาไว้ในหมู่เกาะขนาดใหญ่ของตน";
-        rat = @"     เพียงเพราะต้องการตกแต่ง หมู่เกาะของตนให้ดูสวยงามขึ้น";//((LocalizeDataStore *)[app.listArray objectAtIndex:1]).TH;
-        lion2 = @"     ทำให้ทีมนักผจญภัย LEAP ผู้รักในความยุติธรรม ประกอบไปด้วย เลโอสิงโตสีส้มผู้มีจิตใจกล้าหาญ , โปโป้ หมีแพนด้าสีขาวดำ ผู้มีพละกำลัง มหาศาล , รูบี้ กระต่ายสีชมพู  ผู้มีปัญญาฉลาดปราดเปรื่อง"; //((LocalizeDataStore *)[app.listArray objectAtIndex:2]).TH;
+        lion1 =((LocalizeDataStore *)[app.listArray objectAtIndex:6]).TH;
+        rat = ((LocalizeDataStore *)[app.listArray objectAtIndex:7]).TH;
+        lion2 = ((LocalizeDataStore *)[app.listArray objectAtIndex:8]).TH;
         converSound =  @[@"lion sound_02",@"rat001",@"lion sound_03"];
         
     }
@@ -249,6 +249,8 @@ static int curveValues[] = {
         
     }
     
+    
+     conversationTextArray = @[lion1,rat,lion2];
 
     conversationSound = [[Sound alloc] init];
     conversationSound.delegate = self;
@@ -257,20 +259,6 @@ static int curveValues[] = {
     
    
     
-  //  for (int i = 0; i < [converSound count]; i++) {
-      
-    
-      //  [conversationSound playSoundFile:[converSound objectAtIndex:0]];
-        //[conversationSound play];
-        
-      //  [NSThread sleepForTimeInterval:[conversationSound duration]];
-        
-   // }
- 
-    
-    
-  
-    
 }
 
 - (void)playSound:(int)index{
@@ -278,6 +266,9 @@ static int curveValues[] = {
     [conversationSound play];
      NSArray *animalArray = @[@"head_lion2.png",@"button_head_rat.png",@"head_lion2.png"];
      animalImageView.image = [UIImage imageNamed:[animalArray objectAtIndex:index]];
+    NSString *conversationString = [conversationTextArray objectAtIndex:index];
+    self.conversationTxt.text = [NSString stringWithFormat:@"%@",conversationString];
+    self.conversationTxt.font = [GeneralUtility fontThaiAndEng];
     
     
 }
@@ -296,9 +287,7 @@ static int curveValues[] = {
 }
 
 -(void)setNextImage:(NSString*)nextImage{
-    
-   
-   
+
     animalImageView.image = [UIImage imageNamed:nextImage];
     
 }

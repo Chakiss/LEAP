@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LocalizeData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<List>
-		<Text id="1">
+		<Text id="0">
 			<TH>เมื่อสิ่งปลูกสร้างจากทั่วโลกถูกดอกเตอร์Xหนูจอมเวทย์สีม่วงใช้เวทย์มนต์ส่งลมพายุหมุนขนาดใหญ่ดูดเอาสิ่งปลูกสร้างสวยงามจากทั่วโลกมาไว้ในหมู่เกาะขนาดใหญ่ของตน</TH>
 			<EN>Dr. X , the purple mouse wizard, wishes to decorate his islands with beautiful buildings</EN>
 			<CN>X博士，这个紫色老鼠巫师希望用漂亮的建筑来装饰自己的岛屿。于是巫师使用他的魔法，</CN>
 		</Text>
-		<Text ID="2">
+		<Text ID="1">
 			<TH>เพียงเพราะต้องการตกแต่ง หมู่เกาะของตนให้ดูสวยงามขึ้น</TH>
 			<EN>The wizard uses his magic to create tornadoes to capture landmarks
                 from around the world and have them sent to his islands</EN>
@@ -14,7 +14,7 @@
                 然后将他们送到自己的岛屿。</CN>
 		</Text>
 		
-		<Text ID="3">
+		<Text ID="2">
 			<TH>ทำให้ทีมนักผจญภัย LEAP ผู้รักในความยุติธรรม ประกอบไปด้วย เลโอสิงโตสีส้มผู้มีจิต
                 ใจกล้าหาญ , โปโป้ หมีแพนด้าสีขาวดำ ผู้มีพละกำลัง มหาศาล , รูบี้ กระต่ายสีชมพู  ผู้มีปัญญาฉลาดปราดเปรื่อง</TH>
 			<EN>It’s time for team LEAP to help the world by bringing back the stolen landmarks ! LEAP’s team members are Leo the brave orange lion</EN>
@@ -22,47 +22,45 @@
                 团队成员有勇敢的橙色狮子LEO，</CN>
 		</Text>
 		
-		<Text ID="4">
+		<Text ID="3">
 			<TH>ทต้องการที่จะทวงสิ่งปลูกสร้างที่ถูกขโมยไป ให้กลับคืนมาไว้ดังเดิม</TH>
 			<EN>Popo the powerful panda,and Ruby the clever pink rabbit.</EN>
 			<CN>强大的熊猫POPO，还有聪明的粉红兔RUBY。</CN>
 		</Text>
 		
-		<Text ID="5">
+		<Text ID="4">
 			<TH>ทต้องการที่จะทวงสิ่งปลูกสร้างที่ถูกขโมยไป ให้กลับคืนมาไว้ดังเดิม</TH>
 			<EN>The three heroes travel to the wizard’s islands to destroy his magic</EN>
 			<CN>这三个英雄一路到达巫师的岛屿，摧毁了他的魔法，</CN>
 		</Text>
 		
-		<Text ID="6">
+		<Text ID="5">
 			<TH>เพื่อทำลายเวทย์มนต์และนำสิ่งปลูกสร้างที่ถูกขโมยไป ให้กลับคืนมาให้จงได้</TH>
 			<EN>and to bring back the stolen landmarks.</EN>
 			<CN>并且带回了被偷的标志性建筑</CN>
 		</Text>
 		
-		<Text ID="7">
-			<TH>ในที่สุดก็ได้มาถึง เกาะของจอมเวทย์สีม่วงแล้ว ! พวกเราจะต้องช่วยกัน แก้ไข
-                ปริศนาทั้งหมด ถึงจะสามารถช่วยให้สิ่งปลูกสร้างทั้งหมด กลับไปประจำอยู่ที่เดิม
-                ได้!</TH>
+		<Text ID="6">
+			<TH>ในที่สุดก็ได้มาถึง เกาะของจอมเวทย์สีม่วงแล้ว ! พวกเราจะต้องช่วยกัน แก้ไข ปริศนาทั้งหมด ถึงจะสามารถช่วยให้สิ่งปลูกสร้างทั้งหมด กลับไxประจำอยู่ที่เดิมได้!</TH>
             <EN>We finally arrive the wizard’s island. We must solve all the mysterious
                 puzzle inorder to rescue the landmarks. </EN>
             <CN>我们最终到达了巫师的岛屿，但是我们必须解决所有难解的
                 拼图，才能拯救这些标志性建筑。</CN>
 		</Text>
 		
-		<Text ID="8">
-			<TH>ใพวกเจ้าไม่มีทางแก้ปริศนาได้ทั้งหมดหรอก!</TH>
+		<Text ID="7">
+			<TH>พวกเจ้าไม่มีทางแก้ปริศนาได้ทั้งหมดหรอก!</TH>
             <EN>You will never be able to solve all these puzzles.</EN>
             <CN>你将不可能解决所有的拼图。</CN>
 		</Text>
 		
-		<Text ID="9">
-			<TH>พวกเจ้าไม่มีทางแก้ปริศนาได้ทั้งหมดหรอก!</TH>
+		<Text ID="8">
+			<TH>พวกเราทำได้แน่!</TH>
             <EN>Of course, we can solve them ! </EN>
             <CN>当然可以，我们能解决他们！</CN>
 		</Text>
 		
-		<Text ID="10">
+		<Text ID="9">
             <TH>พระราชวังต้องห้าม 100%  /n     พระราชวังต้องห้าม  ตั้งอยู่ใจกลางกรุง
                 ปักกิ่ง เป็นพระราชวังหลวงของตั้งแต่
                 ราชวงศ์หมิง จนถึงราชวงศ์ชิง</TH>

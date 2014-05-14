@@ -33,6 +33,7 @@
 @property (strong, nonatomic) IBOutlet UIView *footerView;
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
 @property (strong, nonatomic) IBOutlet UILabel *goldLabel;
+@property (strong, nonatomic) IBOutlet UITextView *conversationTxt;
 
 - (IBAction)stageSelect:(id)sender;
 - (IBAction)pressedProfile:(id)sender;

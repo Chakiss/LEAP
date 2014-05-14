@@ -17,5 +17,6 @@
 - (void)setTotalScore:(int)score;
 - (void)setHeightScore:(int)score andLevel:(int)level;
 - (NSInteger)getLevelHeightScore:(int)level;
+- (NSInteger)completeScore:(int)score andFullMarksLevel:(int)fullMarks;
 
 @end
