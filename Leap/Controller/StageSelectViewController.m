@@ -15,6 +15,8 @@
 #import "Sound.h"
 #import "StoryLineViewController.h"
 #import "ButtonAnimation.h"
+#import "GeneralUtility.h"
+
 static BOOL isConversation = true;
 
 static int curveValues[] = {
@@ -264,8 +266,9 @@ static int curveValues[] = {
     [conversationSound play];
      NSArray *animalArray = @[@"head_lion2.png",@"button_head_rat.png",@"head_lion2.png"];
      animalImageView.image = [UIImage imageNamed:[animalArray objectAtIndex:index]];
-    
-    self.conversationLabel.text = [NSString stringWithFormat:@"%@",[conversationTextArray objectAtIndex:index]];
+    NSString *conversationString = [conversationTextArray objectAtIndex:index];
+    self.conversationTxt.text = [NSString stringWithFormat:@"%@",conversationString];
+    self.conversationTxt.font = [GeneralUtility fontThaiAndEng];
     
     
 }
