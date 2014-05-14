@@ -38,8 +38,13 @@
     return self;
 }
 
--(void)setImageWithLetter:(NSString *)letter{
+- (void)setImageWithLetter:(NSString *)letter{
     UIImage* img = [UIImage imageNamed:[NSString stringWithFormat:@"ui_font_%@_@2x.png",letter]];
+    [self setImage:img];
+}
+
+- (void)setDefaultImage{
+    UIImage* img = [UIImage imageNamed:@"UI_Font_00.png"];
     [self setImage:img];
 }
 

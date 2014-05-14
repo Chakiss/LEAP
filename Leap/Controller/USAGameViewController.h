@@ -11,7 +11,7 @@
 #import "KKProgressTimer.h"
 #import "TileView.h"
 #import "TargetView.h"
-
+#import "AnswerView.h"
 
 @interface USAGameViewController : UIViewController<KKProgressTimerDelegate , TileTouchDelegate>
 
@@ -52,7 +52,7 @@
 @property (nonatomic, weak) IBOutlet TileView *answer9;
 @property (nonatomic, weak) IBOutlet TileView *answer10;
 
--(void)randomWordInLevel;
+@property (nonatomic, weak) IBOutlet AnswerView *answer;
 - (void)playGame;
 - (IBAction)backButtonTapped:(id)sender;
 @end

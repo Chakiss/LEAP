@@ -64,7 +64,7 @@
     tilesArray = [NSArray array];
     tilesArray = @[self.answer1,self.answer2,self.answer3,self.answer4,self.answer5,self.answer6,self.answer7,self.answer8,self.answer9,self.answer10];
     
-    self.level = [Level levelWithNum:33];
+    self.level = [Level levelWithNum:34];
     
     [self.level.level shuffle];
     
@@ -75,7 +75,7 @@
 }
 
 - (void)playGame{
-
+    
     UIView *clockView = [[UIView alloc] initWithFrame:CGRectMake(804, 548, 200, 200)];
     timer1 = [[KKProgressTimer alloc] initWithFrame:clockView.bounds];
     [clockView addSubview:timer1];
@@ -98,12 +98,11 @@
 -(void)randomWordInLevel:(NSString *)string{
     
     NSAssert(self.level.level, @"no level loaded");
-   
+    
     //int randomIndex = arc4random()%[self.level.level count];
     NSString* word = string;//self.level.level[ randomIndex ];
     int wordLen = [word length];
     
-  
     //create answer
     NSString *questionWord = word;
     if (wordLen > 2 && wordLen < 6) {
@@ -130,8 +129,6 @@
             [tile setLetter:letter];
         }
     }
-    
-    
     
     _targets = [NSMutableArray arrayWithCapacity: wordLen];
     // create targets
@@ -161,12 +158,14 @@
         }
     }
     
-    AnswerView *answer = [[AnswerView alloc] init];
-    [self.view addSubview:answer];
+    //   AnswerView *answer = [[AnswerView alloc] init];
+    // [self.view addSubview:answer];
+    [self.answer setDefaultImage];
 }
 
 
 - (void)startGame{
+    
     int wordLen = _targets.count;
     if (currentLetter < wordLen) {
         TargetView* target = _targets[currentLetter];
@@ -179,17 +178,22 @@
         
     }else{
         NSLog(@"จบ 1 คำ");
+        [self.answer answerImageWithWord:self.level.level[currentWord]];
+        
         currentWord++;
-        if (currentWord < self.level.level.count) {
-            currentLetter = 0;
-            [self resetQuestionView];
-            [self randomWordInLevel:self.level.level[currentWord]];
-            [self startGame];
-        }
+        [self performSelector:@selector(nextWord) withObject:nil afterDelay:2.0];
         
     }
 }
-
+- (void)nextWord{
+    if (currentWord < self.level.level.count) {
+        currentLetter = 0;
+        [self resetQuestionView];
+        [self randomWordInLevel:self.level.level[currentWord]];
+        [self startGame];
+    }
+    
+}
 
 #pragma mark KKProgressTimerDelegate Method
 - (void)didUpdateProgressTimer:(KKProgressTimer *)progressTimer percentage:(CGFloat)percentage {
@@ -198,15 +202,19 @@
     }
 }
 - (void)didStopProgressTimer:(KKProgressTimer *)progressTimer percentage:(CGFloat)percentage {
-    
-    if (currentLetter > _targets.count){
-        NSLog(@"END!!!");
-        [timer1 stop];
-    
-     }else{
-    currentLetter++;
-    [self startGame];
-    
+    int wordLen = _targets.count;
+    if (currentLetter < wordLen){
+        if (currentLetter > _targets.count){
+            NSLog(@"END!!!");
+            [timer1 stop];
+            
+        }else{
+            currentLetter++;
+            [self startGame];
+            
+        }
+    }else{
+        NSLog(@"FI:AJFLKAJDL:KASJDKL:");
     }
 }
 
@@ -228,7 +236,7 @@
             }else if (wordLen == 7) {
                 [self.question7[currentLetter] setImageWithLetter:letter];
             }else if (wordLen == 8) {
-                [self.question8[currentLetter] setImageWithLetter:letter];;
+                [self.question8[currentLetter] setImageWithLetter:letter];
             }else if (wordLen == 9) {
                 [self.question9[currentLetter] setImageWithLetter:letter];
             }
@@ -241,6 +249,37 @@
 }
 
 - (void)resetQuestionView{
+    
+    self.questionView3.hidden = YES;
+    self.questionView4.hidden = YES;
+    self.questionView5.hidden = YES;
+    self.questionView6.hidden = YES;
+    self.questionView7.hidden = YES;
+    self.questionView8.hidden = YES;
+    self.questionView9.hidden = YES;
+    
+    for (TargetView* object in self.question3) {
+        [object setDefaultImage];
+    }
+    for (TargetView* object in self.question4) {
+        [object setDefaultImage];
+    }
+    for (TargetView* object in self.question5) {
+        [object setDefaultImage];
+    }
+    for (TargetView* object in self.question6) {
+        [object setDefaultImage];
+    }
+    for (TargetView* object in self.question7) {
+        [object setDefaultImage];
+    }
+    for (TargetView* object in self.question8) {
+        [object setDefaultImage];
+    }
+    for (TargetView* object in self.question9) {
+        [object setDefaultImage];
+    }
+    
     
 }
 

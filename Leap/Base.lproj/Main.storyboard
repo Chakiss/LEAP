@@ -1605,7 +1605,7 @@
                                     <outlet property="delegate" destination="vfN-cn-Mey" id="cVY-9Q-1dC"/>
                                 </connections>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vry-Q3-f3S">
+                            <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vry-Q3-f3S" customClass="AnswerView">
                                 <rect key="frame" x="295" y="164" width="432" height="252"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1616,6 +1616,7 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="answer" destination="vry-Q3-f3S" id="WIy-6R-1D8"/>
                         <outlet property="answer1" destination="rcv-ga-IsI" id="cw6-TN-2kP"/>
                         <outlet property="answer10" destination="FuU-VK-LAh" id="77x-dy-eQJ"/>
                         <outlet property="answer2" destination="hKv-Hc-NQo" id="WM9-ag-Bp2"/>

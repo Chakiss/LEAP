@@ -11,4 +11,5 @@
 @interface AnswerView : UIImageView
 
 - (void)answerImageWithWord:(NSString *)word;
+- (void)setDefaultImage;
 @end
