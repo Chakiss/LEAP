@@ -15,6 +15,11 @@
 #import "AnswerView.h"
 #import "NSString+ShuffledString.h"
 #import "NSMutableArray+ShuffledArray.h"
+#import "Sound.h"
+#import "Message.h"
+#import "GeneralUtility.h"
+#import "ButtonAnimation.h"
+
 @interface USAGameViewController (){
     
     //tile lists
@@ -29,6 +34,12 @@
     int currentLetter;
     
     int currentWord;
+    
+    BOOL isRabbitGuide;
+    
+    Sound *soundGuide;
+    Sound *soundClick;
+    Sound *soundBG;
 }
 
 @end
@@ -60,12 +71,15 @@
 {
     [super viewDidLoad];
     
+    isRabbitGuide  = true;
+    
     tilesArray = [NSArray array];
     tilesArray = @[self.answer1,self.answer2,self.answer3,self.answer4,self.answer5,self.answer6,self.answer7,self.answer8,self.answer9,self.answer10];
     
-    self.level = [Level levelWithNum:34];
     
-    [self.level.level shuffle];
+    self.levelC = [Level levelWithNum:self.level];
+    
+    [self.levelC.level shuffle];
     
     
     [self playGame];
@@ -77,13 +91,26 @@
     
     [super viewWillAppear:animated];
     
+   // self.heightScoreLabel.text = []
+    self.scoreLabel.text = @"0";
     
+    soundBG = [[Sound alloc] init];
+    [soundBG playSoundFile:@"game2_music_bg"];
+    
+    [soundBG play];
+
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    [soundBG stop];
     
 }
 
 - (void)playGame{
     
-    UIView *clockView = [[UIView alloc] initWithFrame:CGRectMake(804, 548, 200, 200)];
+    UIView *clockView = [[UIView alloc] initWithFrame:CGRectMake(804, 610, 200, 138)];
     timer1 = [[KKProgressTimer alloc] initWithFrame:clockView.bounds];
     [clockView addSubview:timer1];
     timer1.delegate = self;
@@ -94,7 +121,7 @@
     currentLetter = 0;
     currentWord = 0;
     
-    [self randomWordInLevel:self.level.level[currentWord]];
+    [self randomWordInLevel:self.levelC.level[currentWord]];
     usaGame = [[USAGame alloc] init];
     
     [self startGame];
@@ -104,7 +131,7 @@
 
 -(void)randomWordInLevel:(NSString *)string{
     
-    NSAssert(self.level.level, @"no level loaded");
+    NSAssert(self.levelC.level, @"no level loaded");
     
     //int randomIndex = arc4random()%[self.level.level count];
     NSString* word = string;//self.level.level[ randomIndex ];
@@ -185,7 +212,11 @@
         
     }else{
         NSLog(@"จบ 1 คำ");
-        [self.answer answerImageWithWord:self.level.level[currentWord]];
+        [self.answer answerImageWithWord:self.levelC.level[currentWord]];
+        soundClick = [[Sound alloc] init];
+        [soundClick playSoundFile:@"sound_magic"];
+        
+        [soundClick play];
         
         currentWord++;
         [self performSelector:@selector(nextWord) withObject:nil afterDelay:2.0];
@@ -193,10 +224,10 @@
     }
 }
 - (void)nextWord{
-    if (currentWord < self.level.level.count) {
+    if (currentWord < self.levelC.level.count) {
         currentLetter = 0;
         [self resetQuestionView];
-        [self randomWordInLevel:self.level.level[currentWord]];
+        [self randomWordInLevel:self.levelC.level[currentWord]];
         [self startGame];
     }
     
@@ -231,6 +262,11 @@
         if ([letter isEqualToString:((TargetView *)_targets[currentLetter]).letter]) {
             /////// ถูกกกกกกกกกก
             
+            soundClick = [[Sound alloc] init];
+            [soundClick playSoundFile:@"Button_sound"];
+            
+            [soundClick play];
+            
             int wordLen = _targets.count;
             if (wordLen == 3) {
                 [self.question3[currentLetter] setImageWithLetter:letter];
@@ -250,6 +286,13 @@
             currentLetter ++;
             [self startGame];
             
+        }
+        else{
+            
+            soundClick = [[Sound alloc] init];
+            [soundClick playSoundFile:@"button_clickwong"];
+            
+            [soundClick play];
         }
     }
     
@@ -308,7 +351,58 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyz";
 
 
 - (IBAction)backButtonTapped:(id)sender{
+    
+    soundClick = [[Sound alloc] init];
+    [soundClick playSoundFile:@"Button_sound"];
+    
+    [soundClick play];
+    
+    [self.backButton.layer addAnimation:[ButtonAnimation animationButton] forKey:@"zoom"];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)rabbitGuideTapped:(id)sender {
+    
+    if(isRabbitGuide){
+        
+        self.footerView.hidden = NO;
+        
+        NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+        
+        NSString *languageString = [standardUserDefaults stringForKey:@"language"];
+        
+
+        soundGuide = [[Sound alloc] init];
+        [soundGuide playSoundFile:@"lion sound_01"];
+        
+        [soundGuide play];
+        
+        
+        
+        NSString *lionString = [Message getMessage:10];
+        
+        self.footerTextView.text = lionString;
+        
+        if ([languageString isEqualToString:@"CH"])
+            self.footerTextView.font = [GeneralUtility fontChina];
+        else
+            self.footerTextView.font = [GeneralUtility fontThaiAndEng];
+        
+        
+        
+        isRabbitGuide = false;
+        
+    }
+    else{
+        
+        isRabbitGuide = true;
+        
+         self.footerView.hidden = YES;
+
+        [soundGuide stop];
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning

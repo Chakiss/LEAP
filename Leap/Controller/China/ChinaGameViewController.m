@@ -15,6 +15,8 @@
 #import "Sound.h"
 #import "Score.h"
 #import "Stage.h"
+#import "Message.h"
+#import "GeneralUtility.h"
 
 
 @interface ChinaGameViewController (){
@@ -36,6 +38,8 @@
     int fullMarks;
     
     NSUserDefaults *defaults;
+    
+    BOOL isGuidePanda;
 }
 
 
@@ -56,6 +60,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    isGuidePanda = true;
     
     if (!self.level) {
         self.level = 1;
@@ -124,7 +130,7 @@
         Stage *stage = [Stage new];
         [stage setStage:self.level];
         
-        [myScore setHeightScore:scoreChina andLevel:self.level-1];
+        [myScore setHeightScore:scoreChina andLevel:self.level];
         NSInteger completedScore = [myScore completeScore:scoreChina andFullMarksLevel:fullMarks];
         
         
@@ -298,19 +304,33 @@
     
 }
 
-- (IBAction)pressedPandaGuide:(id)sender {
+- (IBAction)guidePandaTapped:(id)sender {
     
-    self.footerView.hidden = NO;
-    
-    guideSound = [[Sound alloc] init];
-    
-    guideSound = [[Sound alloc] init];
-    [guideSound playSoundFile:@"panda001"];
-    [guideSound play];
-    
-    self.guideLabel.text = @"";
-    
-    
+    if (isGuidePanda) {
+        
+        NSString *languageString = [defaults stringForKey:@"language"];
+       
+        self.footerView.hidden = NO;
+        
+       
+        guideSound = [[Sound alloc] init];
+        [guideSound playSoundFile:@"panda001"];
+        [guideSound play];
+        
+        self.guideLabel.text = [Message getMessage:11];
+        if ([languageString isEqualToString:@"CH"])
+            self.guideLabel.font = [GeneralUtility fontChina];
+        else
+            self.guideLabel.font = [GeneralUtility fontThaiAndEng];
+        isGuidePanda = false;
+    }
+    else{
+        isGuidePanda = true;
+        self.footerView.hidden = true;
+        [guideSound stop];
+        
+    }
+ 
 }
 
 - (IBAction)backButtonTapped:(id)sender{

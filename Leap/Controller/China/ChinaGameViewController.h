@@ -33,7 +33,7 @@
 @property (weak, nonatomic) IBOutlet KKProgressTimer *timer1;
 
 
-- (IBAction)pressedPandaGuide:(id)sender;
+- (IBAction)guidePandaTapped:(id)sender;
 
 - (IBAction)backButtonTapped:(id)sender;
 @end

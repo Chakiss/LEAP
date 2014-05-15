@@ -41,7 +41,7 @@
 		</Text>
 		
 		<Text ID="6">
-			<TH>ในที่สุดก็ได้มาถึง เกาะของจอมเวทย์สีม่วงแล้ว ! พวกเราจะต้องช่วยกัน แก้ไข ปริศนาทั้งหมด ถึงจะสามารถช่วยให้สิ่งปลูกสร้างทั้งหมด กลับไxประจำอยู่ที่เดิมได้!</TH>
+			<TH>ในที่สุดก็ได้มาถึงเกาะของจอมเวทย์สีม่วงแล้ว! พวกเราจะต้องช่วยกันแก้ไขปริศนาทั้งหมดถึงจะสามารถช่วยให้สิ่งปลูกสร้างทั้งหมด กลับไปประจำอยู่ที่เดิมได้!</TH>
             <EN>We finally arrive the wizard’s island. We must solve all the mysterious
                 puzzle inorder to rescue the landmarks. </EN>
             <CN>我们最终到达了巫师的岛屿，但是我们必须解决所有难解的
@@ -67,6 +67,18 @@
             <EN>Of course, we can solve them ! </EN>
             <CN>当然可以，我们能解决他们！</CN>
 		</Text>
+        
+        <Text ID="10">
+            <TH>จงฟังการออกเสียงจากฉัน และ ใช้นิ้วจิ้มลงไป ที่ตัวพยัญชนะที่ถูกต้อง</TH>
+            <EN>Listen to me and choose the correct alphabet</EN>
+            <CN>狮子：听我说，选择正确的字母。</CN>
+		</Text>
 		
+        <Text ID="11">
+            <TH>จะมีตัวอักษรลอยน้ำมา  เธอจะต้องเขียนตัวอักษร แบบเดียวกันกับที่ลอยอยู่ในน้ำ  ลงไปบนกระดาษให้ทันก่อนที่จระเข้จะกินตัวอักษรเข้าไป</TH>
+            <EN>There are alphabets flowing in the river. You must write these alphabets before the crocodile gets to them.</EN>
+            <CN>这条河里有一些字母在流动，你必须在鳄鱼到达之前写好这些字母。</CN>
+		</Text>
+        
 	</List>
 </LocalizeData>

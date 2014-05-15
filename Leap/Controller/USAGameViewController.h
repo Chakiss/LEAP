@@ -16,10 +16,9 @@
 @interface USAGameViewController : UIViewController<KKProgressTimerDelegate , TileTouchDelegate>
 
 
-
-
 @property (weak, nonatomic) UIView* gameView;
-@property (strong, nonatomic) Level* level;
+@property (strong, nonatomic) Level* levelC;
+@property (assign, nonatomic) int level;
 
 
 
@@ -57,8 +56,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *heightScoreLabel;
 @property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
 
+@property (strong, nonatomic) IBOutlet UIView *footerView;
+@property (strong, nonatomic) IBOutlet UITextView *footerTextView;
 
+@property (strong, nonatomic) IBOutlet UIButton *backButton;
 
 - (void)playGame;
 - (IBAction)backButtonTapped:(id)sender;
+- (IBAction)rabbitGuideTapped:(id)sender;
 @end

@@ -73,7 +73,11 @@ static Score *sharedInstance;
     
    NSInteger completeResultScore = 0;
     
-   completeResultScore = (score * 100) / fullMarks;
+    if (fullMarks > 0 ) {
+        completeResultScore = (score * 100) / fullMarks;
+    }
+    
+   
     
    return completeResultScore;
     

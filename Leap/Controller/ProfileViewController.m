@@ -110,9 +110,11 @@
 
 - (IBAction)pressedClose:(id)sender {
     
-    StageSelectViewController *stageView = [self.storyboard instantiateViewControllerWithIdentifier:@"stageView"];
+   // StageSelectViewController *stageView = [self.storyboard instantiateViewControllerWithIdentifier:@"stageView"];
     
-    [self presentViewController:stageView animated:YES completion:nil];
+   // [self presentViewController:stageView animated:YES completion:nil];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 

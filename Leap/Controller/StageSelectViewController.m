@@ -16,6 +16,8 @@
 #import "StoryLineViewController.h"
 #import "ButtonAnimation.h"
 #import "GeneralUtility.h"
+#import "Message.h"
+#import "PopupContryViewController.h"
 
 static BOOL isConversation = true;
 
@@ -111,8 +113,7 @@ static int curveValues[] = {
     
     ProfileViewController *profileView = [self.storyboard instantiateViewControllerWithIdentifier:@"ProfileView"];
     [self presentViewController:profileView animated:YES completion:nil];
-    
-    
+  
 }
 
 - (IBAction)backAction:(id)sender {
@@ -125,6 +126,19 @@ static int curveValues[] = {
     
 }
 
+- (IBAction)popupTapped:(UIButton *)sender {
+  
+    NSInteger buttonTag = [sender tag];
+    
+    PopupContryViewController *popupView = [self.storyboard instantiateViewControllerWithIdentifier:@"PopupView"];
+    popupView.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    popupView.modalPresentationStyle=UIModalPresentationFormSheet;
+    popupView.view.superview.backgroundColor = [UIColor clearColor];
+    [self presentViewController:popupView animated:YES completion:nil];
+    
+  
+}
+
 
 -(BOOL) prefersStatusBarHidden
 {
@@ -134,7 +148,6 @@ static int curveValues[] = {
 {
     [super viewDidLoad];
     
-    isConversation = true;
     
     selectedCurveIndex = 1;
     
@@ -193,14 +206,16 @@ static int curveValues[] = {
     //********** Ballon ***********///////////
    
     //UIButton *nextLevelButton = (UIButton *)[self.view viewWithTag:2];
-    
-    [ballonView moveTo:
-     CGPointMake(nextLevelButton.center.x - (ballonView.frame.size.width/2),
-                 nextLevelButton.frame.origin.y - (ballonView.frame.size.height + 5.0))
-              duration:3.0
-                option:curveValues[selectedCurveIndex]];
+    NSLog(@"tag : %ld",(long)[nextLevelButton tag]);
+    if ([nextLevelButton tag] > 1) {
+        [ballonView moveTo:
+         CGPointMake(nextLevelButton.center.x - (ballonView.frame.size.width/2),
+                     nextLevelButton.frame.origin.y - (ballonView.frame.size.height + 5.0))
+                  duration:3.0
+                    option:curveValues[selectedCurveIndex]];
+    }
+   
 
-    
     if (isConversation) {
         [self conversation];
     }
@@ -208,47 +223,26 @@ static int curveValues[] = {
    
 }
 
+- (void)viewDidDisappear:(BOOL)animated{
+    
+    [super viewDidDisappear:animated];
+    footerView.hidden = YES;
+    isConversation = false;
+    
+   [soundBG stop];
+    [conversationSound stop];
+    
+}
+
 - (void) conversation {
     
-    app = [[UIApplication sharedApplication] delegate];
-    
-    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
-    
-    // getting an NSString object
-    NSString *languageString = [standardUserDefaults stringForKey:@"language"];
-    
-    NSString *lion1;
-    NSString *rat;
-    NSString *lion2;
-    
 
-    if ([languageString isEqualToString:@"TH"]) {
-        
-        
-        lion1 =((LocalizeDataStore *)[app.listArray objectAtIndex:6]).TH;
-        rat = ((LocalizeDataStore *)[app.listArray objectAtIndex:7]).TH;
-        lion2 = ((LocalizeDataStore *)[app.listArray objectAtIndex:8]).TH;
-        converSound =  @[@"lion sound_02",@"rat001",@"lion sound_03"];
-        
-    }
-    else if ([languageString isEqualToString:@"EN"]){
-        
-        lion1 = ((LocalizeDataStore *)[app.listArray objectAtIndex:0]).EN;
-        rat = ((LocalizeDataStore *)[app.listArray objectAtIndex:1]).EN;
-        lion2 = ((LocalizeDataStore *)[app.listArray objectAtIndex:2]).EN;
-        
-        converSound =  @[@"lion sound_02",@"rat001",@"lion sound_03"];
-    }
-    else if ([languageString isEqualToString:@"CN"]){
-        
-        lion1 = ((LocalizeDataStore *)[app.listArray objectAtIndex:0]).CN;
-        rat = ((LocalizeDataStore *)[app.listArray objectAtIndex:1]).CN;
-        lion2 = ((LocalizeDataStore *)[app.listArray objectAtIndex:2]).CN;
-        
-        converSound =  @[@"lion sound_02",@"rat001",@"lion sound_03"];
-        
-    }
+    NSString *lion1 = [Message getMessage:6];
+    NSString *rat = [Message getMessage:7];
+    NSString *lion2 = [Message getMessage:8];
     
+    converSound =  @[@"lion sound_02",@"rat001",@"lion sound_03"];
+        
     
      conversationTextArray = @[lion1,rat,lion2];
 
@@ -278,6 +272,8 @@ static int curveValues[] = {
     if (currentSound < converSound.count) {
        
         [self playSound:currentSound];
+        
+          isConversation = false;
     }
     else{
         footerView.hidden = YES;

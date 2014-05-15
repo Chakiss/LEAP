@@ -12,12 +12,12 @@
 
 + (UIFont *)fontThaiAndEng
 {
-    return [self fontArialUnicodeMSWithSize:26.0f];
+    return [self fontArialUnicodeMSWithSize:24.0f];
 }
 
 + (UIFont *)fontChina
 {
-    return [self fontArialUnicodeMSWithSize:26.0f];
+    return [self fontArialUnicodeMSWithSize:24.0f];
 }
 
 + (UIFont *)fontArialUnicodeMSWithSize:(CGFloat)fontSize

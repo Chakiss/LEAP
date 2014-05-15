@@ -38,5 +38,6 @@
 - (IBAction)stageSelect:(id)sender;
 - (IBAction)pressedProfile:(id)sender;
 - (IBAction)backAction:(id)sender;
+- (IBAction)popupTapped:(UIButton *)sender;
 
 @end

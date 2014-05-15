@@ -13,6 +13,14 @@
 #import "ButtonAnimation.h"
 #import "Sound.h"
 #import "ProfileViewController.h"
+#import "ExplodeView.h"
+#import "StarDustView.h"
+#import "StageSelectViewController.h"
+#import "Message.h"
+#import "GeneralUtility.h"
+#import "ResultScoreViewController.h"
+#import "Score.h"
+#import "Stage.h"
 
 @interface PhonicGameViewController (){
     NSArray *soundArray;
@@ -23,9 +31,14 @@
     int countLoop;
     int max;
     int min;
-    NSMutableArray *alphabetPlay;
-    Sound *soundClick;
     
+    BOOL isGuideLion;
+    NSMutableArray *alphabetPlay;
+    Sound *backgroundSound;
+    Sound *soundClick;
+    Sound *soundGuide;
+    Score *myScore;
+    NSUserDefaults *defaults;
 }
 
 @end
@@ -50,13 +63,11 @@
 {
     [super viewDidLoad];
     
-    if (self.level == 0) {
-        
-        self.level = 19;
-        
-    }
+    defaults = [NSUserDefaults standardUserDefaults];
     
+    isGuideLion = true;
     
+
     indexArray = [NSMutableArray arrayWithObjects:
                   [NSValue valueWithCGRect:CGRectMake(210, 212, 88, 87)],
                   [NSValue valueWithCGRect:CGRectMake(296, 212, 88, 87)],
@@ -98,13 +109,20 @@
     self.timer1.tag = 1;
     check = 0;
     currentLoop = 0;
+    
+    myScore = [Score sharedInstance];
+    
     [self playWithStage];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-   // self.hi.text = [NSString stringWithFormat:@"%ld",(long)[myScore getLevelHeightScore:self.level]];
+    backgroundSound = [[Sound alloc] init];
+    [backgroundSound playSoundFile:@"game2_music_bg"];
+    [backgroundSound play];
+    
+    self.heightScoreLabel.text = [NSString stringWithFormat:@"%ld",(long)[myScore getLevelHeightScore:self.level]];
     self.scoreLabel.text = @"0";
     
 }
@@ -124,6 +142,27 @@
     if (currentLoop > countLoop) {
         NSLog(@"END!!!");
         [self.timer1 stop];
+        
+        [myScore setHeightScore:phonicGame.total andLevel:self.level];
+        
+         NSInteger completedScore = [myScore completeScore:phonicGame.total andFullMarksLevel:phonicGame.sumTotal];
+        
+        if (completedScore > 50) {
+            self.level++;
+            
+            Stage *stage = [Stage new];
+            [stage setStage:self.level];
+        }
+        
+        NSInteger goldInteger = [defaults integerForKey:@"gold"];
+        
+        UIStoryboard *storyboard     = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        ResultScoreViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ResultScore"];
+        vc.scoreResult = phonicGame.total;
+        vc.goleResult = goldInteger;
+        vc.completeResult = completedScore;
+        
+        [self presentViewController:vc animated:NO completion:nil];
     }
     else{
         __block CGFloat i1 = 0;
@@ -170,10 +209,21 @@
 - (IBAction) playaction:(id)sender {
     currentLoop++;
     if ([phonicGame checkResult:[sender tag]] == 1) {  //ถูก
+        soundClick = [[Sound alloc] init];
+        [soundClick playSoundFile:@"Button_sound"];
+        
+        [soundClick play];
+        
         self.scoreLabel.text = [NSString stringWithFormat:@"%d",phonicGame.total];
         [self playGame];
+        
+        
     }
     else{ // ผิด
+        soundClick = [[Sound alloc] init];
+        [soundClick playSoundFile:@"button_clickwong"];
+        
+        [soundClick play];
         
         [self shuffleButton];
         [self moveOut];
@@ -243,6 +293,48 @@
     [self presentViewController:profileView animated:YES completion:nil];
     
 }
+
+- (IBAction)lionTapped:(id)sender {
+    
+   
+    if (isGuideLion) {
+        
+        NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+        
+        NSString *languageString = [standardUserDefaults stringForKey:@"language"];
+        
+        self.footerview.hidden = NO;
+        
+        soundGuide = [[Sound alloc] init];
+        [soundGuide playSoundFile:@"lion sound_01"];
+        
+        [soundGuide play];
+        
+       
+        
+        NSString *lionString = [Message getMessage:10];
+        
+        self.footerTextView.text = lionString;
+        
+        if ([languageString isEqualToString:@"CH"])
+            self.footerTextView.font = [GeneralUtility fontChina];
+        else
+            self.footerTextView.font = [GeneralUtility fontThaiAndEng];
+        
+        
+         isGuideLion = false;
+ 
+    }
+    else{
+         isGuideLion = true;
+        
+         self.footerview.hidden = YES;
+        [soundClick stop];
+        
+    }
+    
+
+}
 - (IBAction)backButtonTapped:(id)sender{
     
     soundClick = [[Sound alloc] init];
@@ -253,6 +345,10 @@
     [self.backButton.layer addAnimation:[ButtonAnimation animationButton] forKey:@"zoom"];
     
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+  //  StageSelectViewController *stageView = [self.storyboard instantiateViewControllerWithIdentifier:@"stageView"];
+    //[self presentViewController:stageView animated:YES completion:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning

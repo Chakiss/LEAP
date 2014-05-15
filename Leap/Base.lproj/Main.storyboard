@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="APX-f9-vqr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -872,6 +872,16 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPw-yu-WmV">
+                                                <rect key="frame" x="664" y="415" width="59" height="97"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="popupTapped:" destination="u98-LD-TsY" eventType="touchUpInside" id="rQu-2V-ucy"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
@@ -926,17 +936,18 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qa4-tM-qJg" userLabel="FooterView">
-                                <rect key="frame" x="0.0" y="618" width="1024" height="150"/>
+                                <rect key="frame" x="0.0" y="610" width="1024" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="head_lion2.png" translatesAutoresizingMaskIntoConstraints="NO" id="ras-Bq-A7U">
-                                        <rect key="frame" x="20" y="22" width="138" height="106"/>
+                                        <rect key="frame" x="20" y="5" width="218" height="150"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LY2-qJ-uyV">
-                                        <rect key="frame" x="150" y="22" width="765" height="108"/>
+                                        <rect key="frame" x="230" y="22" width="725" height="108"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -1018,6 +1029,71 @@
             </objects>
             <point key="canvasLocation" x="2603" y="171"/>
         </scene>
+        <!--Popup Contry View Controller-->
+        <scene sceneID="D4z-Eb-97o">
+            <objects>
+                <viewController storyboardIdentifier="PopupView" id="LeX-UJ-93O" customClass="PopupContryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xpo-eV-d1i"/>
+                        <viewControllerLayoutGuide type="bottom" id="pzw-ho-z3X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFit" id="WHJ-Az-Uvt">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="popup_profile&amp;play.png" translatesAutoresizingMaskIntoConstraints="NO" id="vlU-p7-2yx">
+                                <rect key="frame" x="-101" y="0.0" width="721" height="620"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FHv-EW-CnX">
+                                <rect key="frame" x="127" y="101" width="286" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wch-f2-Evt">
+                                <rect key="frame" x="63" y="387" width="416" height="171"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kZ-tp-pEy" userLabel="Close Button">
+                                <rect key="frame" x="470" y="20" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="close.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeTapped:" destination="LeX-UJ-93O" eventType="touchUpInside" id="EKk-Ej-cQa"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ui_star0.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vh4-3j-Tdx" userLabel="Star Image View1">
+                                <rect key="frame" x="154" y="286" width="72" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ui_star0.png" translatesAutoresizingMaskIntoConstraints="NO" id="s83-Xd-AD3" userLabel="Star Image View2">
+                                <rect key="frame" x="234" y="286" width="72" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ui_star0.png" translatesAutoresizingMaskIntoConstraints="NO" id="xdW-QY-Gc1" userLabel="Star Image View3">
+                                <rect key="frame" x="314" y="286" width="72" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="contryImageView" destination="FHv-EW-CnX" id="dVj-o5-vwo"/>
+                        <outlet property="descTextView" destination="wch-f2-Evt" id="7vi-1G-udU"/>
+                        <outlet property="starImageView1" destination="Vh4-3j-Tdx" id="mNR-ac-QCh"/>
+                        <outlet property="starImageView2" destination="s83-Xd-AD3" id="b06-39-H2o"/>
+                        <outlet property="starImageView3" destination="xdW-QY-Gc1" id="QXI-fH-lci"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BfW-AV-8Q6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1272" y="2130"/>
+        </scene>
         <!--Result Score View Controller-->
         <scene sceneID="4kB-oq-5x5">
             <objects>
@@ -1090,7 +1166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjb-bE-S15" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2685" y="2396"/>
+            <point key="canvasLocation" x="2603" y="2396"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="u9I-QJ-X3x">
@@ -1249,7 +1325,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mom-Mw-dw9" userLabel="Close Button">
-                                <rect key="frame" x="885" y="0.0" width="119" height="125"/>
+                                <rect key="frame" x="957" y="20" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="close.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1292,6 +1368,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bo-rR-Lyf" userLabel="FooterView">
+                                <rect key="frame" x="0.0" y="603" width="1024" height="164"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sN1-tt-5Pw">
+                                        <rect key="frame" x="200" y="20" width="580" height="108"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.46999999999999997" colorSpace="calibratedRGB"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhM-Vq-azQ" userLabel="Back Button">
                                 <rect key="frame" x="10" y="10" width="187" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1299,8 +1390,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonTapped:" destination="APX-f9-vqr" eventType="touchUpInside" id="cZD-Zl-sOp"/>
-                                    <action selector="backButtonTapped:" destination="vfN-cn-Mey" eventType="touchUpInside" id="eMN-ZY-bLr"/>
+                                    <action selector="backButtonTapped:" destination="vfN-cn-Mey" eventType="touchUpInside" id="emN-DM-hmg"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ui_profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fn9-TV-gu0">
@@ -1617,6 +1707,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVp-e6-T9a" userLabel="Rabbit Button">
+                                <rect key="frame" x="0.0" y="610" width="218" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="head_rabbit1.png"/>
+                                <connections>
+                                    <action selector="rabbitGuideTapped:" destination="vfN-cn-Mey" eventType="touchUpInside" id="GlH-vD-2zR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -1634,6 +1732,9 @@
                         <outlet property="answer7" destination="Uwa-Vi-AVa" id="qyc-3H-e6M"/>
                         <outlet property="answer8" destination="8t6-BO-I1e" id="OXc-JC-ect"/>
                         <outlet property="answer9" destination="Mkg-ub-4Fo" id="nUl-l5-gmd"/>
+                        <outlet property="backButton" destination="RhM-Vq-azQ" id="Slp-oU-chU"/>
+                        <outlet property="footerTextView" destination="sN1-tt-5Pw" id="uOD-we-LtD"/>
+                        <outlet property="footerView" destination="8bo-rR-Lyf" id="G3u-1D-t9n"/>
                         <outlet property="heightScoreLabel" destination="EI2-cl-K93" id="ClJ-PG-lWt"/>
                         <outlet property="questionView3" destination="xbI-1g-UwP" id="M3g-qw-hN1"/>
                         <outlet property="questionView4" destination="dL6-Ep-oai" id="t8e-rT-jZb"/>
@@ -1753,7 +1854,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vq8-4s-hpY" userLabel="FooterView">
-                                <rect key="frame" x="0.0" y="618" width="1024" height="150"/>
+                                <rect key="frame" x="0.0" y="605" width="1024" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="727" translatesAutoresizingMaskIntoConstraints="NO" id="pXA-2B-zdQ">
@@ -1767,13 +1868,13 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.46999999999999997" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8RV-YB-AAH" userLabel="Panda Button">
-                                <rect key="frame" x="33" y="647" width="128" height="96"/>
+                                <rect key="frame" x="0.0" y="610" width="218" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="head_panda1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="pressedPandaGuide:" destination="FD0-tC-sY8" eventType="touchUpInside" id="sbY-d8-hfj"/>
+                                    <action selector="guidePandaTapped:" destination="FD0-tC-sY8" eventType="touchUpInside" id="Yv2-d5-uib"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1811,21 +1912,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHA-iV-Sm0">
-                                <rect key="frame" x="0.0" y="565" width="218" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="head_lion2.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3yB-oI-3h8" userLabel="FooterView">
-                                <rect key="frame" x="0.0" y="604" width="1024" height="150"/>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3yB-oI-3h8" userLabel="FooterView">
+                                <rect key="frame" x="0.0" y="604" width="1024" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mK4-G7-cCT">
-                                        <rect key="frame" x="150" y="22" width="765" height="108"/>
+                                        <rect key="frame" x="200" y="20" width="580" height="108"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -1871,7 +1966,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HB8-TL-0xb">
-                                <rect key="frame" x="465" y="212" width="88" height="87"/>
+                                <rect key="frame" x="466" y="212" width="88" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ui_font_d_.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2101,7 +2196,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gHW-ep-Y5r" customClass="KKProgressTimer">
-                                <rect key="frame" x="804" y="548" width="200" height="200"/>
+                                <rect key="frame" x="804" y="610" width="200" height="138"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -2151,6 +2246,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHA-iV-Sm0">
+                                <rect key="frame" x="0.0" y="610" width="218" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="head_lion2.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="lionTapped:" destination="APX-f9-vqr" eventType="touchUpInside" id="TAJ-iB-g1d"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -2158,6 +2263,8 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="backButton" destination="Lpz-yA-pdv" id="UM7-cH-Pfm"/>
+                        <outlet property="footerTextView" destination="mK4-G7-cCT" id="zaW-4k-jKJ"/>
+                        <outlet property="footerview" destination="3yB-oI-3h8" id="cmA-fx-ata"/>
                         <outlet property="heightScoreLabel" destination="Xoc-Nu-ffi" id="0Rd-Af-tgd"/>
                         <outlet property="scoreLabel" destination="8ff-Py-1p9" id="Q7m-0L-PxY"/>
                         <outlet property="timer1" destination="gHW-ep-Y5r" id="jQz-N5-jRl"/>
@@ -2262,8 +2369,10 @@
         <image name="game_bg_2x.png" width="2048" height="1536"/>
         <image name="head_lion2.png" width="1024" height="768"/>
         <image name="head_panda1.png" width="1024" height="768"/>
+        <image name="head_rabbit1.png" width="1024" height="768"/>
         <image name="linea.png" width="228" height="269"/>
         <image name="picture_frame.png" width="423" height="285"/>
+        <image name="popup_profile&amp;play.png" width="1024" height="768"/>
         <image name="profile_shop.png" width="1024" height="768"/>
         <image name="rankingbutton.png" width="234" height="107"/>
         <image name="selactcountry.png" width="2048" height="1536"/>
@@ -2300,6 +2409,7 @@
         <image name="ui_font_z_.png" width="109" height="108"/>
         <image name="ui_left.png" width="170" height="74"/>
         <image name="ui_profile.png" width="489" height="159"/>
+        <image name="ui_star0.png" width="1750" height="1643"/>
         <image name="wood.png" width="1262" height="1285"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -1,18 +1,18 @@
 //
-//  ResultScoreViewController.m
+//  PopupContryViewController.m
 //  Leap
 //
-//  Created by Suparuch Sriploy on 5/10/14.
+//  Created by Suparuch Sriploy on 5/15/14.
 //  Copyright (c) 2014 Chakrit. All rights reserved.
 //
 
-#import "ResultScoreViewController.h"
+#import "PopupContryViewController.h"
 
-@interface ResultScoreViewController ()
+@interface PopupContryViewController ()
 
 @end
 
-@implementation ResultScoreViewController
+@implementation PopupContryViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,13 +27,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor clearColor];
     
-    UIImage *imageBackgroud = [UIImage imageNamed:@"popupmissioncomplete.png"];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:imageBackgroud];
+    [self starRate];
+}
+
+- (void)starRate{
     
-    self.scoreLabel.text =[NSString stringWithFormat:@"     %ld",(long)self.scoreResult];
-    self.goldLabel.text =[NSString stringWithFormat:@"     %ld",(long)self.goleResult];
-    self.completeLabel.text =[NSString stringWithFormat:@"%ld %",(long)self.completeResult];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,12 +43,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(IBAction)backButton:(id)sender{
-    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:NO completion:^(void) {
-        
-      
-    }];
-}
+
 /*
 #pragma mark - Navigation
 
@@ -58,4 +55,8 @@
 }
 */
 
+- (IBAction)closeTapped:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

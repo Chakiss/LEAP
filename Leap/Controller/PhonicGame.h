@@ -11,7 +11,7 @@
 @interface PhonicGame : NSObject
 
 
-
+@property (nonatomic,assign) int sumTotal;
 @property (nonatomic,assign) int total;
 @property (nonatomic,assign) int stage;
 

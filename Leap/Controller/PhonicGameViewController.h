@@ -19,6 +19,8 @@
 @property (assign, nonatomic) int level;
 @property (strong, nonatomic) IBOutlet UILabel *heightScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (strong, nonatomic) IBOutlet UIView *footerview;
+@property (strong, nonatomic) IBOutlet UITextView *footerTextView;
 
 
 
@@ -26,5 +28,6 @@
 - (IBAction)playaction:(id)sender;
 - (IBAction)platCurrentSound:(id)sender;
 - (IBAction)profileTapped:(id)sender;
+- (IBAction)lionTapped:(id)sender;
 
 @end

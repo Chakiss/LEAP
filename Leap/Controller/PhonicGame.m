@@ -98,6 +98,7 @@
 
 
 - (int)checkResult:(int)selectedNumber{
+    self.sumTotal += 10;
     if(selectedNumber == randomNumber){
         self.total += 10;
         return 1;
