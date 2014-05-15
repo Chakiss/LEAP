@@ -19,6 +19,11 @@
 #import "Message.h"
 #import "GeneralUtility.h"
 #import "ButtonAnimation.h"
+#import "Score.h"
+#import "Stage.h"
+#import "ResultScoreViewController.h"
+#import "ExplodeView.h"
+#import "StarDustView.h"
 
 @interface USAGameViewController (){
     
@@ -34,12 +39,18 @@
     int currentLetter;
     
     int currentWord;
+    int scoreUSAGame;
+    int scoreFull;
     
     BOOL isRabbitGuide;
     
     Sound *soundGuide;
     Sound *soundClick;
     Sound *soundBG;
+    
+    Score *myScore;
+    
+    NSUserDefaults *standardUserDefaults;
 }
 
 @end
@@ -71,6 +82,10 @@
 {
     [super viewDidLoad];
     
+     myScore = [Score sharedInstance];
+    
+     standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    
     isRabbitGuide  = true;
     
     tilesArray = [NSArray array];
@@ -91,7 +106,7 @@
     
     [super viewWillAppear:animated];
     
-   // self.heightScoreLabel.text = []
+    self.heightScoreLabel.text = [NSString stringWithFormat:@"%ld",(long)[myScore getLevelHeightScore:self.level]];
     self.scoreLabel.text = @"0";
     
     soundBG = [[Sound alloc] init];
@@ -240,11 +255,13 @@
     }
 }
 - (void)didStopProgressTimer:(KKProgressTimer *)progressTimer percentage:(CGFloat)percentage {
-    int wordLen = _targets.count;
+    int wordLen = [_targets count];
     if (currentLetter < wordLen){
         if (currentLetter > _targets.count){
             NSLog(@"END!!!");
             [timer1 stop];
+           
+  
             
         }else{
             currentLetter++;
@@ -253,6 +270,30 @@
         }
     }else{
         NSLog(@"FI:AJFLKAJDL:KASJDKL:");
+        
+        NSLog(@"level %d",self.level);
+        
+        [myScore setHeightScore:scoreUSAGame andLevel:self.level];
+        
+        NSInteger completedScore = [myScore completeScore:scoreUSAGame andFullMarksLevel:scoreFull];
+        
+        if (completedScore > 50) {
+            self.level++;
+            
+            Stage *stage = [Stage new];
+            [stage setStage:self.level];
+        }
+        
+        NSInteger goldInteger = [standardUserDefaults integerForKey:@"gold"];
+        
+        UIStoryboard *storyboard     = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        ResultScoreViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ResultScore"];
+        vc.scoreResult = scoreUSAGame;
+        vc.goleResult = goldInteger;
+        vc.completeResult = completedScore;
+        
+        [self presentViewController:vc animated:NO completion:nil];
+
     }
 }
 
@@ -262,10 +303,39 @@
         if ([letter isEqualToString:((TargetView *)_targets[currentLetter]).letter]) {
             /////// ถูกกกกกกกกกก
             
+        
+            
+            /*
+            ExplodeView* explode = [[ExplodeView alloc] initWithFrame:CGRectMake(tileView.center.x,tileView.center.y,10,10)];
+            [superview addSubview: explode];
+            [superview sendSubviewToBack:explode];
+            
+            StarDustView* stars = [[StarDustView alloc] initWithFrame:CGRectMake(startX, startY, 10, 10)];
+            [self.gameView addSubview:stars];
+            [self.gameView sendSubviewToBack:stars];
+            
+            [UIView animateWithDuration:3
+                                  delay:0
+                                options:UIViewAnimationOptionCurveEaseOut
+                             animations:^{
+                                 stars.center = CGPointMake(endX, startY);
+                             } completion:^(BOOL finished) {
+                                 
+                                 //game finished
+                                 [stars removeFromSuperview];
+                                 
+                                 //when animation is finished, show menu
+                                 [self clearBoard];
+                                 self.onAnagramSolved();
+                             }];
+             */
+            
             soundClick = [[Sound alloc] init];
             [soundClick playSoundFile:@"Button_sound"];
             
             [soundClick play];
+            
+            [self.question3[currentLetter] center];
             
             int wordLen = _targets.count;
             if (wordLen == 3) {
@@ -284,6 +354,8 @@
                 [self.question9[currentLetter] setImageWithLetter:letter];
             }
             currentLetter ++;
+            scoreUSAGame += 10;
+            self.scoreLabel.text = [NSString stringWithFormat:@"%li",(long)scoreUSAGame];
             [self startGame];
             
         }
@@ -295,6 +367,8 @@
             [soundClick play];
         }
     }
+    
+    scoreFull += 10;
     
 }
 
@@ -367,8 +441,6 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyz";
     if(isRabbitGuide){
         
         self.footerView.hidden = NO;
-        
-        NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
         
         NSString *languageString = [standardUserDefaults stringForKey:@"language"];
         

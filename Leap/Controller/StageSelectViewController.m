@@ -45,6 +45,7 @@ static int curveValues[] = {
     
     Sound *soundBG;
     Sound *conversationSound;
+    NSUserDefaults *standardUserDefaults;
 
 }
 
@@ -148,10 +149,11 @@ static int curveValues[] = {
 {
     [super viewDidLoad];
     
+    standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    
     
     selectedCurveIndex = 1;
-    
-   
+
    // [stage setStage:10];
     NSLog(@"%d",[stage currentStage]);
     for (UIButton* object in self.button) {
@@ -273,7 +275,7 @@ static int curveValues[] = {
        
         [self playSound:currentSound];
         
-          isConversation = false;
+        isConversation = false;
     }
     else{
         footerView.hidden = YES;
