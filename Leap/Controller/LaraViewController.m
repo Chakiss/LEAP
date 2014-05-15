@@ -1,25 +1,22 @@
 //
-//  ChinaGameViewController.m
+//  LaraViewController.m
 //  Leap
 //
-//  Created by Chakrit Paniam on 4/30/2557 BE.
+//  Created by Chakrit Paniam on 5/14/2557 BE.
 //  Copyright (c) 2557 Chakrit. All rights reserved.
 //
 
 #define GESTURE_SCORE_THRESHOLD  0.7f
 
-#import "ChinaGameViewController.h"
+#import "LaraViewController.h"
 #import "ResultScoreViewController.h"
 #import "WTMGlyphDetectorView.h"
 #import "NSMutableArray+ShuffledArray.h"
 #import "Sound.h"
 #import "Score.h"
 #import "Stage.h"
-#import "Message.h"
-#import "GeneralUtility.h"
 
-
-@interface ChinaGameViewController (){
+@interface LaraViewController (){
     
     AlphabetView *alphabetView;
     int loop;
@@ -30,23 +27,18 @@
     Sound *backgroundSound;
     Sound *correctSound;
     Sound *crocodileSound;
-    Sound *guideSound;
     
     Score *myScore;
     
     int scoreChina;
-    int fullMarks;
     
     NSUserDefaults *defaults;
-    
-    BOOL isGuidePanda;
 }
-
 
 
 @end
 
-@implementation ChinaGameViewController
+@implementation LaraViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -60,15 +52,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    isGuidePanda = true;
-    
-    if (!self.level) {
-        self.level = 1;
-    }
-    
-    self.footerView.hidden = YES;
-
     defaults = [NSUserDefaults standardUserDefaults];
     
     currentloop = 0;
@@ -90,19 +73,18 @@
     self.alligatorView.animationImages = @[[UIImage imageNamed:@"game1_close.png"],[UIImage imageNamed:@"game1_open.png"]];
     self.alligatorView.animationDuration = 0.5;
     self.alligatorView.animationRepeatCount = 1;
-
+    
     
     myScore = [Score sharedInstance];
-   // [ self.alligatorView startAnimating];
-    
-    [self score];
+
+    // Do any additional setup after loading the view.
 }
 
 -(void)score{
     
-     self.heightScoreLabel.text = [NSString stringWithFormat:@"%ld",(long)[myScore getLevelHeightScore:self.level]];
-     self.scoreLabel.text = @"0";
- 
+    //self.heightScoreLabel.text = [NSString stringWithFormat:@"%ld",(long)[myScore getLevelHeightScore:self.level]];
+    self.scoreLabel.text = @"0";
+    
 }
 
 - (void)playGame{
@@ -124,14 +106,10 @@
         [crocodileSound stop];
         [self.drawAreaView removeFromSuperview];
         [self.choiceImageView removeFromSuperview];
-        self.level++;
+     
         
-        Stage *stage = [Stage new];
-        [stage setStage:self.level];
         
-        [myScore setHeightScore:scoreChina andLevel:self.level];
-        NSInteger completedScore = [myScore completeScore:scoreChina andFullMarksLevel:fullMarks];
-        
+       
         
         NSInteger goldInteger = [defaults integerForKey:@"gold"];
         
@@ -140,7 +118,7 @@
         ResultScoreViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ResultScore"];
         vc.scoreResult = scoreChina;
         vc.goleResult = goldInteger;
-        vc.completeResult = completedScore;
+       // vc.completeResult = completedScore;
         
         [self presentViewController:vc animated:NO completion:nil];
     }
@@ -156,7 +134,7 @@
     currentloop++;
     [ self.alligatorView startAnimating];
     [self playGame];
-   
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -197,99 +175,21 @@
             NSLog(@"ผิดดดดดดด");
         }
         
-         fullMarks++;
+        //fullMarks++;
     }
     else{
         NSLog(@"NO");
     }
-   
- 
+    
+    
 }
 - (void)checkLevel{
-    if (self.level == 1){
-        loop = 4;
-        alplabet = [@[@"a",@"a",@"b",@"b"] mutableCopy];
-        [self.gestureDetectorView loadTemplatesWithNames:@"A",@"B",nil];
-    }
-    else if(self.level == 2){
-        loop = 4;
-        alplabet = [@[@"c",@"c",@"d",@"d"] mutableCopy];
-        [self.gestureDetectorView loadTemplatesWithNames:@"C",@"D",nil];
-    }
-    else if(self.level == 3){
-        loop = 4;
-        alplabet = [@[@"e",@"e",@"f",@"f"] mutableCopy];
-        [self.gestureDetectorView loadTemplatesWithNames:@"E",@"F",nil];
-    }
-    else if(self.level == 4){
-        loop = 4;
-        alplabet = [@[@"g",@"g",@"h",@"h"] mutableCopy];
-        [self.gestureDetectorView loadTemplatesWithNames:@"G",@"H",nil];
-    }
-    else if(self.level == 5){
-        loop = 4;
-        alplabet = [@[@"i",@"i",@"j",@"j"] mutableCopy];
-        [self.gestureDetectorView loadTemplatesWithNames:@"I",@"J",nil];
-    }
-    else if(self.level == 6){
-        loop = 4;
-        alplabet = [@[@"k",@"k",@"l",@"l"] mutableCopy];
-        [self.gestureDetectorView loadTemplatesWithNames:@"K",@"L",nil];
-    }
-    else if(self.level == 7){
-        loop = 4;
-        alplabet = [@[@"m",@"m",@"n",@"n"] mutableCopy];
-        [self.gestureDetectorView loadTemplatesWithNames:@"M",@"N",nil];
-    }
-    else if(self.level == 8){
-        loop = 4;
-        alplabet = [@[@"o",@"o",@"p",@"p"] mutableCopy];
-        [self.gestureDetectorView loadTemplatesWithNames:@"O",@"P",nil];
-    }
-    else if(self.level == 9){
-        loop = 4;
-        alplabet = [@[@"q",@"q",@"r",@"r"] mutableCopy];
-        [self.gestureDetectorView loadTemplatesWithNames:@"Q",@"R",nil];
-    }
-    else if(self.level == 10){
-        loop = 4;
-        alplabet = [@[@"s",@"s",@"t",@"t"] mutableCopy];
-        [self.gestureDetectorView loadTemplatesWithNames:@"S",@"T",nil];
-    }
-    else if(self.level == 11){
-        loop = 4;
-        alplabet = [@[@"u",@"u",@"v",@"v"] mutableCopy];
-        [self.gestureDetectorView loadTemplatesWithNames:@"U",@"V",nil];
-    }
-    else if(self.level == 12){
-        loop = 4;
-        alplabet = [@[@"w",@"x",@"y",@"z"] mutableCopy];
-        [self.gestureDetectorView loadTemplatesWithNames:@"W",@"X",@"Y",@"Z",nil];
-    }
-    else if(self.level == 13){
-        loop = 10;
-        alplabet = [@[@"a",@"b",@"c",@"d",@"e",@"f",@"g",@"h",@"i",@"j"] mutableCopy];
-        [self.gestureDetectorView loadTemplatesWithNames:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",nil];
-        
-    }
-    else if(self.level == 14){
-        loop = 10;
-        alplabet = [@[@"k",@"l",@"m",@"n",@"o",@"p",@"q",@"r",@"s",@"t"] mutableCopy];
-        [self shuffle];
-        [self.gestureDetectorView loadTemplatesWithNames:@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",nil];
-    }
-    else if(self.level == 15){
-        loop = 10;
-        alplabet = [@[@"u",@"v",@"w",@"x",@"y",@"z",@"u",@"w",@"y",@"z"] mutableCopy];
-        [self shuffle];
-        [self.gestureDetectorView loadTemplatesWithNames:@"U",@"V",@"W",@"X",@"Y",@"Z",nil];
-    }
-    else if(self.level == 16){
+      // else if(self.level == 16){
         loop = 10;
         alplabet = [@[@"a",@"b",@"c",@"d",@"e",@"f",@"g",@"h",@"i",@"j",@"k",@"l",@"m",@"n",@"o",@"p",@"q",@"r",@"s",@"t",@"u",@"v",@"w",@"x",@"y",@"z"] mutableCopy];
         [self shuffle];
         [self.gestureDetectorView loadTemplatesWithNames:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",nil];
-    }
+   // }
     
 }
 
@@ -303,33 +203,11 @@
     
 }
 
-- (IBAction)guidePandaTapped:(id)sender {
+- (IBAction)pressedPandaGuide:(id)sender {
     
-    if (isGuidePanda) {
-        
-        NSString *languageString = [defaults stringForKey:@"language"];
-       
-        self.footerView.hidden = NO;
-        
-       
-        guideSound = [[Sound alloc] init];
-        [guideSound playSoundFile:@"panda001"];
-        [guideSound play];
-        
-        self.guideLabel.text = [Message getMessage:11];
-        if ([languageString isEqualToString:@"CH"])
-            self.guideLabel.font = [GeneralUtility fontChina];
-        else
-            self.guideLabel.font = [GeneralUtility fontThaiAndEng];
-        isGuidePanda = false;
-    }
-    else{
-        isGuidePanda = true;
-        self.footerView.hidden = true;
-        [guideSound stop];
-        
-    }
- 
+    
+    
+    
 }
 
 - (IBAction)backButtonTapped:(id)sender{
@@ -337,4 +215,7 @@
     [crocodileSound stop];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
+
 @end
