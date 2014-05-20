@@ -58,8 +58,10 @@
 
 @property (strong, nonatomic) IBOutlet UIView *footerView;
 @property (strong, nonatomic) IBOutlet UITextView *footerTextView;
+@property (strong, nonatomic) IBOutlet UIButton *rabbitButton;
 
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
+
 
 - (void)playGame;
 - (IBAction)backButtonTapped:(id)sender;

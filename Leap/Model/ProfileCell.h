@@ -9,5 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface ProfileCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UIImageView *barrierImageView;
+@property (strong, nonatomic) IBOutlet UILabel *goldLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *userImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *flagImageView;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *homeImage;
+@property (strong, nonatomic) IBOutlet UIImageView *trophyImageView;
+
 
 @end

@@ -98,9 +98,9 @@
 
 
 - (int)checkResult:(int)selectedNumber{
-    self.sumTotal += 10;
+    self.sumTotal += 1000;
     if(selectedNumber == randomNumber){
-        self.total += 10;
+        self.total += 1000;
         return 1;
     }
     else{

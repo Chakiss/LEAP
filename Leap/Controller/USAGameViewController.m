@@ -81,7 +81,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    if (self.level == 0) {
+        self.level = 34;
+    }
      myScore = [Score sharedInstance];
     
      standardUserDefaults = [NSUserDefaults standardUserDefaults];
@@ -99,7 +101,25 @@
     
     [self playGame];
     
+    [NSTimer scheduledTimerWithTimeInterval:1.0
+                                     target:self
+                                   selector:@selector(rabbitAnimation)
+                                   userInfo:nil
+                                    repeats:YES];
+    
     // Do any additional setup after loading the view.
+}
+
+NSInteger rabbitImageLooop = 0;
+-(void)rabbitAnimation{
+    
+    NSArray *rabbitImageArray = @[@"head_rabbit1.png",@"head_rabbit2.png",@"head_rabbit3.png",@"head_rabbit4.png"];
+    
+    [self.rabbitButton setImage:[UIImage imageNamed:[rabbitImageArray objectAtIndex:rabbitImageLooop]]  forState:UIControlStateNormal];
+    
+    rabbitImageLooop++;
+    if(rabbitImageLooop == 3)
+        rabbitImageLooop = 0;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -354,7 +374,7 @@
                 [self.question9[currentLetter] setImageWithLetter:letter];
             }
             currentLetter ++;
-            scoreUSAGame += 10;
+            scoreUSAGame += 1000;
             self.scoreLabel.text = [NSString stringWithFormat:@"%li",(long)scoreUSAGame];
             [self startGame];
             
@@ -441,6 +461,9 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyz";
     if(isRabbitGuide){
         
         self.footerView.hidden = NO;
+        
+        //[self.view bringSubviewToFront:self.footerView];
+        //[self.view bringSubviewToFront:self.rabbitButton];
         
         NSString *languageString = [standardUserDefaults stringForKey:@"language"];
         

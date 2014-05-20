@@ -14,7 +14,7 @@
 #import "Score.h"
 #import "Gold.h"
 
-@interface StageSelectViewController : UIViewController<SoundDelegate>
+@interface StageSelectViewController : UIViewController<SoundDelegate,UIAlertViewDelegate>
 {
     int	selectedCurveIndex;
     AppDelegate *app;

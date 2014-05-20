@@ -32,6 +32,9 @@
 
 @property (weak, nonatomic) IBOutlet KKProgressTimer *timer1;
 
+@property (strong, nonatomic) IBOutlet UIButton *pandaButton;
+
+
 
 - (IBAction)guidePandaTapped:(id)sender;
 

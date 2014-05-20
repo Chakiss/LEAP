@@ -18,6 +18,7 @@
 #import "GeneralUtility.h"
 #import "Message.h"
 #import "PopupContryViewController.h"
+#import "ViewController.h"
 
 static BOOL isConversation = true;
 
@@ -119,11 +120,14 @@ static int curveValues[] = {
 
 - (IBAction)backAction:(id)sender {
     
-  [self.backButton.layer addAnimation:[ButtonAnimation animationButton] forKey:@"zoom"];
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"ต้องการกลับไปหน้า Start"
+                                                      message:@""
+                                                     delegate:self
+                                            cancelButtonTitle:@"ไม่"
+                                            otherButtonTitles:@"ใช่",nil];
     
-    StoryLineViewController *storyView = [self.storyboard instantiateViewControllerWithIdentifier:@"StorylineView"];
+    [message show];
     
-    [self presentViewController:storyView animated:YES completion:nil];
     
 }
 
@@ -305,13 +309,12 @@ static int curveValues[] = {
 - (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view //available starting with iOS 3.2
 {
    
-    [scrollView setScrollEnabled:FALSE];
+  
 }
 
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale
 {
-    if(scale > 1)
-        [scrollView setScrollEnabled:TRUE];
+    
 }
 
 
@@ -319,6 +322,22 @@ static int curveValues[] = {
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+   
+    NSLog(@"%zd",buttonIndex);
+    
+    if (buttonIndex == 1) {
+        
+        [self.backButton.layer addAnimation:[ButtonAnimation animationButton] forKey:@"zoom"];
+        
+        ViewController *storyView = [self.storyboard instantiateViewControllerWithIdentifier:@"StartView"];
+        
+        [self presentViewController:storyView animated:YES completion:nil];
+    }
+    
 }
 
 @end

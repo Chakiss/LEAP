@@ -93,9 +93,27 @@
 
     
     myScore = [Score sharedInstance];
-   // [ self.alligatorView startAnimating];
-    
+
+
+    [NSTimer scheduledTimerWithTimeInterval:1.0
+                                     target:self
+                                   selector:@selector(pandaLoop)
+                                   userInfo:nil
+                                    repeats:YES];
+ 
     [self score];
+}
+
+NSInteger imageLooop = 0;
+-(void)pandaLoop{
+    
+    NSArray *pandaImageArray = @[@"head_panda1.png",@"head_panda2.png",@"head_panda3.png",@"head_panda4.png"];
+    
+    [self.pandaButton setImage:[UIImage imageNamed:[pandaImageArray objectAtIndex:imageLooop]]  forState:UIControlStateNormal];
+    
+    imageLooop++;
+    if(imageLooop == 3)
+        imageLooop = 0;
 }
 
 -(void)score{
@@ -184,7 +202,7 @@
         
         if ([answerLetter isEqualToString:[alplabet[currentloop] uppercaseString]]) {
             NSLog(@"ถูกกกกกก");
-            scoreChina++;
+            scoreChina += 100;
             self.scoreLabel.text = [NSString stringWithFormat:@"%d",scoreChina];
             [self.drawAreaView reloadInputViews];
             [alphabetView removeFromSuperview];

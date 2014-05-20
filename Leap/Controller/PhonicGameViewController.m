@@ -62,7 +62,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    if (self.level == 0) {
+        self.level = 17;
+    }
     defaults = [NSUserDefaults standardUserDefaults];
     
     isGuideLion = true;
@@ -113,6 +115,25 @@
     myScore = [Score sharedInstance];
     
     [self playWithStage];
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0
+                                     target:self
+                                   selector:@selector(lionAnimation)
+                                   userInfo:nil
+                                    repeats:YES];
+}
+
+
+NSInteger lionImageLooop = 0;
+-(void)lionAnimation{
+    
+    NSArray *lionImageArray = @[@"head_lion1.png",@"head_lion2.png",@"head_lion3.png",@"head_lion4.png"];
+    
+    [self.lionButton setImage:[UIImage imageNamed:[lionImageArray objectAtIndex:lionImageLooop]]  forState:UIControlStateNormal];
+    
+    lionImageLooop++;
+    if(lionImageLooop == 3)
+        lionImageLooop = 0;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

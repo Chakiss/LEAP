@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutlet UIView *footerview;
 @property (strong, nonatomic) IBOutlet UITextView *footerTextView;
+@property (strong, nonatomic) IBOutlet UIButton *lionButton;
 
 
 

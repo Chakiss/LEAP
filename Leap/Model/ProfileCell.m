@@ -10,6 +10,9 @@
 
 @implementation ProfileCell
 
+@synthesize barrierImageView;
+@synthesize goldLabel;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
